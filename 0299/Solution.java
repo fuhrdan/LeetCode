@@ -1,0 +1,1 @@
+class Solution{public String getHint(String s,String g){int b=0,c=0;int[]a=new int[10],x=new int[10];for(int i=0;i<s.length();i++)if(s.charAt(i)==g.charAt(i))b++;else{a[s.charAt(i)-'0']++;x[g.charAt(i)-'0']++;}for(int i=0;i<10;i++)c+=Math.min(a[i],x[i]);return b+"A"+c+"B";}}

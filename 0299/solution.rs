@@ -1,0 +1,1 @@
+impl Solution{pub fn get_hint(s:String,g:String)->String{let(mut b,mut c)=(0,0);let(mut a,mut x)=([0;10],[0;10]);for(u,v)in s.bytes().zip(g.bytes()){if u==v{b+=1}else{a[(u-b'0')as usize]+=1;x[(v-b'0')as usize]+=1}}for i in 0..10{c+=a[i].min(x[i])}format!("{}A{}B",b,c)}}

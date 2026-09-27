@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<String> generatePossibleNextMoves(String s){List<String>o=new ArrayList<>();for(int i=0;i+1<s.length();i++)if(s.charAt(i)=='+'&&s.charAt(i+1)=='+'){char[]x=s.toCharArray();x[i]=x[i+1]='-';o.add(new String(x));}return o;}}

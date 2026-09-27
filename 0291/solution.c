@@ -1,0 +1,3 @@
+#include <stdbool.h>
+#include <string.h>
+static bool f(char*p,int pi,char*s,int si,char map[26][64],bool used[256][64]){if(!p[pi]&&!s[si])return true;if(!p[pi]||!s[si])return false;int k=p[pi]-'a';if(map[k][0]){int z=strlen(map[k]);return strncmp(s+si,map[k],z)==0&&f(p,pi+1,s,si+z,map,used);}char sub[64];for(int e=si;e<strlen(s)&&e-si<63;e++){int z=e-si+1;memcpy(sub,s+si,z);sub[z]=0;bool taken=false;for(int j=0;j<26;j++)if(map[j][0]&&!strcmp(map[j],sub))taken=true;if(taken)continue;strcpy(map[k],sub);if(f(p,pi+1,s,e+1,map,used))return true;map[k][0]=0;}return false;}bool wordPatternMatch(char*p,char*s){char map[26][64]={{0}};bool u[256][64]={{0}};return f(p,0,s,0,map,u);}

@@ -1,0 +1,2 @@
+#include <stdlib.h>
+void wallsAndGates(int**r,int m,int*cols){if(!m)return;int n=cols[0],*qr=malloc(m*n*sizeof(int)),*qc=malloc(m*n*sizeof(int)),h=0,t=0;for(int i=0;i<m;i++)for(int j=0;j<n;j++)if(r[i][j]==0){qr[t]=i;qc[t++]=j;}int dr[4]={1,-1,0,0},dc[4]={0,0,1,-1};while(h<t){int x=qr[h],y=qc[h++];for(int k=0;k<4;k++){int a=x+dr[k],b=y+dc[k];if(a>=0&&b>=0&&a<m&&b<n&&r[a][b]==2147483647){r[a][b]=r[x][y]+1;qr[t]=a;qc[t++]=b;}}}free(qr);free(qc);}

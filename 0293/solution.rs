@@ -1,0 +1,1 @@
+impl Solution{pub fn generate_possible_next_moves(s:String)->Vec<String>{let mut o=vec![];let b=s.as_bytes();for i in 0..b.len().saturating_sub(1){if b[i]==b'+'&&b[i+1]==b'+'{let mut x=b.to_vec();x[i]=b'-';x[i+1]=b'-';o.push(String::from_utf8(x).unwrap());}}o}}

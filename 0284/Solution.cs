@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class PeekingIterator{IEnumerator<int>it;bool has;int cache;public PeekingIterator(IEnumerator<int>iterator){it=iterator;has=it.MoveNext();if(has)cache=it.Current;}public int Peek()=>cache;public int Next(){int r=cache;has=it.MoveNext();if(has)cache=it.Current;return r;}public bool HasNext()=>has;}

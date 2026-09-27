@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class ValidWordAbbr{Dictionary<string,string>m=new();string A(string s)=>s.Length<=2?s:$"{s[0]}{s.Length-2}{s[^1]}";public ValidWordAbbr(string[]d){foreach(var s in d){var k=A(s);if(!m.ContainsKey(k))m[k]=s;else if(m[k]!=s)m[k]="#";}}public bool IsUnique(string w){var k=A(w);return !m.ContainsKey(k)||m[k]==w;}}

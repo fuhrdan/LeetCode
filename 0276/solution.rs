@@ -1,0 +1,1 @@
+impl Solution{pub fn num_ways(n:i32,k:i32)->i32{if n==0{return 0}if n==1{return k}let(mut s,mut d)=(k as i64,k as i64*(k-1)as i64);for _ in 3..=n{let ns=d;let nd=(s+d)*(k-1)as i64;s=ns;d=nd;}(s+d)as i32}}

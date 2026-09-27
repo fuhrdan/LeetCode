@@ -1,0 +1,1 @@
+import java.util.*;class Solution{Map<String,Boolean>m=new HashMap<>();public boolean canWin(String s){if(m.containsKey(s))return m.get(s);char[]a=s.toCharArray();for(int i=0;i+1<a.length;i++)if(a[i]=='+'&&a[i+1]=='+'){a[i]=a[i+1]='-';boolean w=!canWin(new String(a));a[i]=a[i+1]='+';if(w){m.put(s,true);return true;}}m.put(s,false);return false;}}

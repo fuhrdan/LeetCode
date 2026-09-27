@@ -1,0 +1,1 @@
+class Solution{int b;void f(TreeNode n,int p,int len){if(n==null)return;len=n.val==p+1?len+1:1;b=Math.max(b,len);f(n.left,n.val,len);f(n.right,n.val,len);}public int longestConsecutive(TreeNode r){if(r==null)return 0;f(r,r.val-1,0);return b;}}

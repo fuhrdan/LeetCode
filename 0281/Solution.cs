@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class ZigzagIterator{IList<int>a,b;int i,j;bool t;public ZigzagIterator(IList<int>a,IList<int>b){this.a=a;this.b=b;}public int Next(){if((!t&&i<a.Count)||j==b.Count){t=true;return a[i++];}t=false;return b[j++];}public bool HasNext()=>i<a.Count||j<b.Count;}

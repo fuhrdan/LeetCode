@@ -1,0 +1,1 @@
+using System;public class Solution{public string GetHint(string s,string g){int b=0,c=0;int[]a=new int[10],x=new int[10];for(int i=0;i<s.Length;i++)if(s[i]==g[i])b++;else{a[s[i]-'0']++;x[g[i]-'0']++;}for(int i=0;i<10;i++)c+=Math.Min(a[i],x[i]);return $"{b}A{c}B";}}

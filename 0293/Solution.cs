@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public IList<string> GeneratePossibleNextMoves(string s){var o=new List<string>();for(int i=0;i+1<s.Length;i++)if(s[i]=='+'&&s[i+1]=='+'){char[]x=s.ToCharArray();x[i]=x[i+1]='-';o.Add(new string(x));}return o;}}

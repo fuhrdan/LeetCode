@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{Dictionary<string,bool>m=new();public bool CanWin(string s){if(m.ContainsKey(s))return m[s];char[]a=s.ToCharArray();for(int i=0;i+1<a.Length;i++)if(a[i]=='+'&&a[i+1]=='+'){a[i]=a[i+1]='-';bool w=!CanWin(new string(a));a[i]=a[i+1]='+';if(w)return m[s]=true;}return m[s]=false;}}

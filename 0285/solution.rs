@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn inorder_successor(mut r:Option<Rc<RefCell<TreeNode>>>,p:Option<Rc<RefCell<TreeNode>>>)->Option<Rc<RefCell<TreeNode>>>{let pv=p.unwrap().borrow().val;let mut s=None;while let Some(x)=r.clone(){if pv<x.borrow().val{s=Some(x.clone());r=x.borrow().left.clone()}else{r=x.borrow().right.clone()}}s}}

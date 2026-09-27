@@ -1,0 +1,1 @@
+impl Solution{pub fn length_of_lis(a:Vec<i32>)->i32{let mut t:Vec<i32>=vec![];for x in a{let(mut l,mut r)=(0,t.len());while l<r{let m=(l+r)/2;if t[m]<x{l=m+1}else{r=m}}if l==t.len(){t.push(x)}else{t[l]=x}}t.len()as i32}}

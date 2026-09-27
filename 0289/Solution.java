@@ -1,0 +1,1 @@
+class Solution{public void gameOfLife(int[][]b){int m=b.length,n=b[0].length;for(int i=0;i<m;i++)for(int j=0;j<n;j++){int c=0;for(int a=-1;a<=1;a++)for(int z=-1;z<=1;z++)if(a!=0||z!=0){int x=i+a,y=j+z;if(x>=0&&y>=0&&x<m&&y<n&&(b[x][y]&1)==1)c++;}if((b[i][j]&1)==1&&(c==2||c==3))b[i][j]|=2;else if((b[i][j]&1)==0&&c==3)b[i][j]|=2;}for(int[]r:b)for(int j=0;j<n;j++)r[j]>>=1;}}

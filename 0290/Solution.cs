@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public bool WordPattern(string p,string s){var w=s.Split(' ');if(p.Length!=w.Length)return false;var a=new Dictionary<char,string>();var b=new Dictionary<string,char>();for(int i=0;i<w.Length;i++){char c=p[i];if(a.ContainsKey(c)&&a[c]!=w[i]||b.ContainsKey(w[i])&&b[w[i]]!=c)return false;a[c]=w[i];b[w[i]]=c;}return true;}}

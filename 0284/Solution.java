@@ -1,0 +1,1 @@
+import java.util.*;class PeekingIterator implements Iterator<Integer>{Iterator<Integer>it;Integer cache;public PeekingIterator(Iterator<Integer>iterator){it=iterator;if(it.hasNext())cache=it.next();}public Integer peek(){return cache;}public Integer next(){Integer r=cache;cache=it.hasNext()?it.next():null;return r;}public boolean hasNext(){return cache!=null;}}

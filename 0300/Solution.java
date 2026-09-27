@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int lengthOfLIS(int[]a){int[]t=new int[a.length];int len=0;for(int x:a){int l=0,r=len;while(l<r){int m=(l+r)/2;if(t[m]<x)l=m+1;else r=m;}t[l]=x;if(l==len)len++;}return len;}}

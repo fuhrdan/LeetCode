@@ -1,0 +1,2 @@
+#include <stdlib.h>
+typedef struct{int*a,*b,na,nb,ia,ib,turn;}ZigzagIterator;ZigzagIterator* zigzagIteratorCreate(int*a,int na,int*b,int nb){ZigzagIterator*z=malloc(sizeof(*z));*z=(ZigzagIterator){a,b,na,nb,0,0,0};return z;}int zigzagIteratorNext(ZigzagIterator*z){if((z->turn==0&&z->ia<z->na)||z->ib>=z->nb){z->turn=1;return z->a[z->ia++];}z->turn=0;return z->b[z->ib++];}bool zigzagIteratorHasNext(ZigzagIterator*z){return z->ia<z->na||z->ib<z->nb;}void zigzagIteratorFree(ZigzagIterator*z){free(z);}

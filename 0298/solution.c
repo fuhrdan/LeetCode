@@ -1,0 +1,1 @@
+static int best;static void f(struct TreeNode*n,int parent,int len){if(!n)return;len=n->val==parent+1?len+1:1;if(len>best)best=len;f(n->left,n->val,len);f(n->right,n->val,len);}int longestConsecutive(struct TreeNode*r){if(!r)return 0;best=0;f(r,r->val-1,0);return best;}

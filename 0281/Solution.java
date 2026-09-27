@@ -1,0 +1,1 @@
+import java.util.*;public class ZigzagIterator{List<Integer>a,b;int i,j;boolean t;public ZigzagIterator(List<Integer>a,List<Integer>b){this.a=a;this.b=b;}public int next(){if((!t&&i<a.size())||j==b.size()){t=true;return a.get(i++);}t=false;return b.get(j++);}public boolean hasNext(){return i<a.size()||j<b.size();}}

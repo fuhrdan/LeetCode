@@ -1,0 +1,1 @@
+impl Solution{pub fn min_total_distance(g:Vec<Vec<i32>>)->i32{let mut r=vec![];let mut c=vec![];for i in 0..g.len(){for j in 0..g[0].len(){if g[i][j]==1{r.push(i as i32)}}}for j in 0..g[0].len(){for i in 0..g.len(){if g[i][j]==1{c.push(j as i32)}}}let mr=r[r.len()/2];let mc=c[c.len()/2];r.iter().map(|x|(x-mr).abs()).sum::<i32>()+c.iter().map(|x|(x-mc).abs()).sum::<i32>()}}

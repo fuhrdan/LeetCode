@@ -1,0 +1,1 @@
+void gameOfLife(int**b,int m,int*cols){int n=cols[0];for(int i=0;i<m;i++)for(int j=0;j<n;j++){int c=0;for(int a=-1;a<=1;a++)for(int z=-1;z<=1;z++)if(a||z){int x=i+a,y=j+z;if(x>=0&&y>=0&&x<m&&y<n&&(b[x][y]==1||b[x][y]==2))c++;}if(b[i][j]==1&&(c<2||c>3))b[i][j]=2;else if(b[i][j]==0&&c==3)b[i][j]=3;}for(int i=0;i<m;i++)for(int j=0;j<n;j++)b[i][j]=b[i][j]==1||b[i][j]==3;}
