@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<string>o=new();void F(TreeNode n,string s){if(n==null)return;s=s==""?$"{n.val}":$"{s}->{n.val}";if(n.left==null&&n.right==null)o.Add(s);else{F(n.left,s);F(n.right,s);}}public IList<string> BinaryTreePaths(TreeNode r){F(r,"");return o;}}

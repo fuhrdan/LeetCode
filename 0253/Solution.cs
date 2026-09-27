@@ -1,0 +1,1 @@
+using System;public class Solution{public int MinMeetingRooms(int[][]a){int n=a.Length;int[]s=new int[n],e=new int[n];for(int i=0;i<n;i++){s[i]=a[i][0];e[i]=a[i][1];}Array.Sort(s);Array.Sort(e);int x=0,y=0,c=0,b=0;while(x<n){if(s[x]<e[y]){b=Math.Max(b,++c);x++;}else{c--;y++;}}return b;}}

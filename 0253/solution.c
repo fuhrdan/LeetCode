@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static int cmpi(const void*a,const void*b){return(*(int*)a>*(int*)b)-(*(int*)a<*(int*)b);}int minMeetingRooms(int**a,int n,int*cols){int*s=malloc(n*sizeof(int)),*e=malloc(n*sizeof(int));for(int i=0;i<n;i++){s[i]=a[i][0];e[i]=a[i][1];}qsort(s,n,sizeof(int),cmpi);qsort(e,n,sizeof(int),cmpi);int i=0,j=0,c=0,b=0;while(i<n){if(s[i]<e[j]){c++;if(c>b)b=c;i++;}else{c--;j++;}}free(s);free(e);return b;}

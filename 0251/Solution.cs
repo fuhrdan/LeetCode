@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Vector2D{IList<IList<int>>v;int r,c;public Vector2D(IList<IList<int>>v){this.v=v;}void A(){while(r<v.Count&&c>=v[r].Count){r++;c=0;}}public int Next(){A();return v[r][c++];}public bool HasNext(){A();return r<v.Count;}}

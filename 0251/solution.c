@@ -1,0 +1,2 @@
+#include <stdlib.h>
+typedef struct{int**v,*cols,rows,r,c;}Vector2D;Vector2D* vector2DCreate(int**v,int n,int*cols){Vector2D*x=malloc(sizeof(*x));x->v=v;x->cols=cols;x->rows=n;x->r=x->c=0;return x;}static void adv(Vector2D*x){while(x->r<x->rows&&x->c>=x->cols[x->r]){x->r++;x->c=0;}}int vector2DNext(Vector2D*x){adv(x);return x->v[x->r][x->c++];}bool vector2DHasNext(Vector2D*x){adv(x);return x->r<x->rows;}void vector2DFree(Vector2D*x){free(x);}

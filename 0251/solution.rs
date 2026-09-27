@@ -1,0 +1,1 @@
+struct Vector2D{v:Vec<Vec<i32>>,r:usize,c:usize}impl Vector2D{fn new(v:Vec<Vec<i32>>)->Self{Self{v,r:0,c:0}}fn adv(&mut self){while self.r<self.v.len()&&self.c>=self.v[self.r].len(){self.r+=1;self.c=0;}}fn next(&mut self)->i32{self.adv();let x=self.v[self.r][self.c];self.c+=1;x}fn has_next(&mut self)->bool{self.adv();self.r<self.v.len()}}

@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<IList<int>>o=new();void F(int n,int st,List<int>v){for(int x=st;x*x<=n;x++)if(n%x==0){v.Add(x);v.Add(n/x);o.Add(new List<int>(v));v.RemoveAt(v.Count-1);F(n/x,x,v);v.RemoveAt(v.Count-1);}}public IList<IList<int>> GetFactors(int n){F(n,2,new List<int>());return o;}}

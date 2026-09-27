@@ -1,0 +1,1 @@
+using System;public class Solution{public int ThreeSumSmaller(int[]a,int t){Array.Sort(a);int c=0;for(int i=0;i+2<a.Length;i++){int l=i+1,r=a.Length-1;while(l<r){if(a[i]+a[l]+a[r]<t){c+=r-l;l++;}else r--;}}return c;}}

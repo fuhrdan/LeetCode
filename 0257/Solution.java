@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<String>o=new ArrayList<>();void f(TreeNode n,String s){if(n==null)return;s=s.isEmpty()?""+n.val:s+"->"+n.val;if(n.left==null&&n.right==null)o.add(s);else{f(n.left,s);f(n.right,s);}}public List<String> binaryTreePaths(TreeNode r){f(r,"");return o;}}

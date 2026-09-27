@@ -1,0 +1,1 @@
+impl Solution{pub fn get_factors(n:i32)->Vec<Vec<i32>>{fn f(n:i32,st:i32,v:&mut Vec<i32>,o:&mut Vec<Vec<i32>>){for x in st..=((n as f64).sqrt()as i32){if n%x==0{v.push(x);v.push(n/x);o.push(v.clone());v.pop();f(n/x,x,v,o);v.pop();}}}let mut o=vec![];f(n,2,&mut vec![],&mut o);o}}

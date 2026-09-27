@@ -1,0 +1,1 @@
+impl Solution{pub fn single_number(a:Vec<i32>)->Vec<i32>{let x=a.iter().fold(0,|v,&n|v^n);let b=(x as u32)&(x as u32).wrapping_neg();let(mut p,mut q)=(0,0);for v in a{if(v as u32)&b!=0{p^=v}else{q^=v}}vec![p,q]}}

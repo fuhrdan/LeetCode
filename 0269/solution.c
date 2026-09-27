@@ -1,0 +1,3 @@
+#include <stdlib.h>
+#include <string.h>
+char* alienOrder(char**w,int n){int g[26][26]={0},d[26]={0},seen[26]={0};for(int i=0;i<n;i++)for(int j=0;w[i][j];j++)seen[w[i][j]-'a']=1;for(int i=0;i<n-1;i++){int a=strlen(w[i]),b=strlen(w[i+1]),m=a<b?a:b,j=0;while(j<m&&w[i][j]==w[i+1][j])j++;if(j==m){if(a>b){char*r=malloc(1);r[0]=0;return r;}}else{int x=w[i][j]-'a',y=w[i+1][j]-'a';if(!g[x][y])g[x][y]=1,d[y]++;}}int q[26],h=0,t=0,cnt=0;for(int i=0;i<26;i++)if(seen[i]){cnt++;if(!d[i])q[t++]=i;}char*r=malloc(cnt+1);int k=0;while(h<t){int u=q[h++];r[k++]='a'+u;for(int v=0;v<26;v++)if(g[u][v]&&--d[v]==0)q[t++]=v;}r[k]=0;if(k!=cnt)r[0]=0;return r;}

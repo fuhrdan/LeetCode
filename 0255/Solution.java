@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public boolean verifyPreorder(int[]a){Deque<Integer>st=new ArrayDeque<>();int low=Integer.MIN_VALUE;for(int x:a){if(x<low)return false;while(!st.isEmpty()&&x>st.peek()){low=st.pop();}st.push(x);}return true;}}

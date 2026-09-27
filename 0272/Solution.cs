@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{void F(TreeNode n,List<int>a){if(n==null)return;F(n.left,a);a.Add(n.val);F(n.right,a);}public IList<int> ClosestKValues(TreeNode r,double t,int k){var a=new List<int>();F(r,a);a.Sort((x,y)=>Math.Abs(x-t).CompareTo(Math.Abs(y-t)));return a.GetRange(0,k);}}

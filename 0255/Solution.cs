@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public bool VerifyPreorder(int[]a){var st=new Stack<int>();int low=int.MinValue;foreach(int x in a){if(x<low)return false;while(st.Count>0&&x>st.Peek())low=st.Pop();st.Push(x);}return true;}}

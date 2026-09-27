@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int threeSumSmaller(int[]a,int t){Arrays.sort(a);int c=0;for(int i=0;i+2<a.length;i++){int l=i+1,r=a.length-1;while(l<r){if(a[i]+a[l]+a[r]<t){c+=r-l;l++;}else r--;}}return c;}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn verify_preorder(a:Vec<i32>)->bool{let mut st=vec![];let mut low=i32::MIN;for x in a{if x<low{return false}while st.last().map(|&v|x>v).unwrap_or(false){low=st.pop().unwrap();}st.push(x);}true}}

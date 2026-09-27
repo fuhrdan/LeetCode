@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public boolean canAttendMeetings(int[][]a){Arrays.sort(a,Comparator.comparingInt(x->x[0]));for(int i=1;i<a.length;i++)if(a[i][0]<a[i-1][1])return false;return true;}}

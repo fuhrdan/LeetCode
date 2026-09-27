@@ -1,0 +1,1 @@
+impl Solution{pub fn nth_ugly_number(n:i32)->i32{let n=n as usize;let mut u=vec![1i64;n];let(mut a,mut b,mut c)=(0,0,0);for i in 1..n{u[i]=(2*u[a]).min(3*u[b]).min(5*u[c]);if u[i]==2*u[a]{a+=1}if u[i]==3*u[b]{b+=1}if u[i]==5*u[c]{c+=1}}u[n-1]as i32}}

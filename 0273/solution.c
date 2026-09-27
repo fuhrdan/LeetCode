@@ -1,0 +1,4 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+static const char* below20[]={"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"};static const char*tens[]={"","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"};static void chunk(int n,char*b){if(n>=100){strcat(b,below20[n/100]);strcat(b," Hundred");n%=100;if(n)strcat(b," ");}if(n>=20){strcat(b,tens[n/10]);n%=10;if(n){strcat(b," ");strcat(b,below20[n]);}}else if(n)strcat(b,below20[n]);}char* numberToWords(int n){if(!n)return strdup("Zero");const char*scale[]={"","Thousand","Million","Billion"};char*r=calloc(1,512);char parts[4][128]={{0}};int i=0;while(n){if(n%1000)chunk(n%1000,parts[i]);n/=1000;i++;}for(int j=i-1;j>=0;j--)if(parts[j][0]){if(r[0])strcat(r," ");strcat(r,parts[j]);if(j){strcat(r," ");strcat(r,scale[j]);}}return r;}

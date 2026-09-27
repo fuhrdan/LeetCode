@@ -1,0 +1,1 @@
+using System;using System.Linq;public class Solution{public int MinCostII(int[][]c){if(c.Length==0)return 0;int[]d=(int[])c[0].Clone();for(int i=1;i<c.Length;i++){int m1=int.MaxValue,m2=int.MaxValue,id=-1;for(int j=0;j<d.Length;j++)if(d[j]<m1){m2=m1;m1=d[j];id=j;}else if(d[j]<m2)m2=d[j];for(int j=0;j<d.Length;j++)d[j]=c[i][j]+(j==id?m2:m1);}return d.Min();}}

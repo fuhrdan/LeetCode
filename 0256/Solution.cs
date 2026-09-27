@@ -1,0 +1,1 @@
+using System;public class Solution{public int MinCost(int[][]c){int a=0,b=0,d=0;foreach(var x in c){int na=x[0]+Math.Min(b,d),nb=x[1]+Math.Min(a,d),nd=x[2]+Math.Min(a,b);a=na;b=nb;d=nd;}return Math.Min(a,Math.Min(b,d));}}

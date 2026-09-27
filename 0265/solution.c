@@ -1,0 +1,2 @@
+#include <limits.h>
+int minCostII(int**c,int n,int*cols){if(!n)return 0;int k=cols[0];int*dp=malloc(k*sizeof(int));for(int j=0;j<k;j++)dp[j]=c[0][j];for(int i=1;i<n;i++){int m1=INT_MAX,m2=INT_MAX,idx=-1;for(int j=0;j<k;j++){if(dp[j]<m1){m2=m1;m1=dp[j];idx=j;}else if(dp[j]<m2)m2=dp[j];}for(int j=0;j<k;j++)dp[j]=c[i][j]+(j==idx?m2:m1);}int r=dp[0];for(int j=1;j<k;j++)if(dp[j]<r)r=dp[j];free(dp);return r;}

@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static void f(int n,int st,int*b,int len,int***o,int**cs,int*c,int*cap){for(int x=st;x*x<=n;x++)if(n%x==0){b[len]=x;if(*c==*cap){*cap*=2;*o=realloc(*o,*cap*sizeof(int*));*cs=realloc(*cs,*cap*sizeof(int));}(*o)[*c]=malloc((len+2)*sizeof(int));for(int i=0;i<=len;i++)(*o)[*c][i]=b[i];(*o)[*c][len+1]=n/x;(*cs)[(*c)++]=len+2;f(n/x,x,b,len+1,o,cs,c,cap);}}int** getFactors(int n,int*rs,int**rc){int cap=16,c=0,**o=malloc(cap*sizeof(int*)),*cs=malloc(cap*sizeof(int)),b[32];f(n,2,b,0,&o,&cs,&c,&cap);*rs=c;*rc=cs;return o;}

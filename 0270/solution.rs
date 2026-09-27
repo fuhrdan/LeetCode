@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn closest_value(mut r:Option<Rc<RefCell<TreeNode>>>,t:f64)->i32{let mut b=r.as_ref().unwrap().borrow().val;while let Some(x)=r{let v=x.borrow().val;if((v as f64)-t).abs()<((b as f64)-t).abs(){b=v}r=if t<v as f64{x.borrow().left.clone()}else{x.borrow().right.clone()};}b}}

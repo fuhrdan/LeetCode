@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int minMeetingRooms(int[][]a){int n=a.length;int[]s=new int[n],e=new int[n];for(int i=0;i<n;i++){s[i]=a[i][0];e[i]=a[i][1];}Arrays.sort(s);Arrays.sort(e);int i=0,j=0,c=0,b=0;while(i<n){if(s[i]<e[j]){b=Math.max(b,++c);i++;}else{c--;j++;}}return b;}}

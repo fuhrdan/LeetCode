@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<List<Integer>>o=new ArrayList<>();void f(int n,int st,List<Integer>v){for(int x=st;x*x<=n;x++)if(n%x==0){v.add(x);v.add(n/x);o.add(new ArrayList<>(v));v.remove(v.size()-1);f(n/x,x,v);v.remove(v.size()-1);}}public List<List<Integer>> getFactors(int n){f(n,2,new ArrayList<>());return o;}}

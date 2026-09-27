@@ -1,0 +1,1 @@
+impl Solution{pub fn min_meeting_rooms(a:Vec<Vec<i32>>)->i32{let mut s:Vec<_>=a.iter().map(|x|x[0]).collect();let mut e:Vec<_>=a.iter().map(|x|x[1]).collect();s.sort();e.sort();let(mut i,mut j,mut c,mut b)=(0,0,0,0);while i<s.len(){if s[i]<e[j]{c+=1;b=b.max(c);i+=1}else{c-=1;j+=1}}b}}

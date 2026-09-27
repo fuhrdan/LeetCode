@@ -1,0 +1,1 @@
+impl Solution{pub fn min_cost_ii(c:Vec<Vec<i32>>)->i32{if c.is_empty(){return 0}let mut d=c[0].clone();for i in 1..c.len(){let(mut m1,mut m2,mut id)=(i32::MAX,i32::MAX,usize::MAX);for j in 0..d.len(){if d[j]<m1{m2=m1;m1=d[j];id=j}else if d[j]<m2{m2=d[j]}}for j in 0..d.len(){d[j]=c[i][j]+if j==id{m2}else{m1};}}*d.iter().min().unwrap()}}

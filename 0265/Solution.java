@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int minCostII(int[][]c){if(c.length==0)return 0;int[]d=c[0].clone();for(int i=1;i<c.length;i++){int m1=Integer.MAX_VALUE,m2=Integer.MAX_VALUE,id=-1;for(int j=0;j<d.length;j++)if(d[j]<m1){m2=m1;m1=d[j];id=j;}else if(d[j]<m2)m2=d[j];for(int j=0;j<d.length;j++)d[j]=c[i][j]+(j==id?m2:m1);}return Arrays.stream(d).min().getAsInt();}}

@@ -1,0 +1,1 @@
+using System;public class Solution{public int NthUglyNumber(int n){long[]u=new long[n];u[0]=1;int a=0,b=0,c=0;for(int i=1;i<n;i++){u[i]=Math.Min(2*u[a],Math.Min(3*u[b],5*u[c]));if(u[i]==2*u[a])a++;if(u[i]==3*u[b])b++;if(u[i]==5*u[c])c++;}return(int)u[n-1];}}

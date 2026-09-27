@@ -1,0 +1,1 @@
+import java.util.*;class Vector2D{List<List<Integer>>v;int r,c;public Vector2D(List<List<Integer>>v){this.v=v;}void a(){while(r<v.size()&&c>=v.get(r).size()){r++;c=0;}}public int next(){a();return v.get(r).get(c++);}public boolean hasNext(){a();return r<v.size();}}

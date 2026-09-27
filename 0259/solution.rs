@@ -1,0 +1,1 @@
+impl Solution{pub fn three_sum_smaller(mut a:Vec<i32>,t:i32)->i32{a.sort();let mut c=0;for i in 0..a.len().saturating_sub(2){let(mut l,mut r)=(i+1,a.len()-1);while l<r{if a[i]+a[l]+a[r]<t{c+=(r-l)as i32;l+=1}else{r-=1}}}c}}

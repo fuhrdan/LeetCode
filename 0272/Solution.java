@@ -1,0 +1,1 @@
+import java.util.*;class Solution{void f(TreeNode n,List<Integer>a){if(n==null)return;f(n.left,a);a.add(n.val);f(n.right,a);}public List<Integer> closestKValues(TreeNode r,double t,int k){List<Integer>a=new ArrayList<>();f(r,a);a.sort(Comparator.comparingDouble(x->Math.abs(x-t)));return new ArrayList<>(a.subList(0,k));}}

@@ -1,0 +1,3 @@
+#include <string>
+#include <vector>
+using namespace std;class Solution{vector<string>a{"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"},t{"","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"};string f(int n){if(!n)return"";if(n<20)return a[n];if(n<100)return t[n/10]+(n%10?" "+a[n%10]:"");return a[n/100]+" Hundred"+(n%100?" "+f(n%100):"");}public:string numberToWords(int n){if(!n)return"Zero";vector<string>s{"","Thousand","Million","Billion"};string r;for(int i=0;n;i++,n/=1000)if(n%1000)r=f(n%1000)+(s[i].empty()?"":" "+s[i])+(r.empty()?"":" "+r);return r;}};
