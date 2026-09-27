@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static struct TreeNode*f(int*a,int l,int r){if(l>r)return NULL;int m=(l+r)/2;struct TreeNode*n=malloc(sizeof(*n));n->val=a[m];n->left=f(a,l,m-1);n->right=f(a,m+1,r);return n;}struct TreeNode* sortedListToBST(struct ListNode*h){int n=0;for(struct ListNode*p=h;p;p=p->next)n++;int*a=malloc(n*sizeof(int)),i=0;for(;h;h=h->next)a[i++]=h->val;struct TreeNode*r=f(a,0,n-1);free(a);return r;}

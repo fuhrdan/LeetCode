@@ -1,0 +1,1 @@
+class Solution{bool m(TreeNode*a,TreeNode*b){if(!a||!b)return a==b;return a->val==b->val&&m(a->left,b->right)&&m(a->right,b->left);}public:bool isSymmetric(TreeNode*r){return !r||m(r->left,r->right);}};

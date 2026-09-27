@@ -1,0 +1,2 @@
+#include <stdlib.h>
+int** levelOrderBottom(struct TreeNode*r,int*rs,int**rc){if(!r){*rs=0;*rc=NULL;return NULL;}struct TreeNode**q=malloc(2048*sizeof(*q));int h=0,t=0,k=0;q[t++]=r;int**o=malloc(2048*sizeof(int*)),*c=malloc(2048*sizeof(int));while(h<t){int n=t-h;int*v=malloc(n*sizeof(int));for(int i=0;i<n;i++){struct TreeNode*x=q[h++];v[i]=x->val;if(x->left)q[t++]=x->left;if(x->right)q[t++]=x->right;}o[k]=v;c[k++]=n;}for(int i=0;i<k/2;i++){int*tv=o[i];o[i]=o[k-1-i];o[k-1-i]=tv;int z=c[i];c[i]=c[k-1-i];c[k-1-i]=z;}free(q);*rs=k;*rc=c;return o;}

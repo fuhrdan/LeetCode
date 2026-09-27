@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{public int MinimumTotal(IList<IList<int>>t){int n=t.Count;int[]d=new int[n];for(int j=0;j<n;j++)d[j]=t[n-1][j];for(int i=n-2;i>=0;i--)for(int j=0;j<=i;j++)d[j]=t[i][j]+Math.Min(d[j],d[j+1]);return d[0];}}

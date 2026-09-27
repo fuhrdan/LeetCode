@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<Integer> getRow(int n){Integer[]r=new Integer[n+1];Arrays.fill(r,0);r[0]=1;for(int i=1;i<=n;i++)for(int j=i;j>0;j--)r[j]+=r[j-1];return Arrays.asList(r);}}

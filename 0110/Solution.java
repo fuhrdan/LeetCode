@@ -1,0 +1,1 @@
+class Solution{int h(TreeNode n){if(n==null)return 0;int a=h(n.left);if(a<0)return-1;int b=h(n.right);if(b<0||Math.abs(a-b)>1)return-1;return 1+Math.max(a,b);}public boolean isBalanced(TreeNode r){return h(r)>=0;}}

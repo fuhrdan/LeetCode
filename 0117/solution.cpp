@@ -1,0 +1,1 @@
+class Solution{public:Node* connect(Node*r){for(Node*level=r;level;){Node dummy;Node*tail=&dummy;dummy.next=nullptr;for(Node*p=level;p;p=p->next){if(p->left){tail->next=p->left;tail=tail->next;}if(p->right){tail->next=p->right;tail=tail->next;}}level=dummy.next;}return r;}};

@@ -1,0 +1,1 @@
+using System;public class Solution{int b=int.MinValue;int F(TreeNode n){if(n==null)return 0;int l=Math.Max(0,F(n.left)),r=Math.Max(0,F(n.right));b=Math.Max(b,n.val+l+r);return n.val+Math.Max(l,r);}public int MaxPathSum(TreeNode r){F(r);return b;}}

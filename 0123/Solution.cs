@@ -1,0 +1,1 @@
+using System;public class Solution{public int MaxProfit(int[]p){int b1=int.MinValue,s1=0,b2=int.MinValue,s2=0;foreach(int x in p){b1=Math.Max(b1,-x);s1=Math.Max(s1,b1+x);b2=Math.Max(b2,s1-x);s2=Math.Max(s2,b2+x);}return s2;}}

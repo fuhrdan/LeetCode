@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn has_path_sum(root:Option<Rc<RefCell<TreeNode>>>,t:i32)->bool{if let Some(r)=root{let b=r.borrow();if b.left.is_none()&&b.right.is_none(){return b.val==t}Self::has_path_sum(b.left.clone(),t-b.val)||Self::has_path_sum(b.right.clone(),t-b.val)}else{false}}}

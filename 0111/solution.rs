@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn min_depth(root:Option<Rc<RefCell<TreeNode>>>)->i32{if let Some(r)=root{let b=r.borrow();match(b.left.clone(),b.right.clone()){(None,None)=>1,(None,x)|(x,None)=>1+Self::min_depth(x),(l,r)=>1+Self::min_depth(l).min(Self::min_depth(r))}}else{0}}}

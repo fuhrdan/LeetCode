@@ -1,0 +1,1 @@
+public class Solution{public Node Connect(Node r){Node level=r;while(level!=null){var dummy=new Node(0);var tail=dummy;for(Node p=level;p!=null;p=p.next){if(p.left!=null){tail.next=p.left;tail=tail.next;}if(p.right!=null){tail.next=p.right;tail=tail.next;}}level=dummy.next;}return r;}}

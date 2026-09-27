@@ -1,0 +1,1 @@
+class Solution{int i;TreeNode f(int[]p,int[]in,int l,int r){if(l>r)return null;int v=p[i++],k=l;while(in[k]!=v)k++;return new TreeNode(v,f(p,in,l,k-1),f(p,in,k+1,r));}public TreeNode buildTree(int[]p,int[]in){return f(p,in,0,in.length-1);}}

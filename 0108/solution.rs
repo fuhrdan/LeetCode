@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn sorted_array_to_bst(a:Vec<i32>)->Option<Rc<RefCell<TreeNode>>>{fn f(a:&[i32])->Option<Rc<RefCell<TreeNode>>>{if a.is_empty(){return None}let m=a.len()/2;Some(Rc::new(RefCell::new(TreeNode{val:a[m],left:f(&a[..m]),right:f(&a[m+1..])})))}f(&a)}}

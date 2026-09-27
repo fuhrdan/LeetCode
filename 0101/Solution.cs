@@ -1,0 +1,1 @@
+public class Solution{bool M(TreeNode a,TreeNode b){if(a==null||b==null)return a==b;return a.val==b.val&&M(a.left,b.right)&&M(a.right,b.left);}public bool IsSymmetric(TreeNode r)=>r==null||M(r.left,r.right);}

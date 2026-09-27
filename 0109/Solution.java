@@ -1,0 +1,1 @@
+import java.util.*;class Solution{TreeNode f(List<Integer>a,int l,int r){if(l>r)return null;int m=(l+r)/2;return new TreeNode(a.get(m),f(a,l,m-1),f(a,m+1,r));}public TreeNode sortedListToBST(ListNode h){List<Integer>a=new ArrayList<>();for(;h!=null;h=h.next)a.add(h.val);return f(a,0,a.size()-1);}}

@@ -1,0 +1,1 @@
+using System;public class Solution{int H(TreeNode n){if(n==null)return 0;int a=H(n.left);if(a<0)return-1;int b=H(n.right);if(b<0||Math.Abs(a-b)>1)return-1;return 1+Math.Max(a,b);}public bool IsBalanced(TreeNode r)=>H(r)>=0;}

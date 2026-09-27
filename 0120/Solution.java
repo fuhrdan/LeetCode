@@ -1,0 +1,1 @@
+class Solution{public int minimumTotal(java.util.List<java.util.List<Integer>>t){int n=t.size();int[]d=new int[n];for(int j=0;j<n;j++)d[j]=t.get(n-1).get(j);for(int i=n-2;i>=0;i--)for(int j=0;j<=i;j++)d[j]=t.get(i).get(j)+Math.min(d[j],d[j+1]);return d[0];}}

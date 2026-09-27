@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn max_path_sum(root:Option<Rc<RefCell<TreeNode>>>)->i32{fn f(n:&Option<Rc<RefCell<TreeNode>>>,b:&mut i32)->i32{if let Some(x)=n{let q=x.borrow();let l=f(&q.left,b).max(0);let r=f(&q.right,b).max(0);*b=(*b).max(q.val+l+r);q.val+l.max(r)}else{0}}let mut b=i32::MIN;f(&root,&mut b);b}}

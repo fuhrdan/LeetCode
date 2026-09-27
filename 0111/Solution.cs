@@ -1,0 +1,1 @@
+using System;public class Solution{public int MinDepth(TreeNode r){if(r==null)return 0;if(r.left==null)return 1+MinDepth(r.right);if(r.right==null)return 1+MinDepth(r.left);return 1+Math.Min(MinDepth(r.left),MinDepth(r.right));}}

@@ -1,0 +1,2 @@
+#include <stdlib.h>
+int** levelOrder(struct TreeNode*r,int*rs,int**rc){if(!r){*rs=0;*rc=NULL;return NULL;}int cap=64,h=0,t=0,levels=0;struct TreeNode**q=malloc(cap*sizeof(*q));q[t++]=r;int**o=malloc(cap*sizeof(int*));int*c=malloc(cap*sizeof(int));while(h<t){int n=t-h;int*row=malloc(n*sizeof(int));for(int i=0;i<n;i++){struct TreeNode*x=q[h++];row[i]=x->val;if(x->left)q[t++]=x->left;if(x->right)q[t++]=x->right;}o[levels]=row;c[levels++]=n;}free(q);*rs=levels;*rc=c;return o;}

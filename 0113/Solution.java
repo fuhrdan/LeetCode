@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<List<Integer>>o=new ArrayList<>();void f(TreeNode n,int t,List<Integer>v){if(n==null)return;v.add(n.val);t-=n.val;if(n.left==null&&n.right==null&&t==0)o.add(new ArrayList<>(v));else{f(n.left,t,v);f(n.right,t,v);}v.remove(v.size()-1);}public List<List<Integer>> pathSum(TreeNode r,int t){f(r,t,new ArrayList<>());return o;}}

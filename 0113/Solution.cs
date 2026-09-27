@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<IList<int>>o=new();void F(TreeNode n,int t,List<int>v){if(n==null)return;v.Add(n.val);t-=n.val;if(n.left==null&&n.right==null&&t==0)o.Add(new List<int>(v));else{F(n.left,t,v);F(n.right,t,v);}v.RemoveAt(v.Count-1);}public IList<IList<int>> PathSum(TreeNode r,int t){F(r,t,new List<int>());return o;}}

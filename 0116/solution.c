@@ -1,0 +1,1 @@
+struct Node* connect(struct Node*r){for(struct Node*level=r;level&&level->left;level=level->left)for(struct Node*p=level;p;p=p->next){p->left->next=p->right;if(p->next)p->right->next=p->next->left;}return r;}

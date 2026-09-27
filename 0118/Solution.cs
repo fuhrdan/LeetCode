@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public IList<IList<int>> Generate(int n){var o=new List<IList<int>>();for(int i=0;i<n;i++){var r=new List<int>();for(int j=0;j<=i;j++)r.Add(j==0||j==i?1:o[i-1][j-1]+o[i-1][j]);o.Add(r);}return o;}}

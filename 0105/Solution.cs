@@ -1,0 +1,1 @@
+public class Solution{int i;TreeNode F(int[]p,int[]ino,int l,int r){if(l>r)return null;int v=p[i++],k=l;while(ino[k]!=v)k++;return new TreeNode(v,F(p,ino,l,k-1),F(p,ino,k+1,r));}public TreeNode BuildTree(int[]p,int[]ino)=>F(p,ino,0,ino.Length-1);}

@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn is_balanced(root:Option<Rc<RefCell<TreeNode>>>)->bool{fn h(n:&Option<Rc<RefCell<TreeNode>>>)->i32{if let Some(x)=n{let b=x.borrow();let a=h(&b.left);if a<0{return -1}let c=h(&b.right);if c<0||(a-c).abs()>1{-1}else{1+a.max(c)}}else{0}}h(&root)>=0}}

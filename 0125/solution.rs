@@ -1,0 +1,1 @@
+impl Solution{pub fn is_palindrome(s:String)->bool{let b=s.as_bytes();let(mut l,mut r)=(0usize,b.len().saturating_sub(1));while l<r{while l<r&&!b[l].is_ascii_alphanumeric(){l+=1}while l<r&&!b[r].is_ascii_alphanumeric(){r-=1}if b[l].to_ascii_lowercase()!=b[r].to_ascii_lowercase(){return false}l+=1;r-=1;}true}}
