@@ -1,0 +1,1 @@
+class Solution{public TreeNode upsideDownBinaryTree(TreeNode r){if(r==null||r.left==null)return r;TreeNode n=upsideDownBinaryTree(r.left);r.left.left=r.right;r.left.right=r;r.left=null;r.right=null;return n;}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn calculate_minimum_hp(d:Vec<Vec<i32>>)->i32{let n=d[0].len();let mut dp=vec![i32::MAX/2;n+1];dp[n-1]=1;for i in (0..d.len()).rev(){for j in (0..n).rev(){dp[j]=1.max(dp[j].min(dp[j+1])-d[i][j]);}}dp[0]}}

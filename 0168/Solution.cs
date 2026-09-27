@@ -1,0 +1,1 @@
+using System.Text;public class Solution{public string ConvertToTitle(int n){var s=new StringBuilder();while(n>0){n--;s.Append((char)('A'+n%26));n/=26;}var a=s.ToString().ToCharArray();System.Array.Reverse(a);return new string(a);}}

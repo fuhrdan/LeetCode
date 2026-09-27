@@ -1,0 +1,1 @@
+class Solution{public:TreeNode* upsideDownBinaryTree(TreeNode*r){if(!r||!r->left)return r;auto n=upsideDownBinaryTree(r->left);r->left->left=r->right;r->left->right=r;r->left=r->right=nullptr;return n;}};

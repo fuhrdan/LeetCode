@@ -1,0 +1,1 @@
+class Solution{public int lengthOfLongestSubstringTwoDistinct(String s){int[]c=new int[256];int l=0,d=0,b=0;for(int r=0;r<s.length();r++){if(c[s.charAt(r)]++==0)d++;while(d>2)if(--c[s.charAt(l++)]==0)d--;b=Math.max(b,r-l+1);}return b;}}

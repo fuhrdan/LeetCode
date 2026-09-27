@@ -1,0 +1,1 @@
+impl Solution{pub fn find_missing_ranges(a:Vec<i32>,lo:i32,hi:i32)->Vec<String>{let mut o=vec![];let mut p=lo as i64-1;for i in 0..=a.len(){let c=if i<a.len(){a[i]as i64}else{hi as i64+1};if c-p>=2{o.push(if p+1==c-1{(p+1).to_string()}else{format!("{}->{}",p+1,c-1)});}p=c;}o}}

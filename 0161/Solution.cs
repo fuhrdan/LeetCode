@@ -1,0 +1,1 @@
+public class Solution{public bool IsOneEditDistance(string s,string t){if(s.Length>t.Length)return IsOneEditDistance(t,s);if(t.Length-s.Length>1)return false;int i=0;while(i<s.Length&&s[i]==t[i])i++;if(i==s.Length)return t.Length==s.Length+1;if(s.Length==t.Length)i++;while(i<s.Length&&s[i]==t[i+t.Length-s.Length])i++;return i==s.Length;}}

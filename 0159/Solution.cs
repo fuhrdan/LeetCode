@@ -1,0 +1,1 @@
+using System;public class Solution{public int LengthOfLongestSubstringTwoDistinct(string s){int[]c=new int[256];int l=0,d=0,b=0;for(int r=0;r<s.Length;r++){if(c[s[r]]++==0)d++;while(d>2)if(--c[s[l++]]==0)d--;b=Math.Max(b,r-l+1);}return b;}}

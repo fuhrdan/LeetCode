@@ -1,0 +1,1 @@
+using System;public class Solution{public int MaxProduct(int[]a){int mx=a[0],mn=a[0],b=a[0];for(int i=1;i<a.Length;i++){int x=a[i];if(x<0)(mx,mn)=(mn,mx);mx=Math.Max(x,mx*x);mn=Math.Min(x,mn*x);b=Math.Max(b,mx);}return b;}}

@@ -1,0 +1,1 @@
+class Solution{public int maxProduct(int[]a){int mx=a[0],mn=a[0],b=a[0];for(int i=1;i<a.length;i++){int x=a[i];if(x<0){int t=mx;mx=mn;mn=t;}mx=Math.max(x,mx*x);mn=Math.min(x,mn*x);b=Math.max(b,mx);}return b;}}

@@ -1,0 +1,1 @@
+import java.util.*;class TwoSum{Map<Integer,Integer>m=new HashMap<>();public TwoSum(){}public void add(int x){m.put(x,m.getOrDefault(x,0)+1);}public boolean find(int v){for(int x:m.keySet()){int y=v-x;if(m.containsKey(y)&&(y!=x||m.get(x)>1))return true;}return false;}}

@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class MinStack{Stack<(int v,int m)>s=new();public MinStack(){}public void Push(int x){s.Push((x,s.Count==0?x:System.Math.Min(x,s.Peek().m)));}public void Pop(){s.Pop();}public int Top()=>s.Peek().v;public int GetMin()=>s.Peek().m;}

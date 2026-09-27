@@ -1,0 +1,1 @@
+static char cache[4];static int pos=0,len=0;int read(char*buf,int n){int got=0;while(got<n){if(pos==len){len=read4(cache);pos=0;if(!len)break;}while(pos<len&&got<n)buf[got++]=cache[pos++];}return got;}

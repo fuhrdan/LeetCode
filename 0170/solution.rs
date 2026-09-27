@@ -1,0 +1,1 @@
+use std::collections::HashMap;struct TwoSum{m:HashMap<i32,i32>}impl TwoSum{fn new()->Self{Self{m:HashMap::new()}}fn add(&mut self,x:i32){*self.m.entry(x).or_insert(0)+=1;}fn find(&self,v:i32)->bool{for(&x,&c)in &self.m{let y=v-x;if let Some(&d)=self.m.get(&y){if y!=x||c>1{return true}}}false}}

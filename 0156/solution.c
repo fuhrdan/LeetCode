@@ -1,0 +1,1 @@
+struct TreeNode* upsideDownBinaryTree(struct TreeNode*r){if(!r||!r->left)return r;struct TreeNode*n=upsideDownBinaryTree(r->left);r->left->left=r->right;r->left->right=r;r->left=0;r->right=0;return n;}

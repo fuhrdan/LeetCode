@@ -1,0 +1,1 @@
+impl Solution{pub fn is_one_edit_distance(mut s:String,mut t:String)->bool{if s.len()>t.len(){std::mem::swap(&mut s,&mut t)}if t.len()-s.len()>1{return false}let(a,b)=(s.as_bytes(),t.as_bytes());let mut i=0;while i<a.len()&&a[i]==b[i]{i+=1}if i==a.len(){return b.len()==a.len()+1}if a.len()==b.len(){i+=1}while i<a.len()&&a[i]==b[i+b.len()-a.len()]{i+=1}i==a.len()}}

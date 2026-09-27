@@ -1,0 +1,1 @@
+import java.util.*;class Solution{String f(long a,long b){return a==b?""+a:a+"->"+b;}public List<String> findMissingRanges(int[]a,int lo,int hi){List<String>o=new ArrayList<>();long p=(long)lo-1;for(int i=0;i<=a.length;i++){long c=i<a.length?a[i]:(long)hi+1;if(c-p>=2)o.add(f(p+1,c-1));p=c;}return o;}}

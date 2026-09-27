@@ -1,0 +1,1 @@
+public class Solution : Reader4{char[]c=new char[4];int p=0,len=0;public int Read(char[]buf,int n){int got=0;while(got<n){if(p==len){len=Read4(c);p=0;if(len==0)break;}while(p<len&&got<n)buf[got++]=c[p++];}return got;}}

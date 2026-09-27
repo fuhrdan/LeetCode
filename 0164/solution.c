@@ -1,0 +1,3 @@
+#include <stdlib.h>
+#include <limits.h>
+int maximumGap(int*a,int n){if(n<2)return 0;int mn=a[0],mx=a[0];for(int i=1;i<n;i++){if(a[i]<mn)mn=a[i];if(a[i]>mx)mx=a[i];}if(mn==mx)return 0;int size=(mx-mn+n-2)/(n-1),bc=(mx-mn)/size+1;int*bmin=malloc(bc*sizeof(int)),*bmax=malloc(bc*sizeof(int)),*use=calloc(bc,sizeof(int));for(int i=0;i<bc;i++){bmin[i]=INT_MAX;bmax[i]=INT_MIN;}for(int i=0;i<n;i++){int k=(a[i]-mn)/size;use[k]=1;if(a[i]<bmin[k])bmin[k]=a[i];if(a[i]>bmax[k])bmax[k]=a[i];}int prev=mn,best=0;for(int i=0;i<bc;i++)if(use[i]){if(bmin[i]-prev>best)best=bmin[i]-prev;prev=bmax[i];}free(bmin);free(bmax);free(use);return best;}

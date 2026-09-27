@@ -1,0 +1,1 @@
+impl Solution{pub fn length_of_longest_substring_two_distinct(s:String)->i32{let b=s.as_bytes();let mut c=[0i32;256];let(mut l,mut d,mut best)=(0usize,0,0);for r in 0..b.len(){let x=b[r]as usize;if c[x]==0{d+=1}c[x]+=1;while d>2{let y=b[l]as usize;l+=1;c[y]-=1;if c[y]==0{d-=1}}best=best.max(r-l+1);}best as i32}}

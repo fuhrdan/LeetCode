@@ -1,0 +1,1 @@
+public class Solution{public int CompareVersion(string a,string b){var x=a.Split('.');var y=b.Split('.');for(int i=0;i<System.Math.Max(x.Length,y.Length);i++){long p=i<x.Length?long.Parse(x[i]):0,q=i<y.Length?long.Parse(y[i]):0;if(p<q)return-1;if(p>q)return 1;}return 0;}}

@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{string F(long a,long b)=>a==b?$"{a}":$"{a}->{b}";public IList<string> FindMissingRanges(int[]a,int lo,int hi){var o=new List<string>();long p=(long)lo-1;for(int i=0;i<=a.Length;i++){long c=i<a.Length?a[i]:(long)hi+1;if(c-p>=2)o.Add(F(p+1,c-1));p=c;}return o;}}

@@ -1,0 +1,1 @@
+class Solution{char c[4];int p=0,len=0;public:int read(char*buf,int n){int got=0;while(got<n){if(p==len){len=read4(c);p=0;if(!len)break;}while(p<len&&got<n)buf[got++]=c[p++];}return got;}};

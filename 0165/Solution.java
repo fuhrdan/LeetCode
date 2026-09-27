@@ -1,0 +1,1 @@
+class Solution{public int compareVersion(String a,String b){String[]x=a.split("\\."),y=b.split("\\.");for(int i=0;i<Math.max(x.length,y.length);i++){long p=i<x.length?Long.parseLong(x[i]):0,q=i<y.length?Long.parseLong(y[i]):0;if(p<q)return-1;if(p>q)return 1;}return 0;}}

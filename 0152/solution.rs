@@ -1,0 +1,1 @@
+impl Solution{pub fn max_product(a:Vec<i32>)->i32{let(mut mx,mut mn,mut b)=(a[0],a[0],a[0]);for &x in a.iter().skip(1){if x<0{std::mem::swap(&mut mx,&mut mn);}mx=x.max(mx*x);mn=x.min(mn*x);b=b.max(mx);}b}}

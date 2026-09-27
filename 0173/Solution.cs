@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class BSTIterator{Stack<TreeNode>s=new();void P(TreeNode n){while(n!=null){s.Push(n);n=n.left;}}public BSTIterator(TreeNode r){P(r);}public int Next(){var n=s.Pop();P(n.right);return n.val;}public bool HasNext()=>s.Count>0;}

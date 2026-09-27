@@ -1,0 +1,1 @@
+struct MinStack{v:Vec<(i32,i32)>}impl MinStack{fn new()->Self{Self{v:vec![]}}fn push(&mut self,x:i32){let m=self.v.last().map(|p|p.1.min(x)).unwrap_or(x);self.v.push((x,m));}fn pop(&mut self){self.v.pop();}fn top(&self)->i32{self.v.last().unwrap().0}fn get_min(&self)->i32{self.v.last().unwrap().1}}

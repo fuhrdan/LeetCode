@@ -1,0 +1,1 @@
+import java.util.*;class BSTIterator{Deque<TreeNode>s=new ArrayDeque<>();void p(TreeNode n){while(n!=null){s.push(n);n=n.left;}}public BSTIterator(TreeNode r){p(r);}public int next(){TreeNode n=s.pop();p(n.right);return n.val;}public boolean hasNext(){return !s.isEmpty();}}

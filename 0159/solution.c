@@ -1,0 +1,1 @@
+int lengthOfLongestSubstringTwoDistinct(char*s){int cnt[256]={0},l=0,d=0,b=0;for(int r=0;s[r];r++){unsigned char c=s[r];if(cnt[c]++==0)d++;while(d>2){c=s[l++];if(--cnt[c]==0)d--;}if(r-l+1>b)b=r-l+1;}return b;}

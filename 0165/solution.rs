@@ -1,0 +1,1 @@
+impl Solution{pub fn compare_version(a:String,b:String)->i32{let mut x=a.split('.');let mut y=b.split('.');loop{let p=x.next();let q=y.next();if p.is_none()&&q.is_none(){return 0}let i=p.unwrap_or("0").parse::<i64>().unwrap();let j=q.unwrap_or("0").parse::<i64>().unwrap();if i<j{return -1}if i>j{return 1}}}}

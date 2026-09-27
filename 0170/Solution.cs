@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class TwoSum{Dictionary<int,int>m=new();public TwoSum(){}public void Add(int x){m[x]=m.GetValueOrDefault(x)+1;}public bool Find(int v){foreach(var kv in m){int y=v-kv.Key;if(m.ContainsKey(y)&&(y!=kv.Key||kv.Value>1))return true;}return false;}}
