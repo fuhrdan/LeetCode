@@ -1,0 +1,1 @@
+impl Solution{pub fn min_sub_array_len(t:i32,a:Vec<i32>)->i32{let(mut l,mut s,mut b)=(0usize,0,i32::MAX);for r in 0..a.len(){s+=a[r];while s>=t{b=b.min((r-l+1)as i32);s-=a[l];l+=1;}}if b==i32::MAX{0}else{b}}}

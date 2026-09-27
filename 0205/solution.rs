@@ -1,0 +1,1 @@
+impl Solution{pub fn is_isomorphic(s:String,t:String)->bool{let(mut a,mut b)=([0usize;256],[0usize;256]);for(i,(x,y))in s.bytes().zip(t.bytes()).enumerate(){if a[x as usize]!=b[y as usize]{return false}a[x as usize]=i+1;b[y as usize]=i+1;}true}}

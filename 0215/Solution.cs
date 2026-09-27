@@ -1,0 +1,1 @@
+public class Solution{int P(int[]a,int l,int r){int x=a[r],i=l;for(int j=l;j<r;j++)if(a[j]<=x){(a[i],a[j])=(a[j],a[i]);i++;}(a[i],a[r])=(a[r],a[i]);return i;}public int FindKthLargest(int[]a,int k){int t=a.Length-k,l=0,r=a.Length-1;while(true){int q=P(a,l,r);if(q==t)return a[q];if(q<t)l=q+1;else r=q-1;}}}

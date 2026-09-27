@@ -1,0 +1,1 @@
+static int part(int*a,int l,int r){int p=a[r],i=l;for(int j=l;j<r;j++)if(a[j]<=p){int t=a[i];a[i++]=a[j];a[j]=t;}int t=a[i];a[i]=a[r];a[r]=t;return i;}int findKthLargest(int*a,int n,int k){int target=n-k,l=0,r=n-1;while(l<=r){int p=part(a,l,r);if(p==target)return a[p];if(p<target)l=p+1;else r=p-1;}return -1;}

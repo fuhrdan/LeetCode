@@ -1,0 +1,1 @@
+using System;public class Solution{int F(int[]a,int l,int r){int p2=0,p1=0;for(int i=l;i<=r;i++){int c=Math.Max(p1,p2+a[i]);p2=p1;p1=c;}return p1;}public int Rob(int[]a){if(a.Length==1)return a[0];return Math.Max(F(a,0,a.Length-2),F(a,1,a.Length-1));}}

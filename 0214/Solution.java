@@ -1,0 +1,1 @@
+class Solution{public String shortestPalindrome(String s){String r=new StringBuilder(s).reverse().toString(),t=s+"#"+r;int[]p=new int[t.length()];for(int i=1;i<t.length();i++){int j=p[i-1];while(j>0&&t.charAt(i)!=t.charAt(j))j=p[j-1];if(t.charAt(i)==t.charAt(j))j++;p[i]=j;}return r.substring(0,s.length()-p[p.length-1])+s;}}

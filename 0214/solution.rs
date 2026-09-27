@@ -1,0 +1,1 @@
+impl Solution{pub fn shortest_palindrome(s:String)->String{let r:String=s.chars().rev().collect();let t=format!("{}#{}",s,r);let b=t.as_bytes();let mut p=vec![0usize;b.len()];for i in 1..b.len(){let mut j=p[i-1];while j>0&&b[i]!=b[j]{j=p[j-1];}if b[i]==b[j]{j+=1}p[i]=j;}format!("{}{}", &r[..s.len()-p[b.len()-1]], s)}}

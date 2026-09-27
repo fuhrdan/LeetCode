@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class MyStack{Queue<int>q=new();public MyStack(){}public void Push(int x){q.Enqueue(x);for(int i=1;i<q.Count;i++)q.Enqueue(q.Dequeue());}public int Pop()=>q.Dequeue();public int Top()=>q.Peek();public bool Empty()=>q.Count==0;}

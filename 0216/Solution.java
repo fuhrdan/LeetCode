@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<List<Integer>>o=new ArrayList<>();void f(int k,int n,int st,List<Integer>v){if(v.size()==k){if(n==0)o.add(new ArrayList<>(v));return;}for(int x=st;x<=9&&x<=n;x++){v.add(x);f(k,n-x,x+1,v);v.remove(v.size()-1);}}public List<List<Integer>> combinationSum3(int k,int n){f(k,n,1,new ArrayList<>());return o;}}

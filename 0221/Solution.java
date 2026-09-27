@@ -1,0 +1,1 @@
+class Solution{public int maximalSquare(char[][]m){if(m.length==0)return 0;int[]d=new int[m[0].length+1];int b=0;for(int i=1;i<=m.length;i++){int p=0;for(int j=1;j<=m[0].length;j++){int old=d[j];if(m[i-1][j-1]=='1'){d[j]=1+Math.min(d[j],Math.min(d[j-1],p));b=Math.max(b,d[j]);}else d[j]=0;p=old;}}return b*b;}}

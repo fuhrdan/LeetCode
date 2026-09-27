@@ -1,0 +1,1 @@
+using System;public class Solution{public int MaximalSquare(char[][]m){if(m.Length==0)return 0;int[]d=new int[m[0].Length+1];int b=0;for(int i=1;i<=m.Length;i++){int p=0;for(int j=1;j<=m[0].Length;j++){int old=d[j];if(m[i-1][j-1]=='1'){d[j]=1+Math.Min(d[j],Math.Min(d[j-1],p));b=Math.Max(b,d[j]);}else d[j]=0;p=old;}}return b*b;}}

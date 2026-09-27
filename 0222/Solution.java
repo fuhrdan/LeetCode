@@ -1,0 +1,1 @@
+class Solution{int l(TreeNode n){int h=0;while(n!=null){h++;n=n.left;}return h;}int r(TreeNode n){int h=0;while(n!=null){h++;n=n.right;}return h;}public int countNodes(TreeNode n){if(n==null)return 0;int a=l(n),b=r(n);if(a==b)return(1<<a)-1;return 1+countNodes(n.left)+countNodes(n.right);}}

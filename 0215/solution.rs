@@ -1,0 +1,1 @@
+impl Solution{pub fn find_kth_largest(mut a:Vec<i32>,k:i32)->i32{let t=a.len()-k as usize;let(mut l,mut r)=(0usize,a.len()-1);loop{let p=a[r];let mut i=l;for j in l..r{if a[j]<=p{a.swap(i,j);i+=1;}}a.swap(i,r);if i==t{return a[i]}if i<t{l=i+1}else{r=i-1}}}}

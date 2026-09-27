@@ -1,0 +1,1 @@
+class Solution{int p(int[]a,int l,int r){int x=a[r],i=l;for(int j=l;j<r;j++)if(a[j]<=x){int t=a[i];a[i++]=a[j];a[j]=t;}int t=a[i];a[i]=a[r];a[r]=t;return i;}public int findKthLargest(int[]a,int k){int t=a.length-k,l=0,r=a.length-1;while(true){int q=p(a,l,r);if(q==t)return a[q];if(q<t)l=q+1;else r=q-1;}}}

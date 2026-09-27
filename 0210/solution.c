@@ -1,0 +1,2 @@
+#include <stdlib.h>
+int* findOrder(int n,int**p,int ps,int*cols,int*rs){int*d=calloc(n,sizeof(int)),*q=malloc(n*sizeof(int)),*o=malloc(n*sizeof(int));for(int i=0;i<ps;i++)d[p[i][0]]++;int h=0,t=0,c=0;for(int i=0;i<n;i++)if(!d[i])q[t++]=i;while(h<t){int u=q[h++];o[c++]=u;for(int i=0;i<ps;i++)if(p[i][1]==u&&--d[p[i][0]]==0)q[t++]=p[i][0];}free(d);free(q);if(c!=n){free(o);*rs=0;return NULL;}*rs=n;return o;}

@@ -1,0 +1,1 @@
+using System;public class Solution{public string ShortestPalindrome(string s){char[]a=s.ToCharArray();Array.Reverse(a);string r=new string(a),t=s+"#"+r;int[]p=new int[t.Length];for(int i=1;i<t.Length;i++){int j=p[i-1];while(j>0&&t[i]!=t[j])j=p[j-1];if(t[i]==t[j])j++;p[i]=j;}return r.Substring(0,s.Length-p[^1])+s;}}

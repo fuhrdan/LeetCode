@@ -1,0 +1,1 @@
+impl Solution{pub fn maximal_square(m:Vec<Vec<char>>)->i32{if m.is_empty(){return 0}let mut d=vec![0;m[0].len()+1];let mut b=0;for i in 1..=m.len(){let mut p=0;for j in 1..=m[0].len(){let old=d[j];if m[i-1][j-1]=='1'{d[j]=1+d[j].min(d[j-1]).min(p);b=b.max(d[j]);}else{d[j]=0}p=old;}}b*b}}

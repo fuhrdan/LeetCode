@@ -1,0 +1,1 @@
+using System;public class Solution{public int MinSubArrayLen(int t,int[]a){int l=0,s=0,b=int.MaxValue;for(int r=0;r<a.Length;r++){s+=a[r];while(s>=t){b=Math.Min(b,r-l+1);s-=a[l++];}}return b==int.MaxValue?0:b;}}

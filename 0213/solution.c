@@ -1,0 +1,1 @@
+static int line(int*a,int l,int r){int p2=0,p1=0;for(int i=l;i<=r;i++){int c=p1>p2+a[i]?p1:p2+a[i];p2=p1;p1=c;}return p1;}int rob(int*a,int n){if(n==1)return a[0];int x=line(a,0,n-2),y=line(a,1,n-1);return x>y?x:y;}

@@ -1,0 +1,1 @@
+public class Solution{public bool IsIsomorphic(string s,string t){int[]a=new int[256],b=new int[256];for(int i=0;i<s.Length;i++){char x=s[i],y=t[i];if(a[x]!=b[y])return false;a[x]=b[y]=i+1;}return true;}}

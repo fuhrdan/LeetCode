@@ -1,0 +1,2 @@
+#include <stdlib.h>
+int calculate(char*s){int*st=malloc(10000*sizeof(int)),top=0,res=0,num=0,sign=1;for(int i=0;;i++){char c=s[i];if(c>='0'&&c<='9')num=num*10+c-'0';else if(c=='+'||c=='-'){res+=sign*num;num=0;sign=c=='+'?1:-1;}else if(c=='('){st[top++]=res;st[top++]=sign;res=0;sign=1;}else if(c==')'){res+=sign*num;num=0;res=st[--top]*res+st[--top];}else if(c==0){res+=sign*num;break;}}free(st);return res;}

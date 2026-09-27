@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public bool ContainsNearbyDuplicate(int[]a,int k){var m=new Dictionary<int,int>();for(int i=0;i<a.Length;i++){if(m.ContainsKey(a[i])&&i-m[a[i]]<=k)return true;m[a[i]]=i;}return false;}}

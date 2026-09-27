@@ -1,0 +1,3 @@
+#include <stdlib.h>
+#include <stdbool.h>
+typedef struct{int*q,cap,n;}MyStack;MyStack* myStackCreate(){MyStack*s=malloc(sizeof(*s));s->cap=16;s->n=0;s->q=malloc(s->cap*sizeof(int));return s;}void myStackPush(MyStack*s,int x){if(s->n==s->cap){s->cap*=2;s->q=realloc(s->q,s->cap*sizeof(int));}s->q[s->n++]=x;for(int i=0;i<s->n-1;i++){int t=s->q[0];for(int j=1;j<s->n;j++)s->q[j-1]=s->q[j];s->q[s->n-1]=t;}}int myStackPop(MyStack*s){int x=s->q[0];for(int i=1;i<s->n;i++)s->q[i-1]=s->q[i];s->n--;return x;}int myStackTop(MyStack*s){return s->q[0];}bool myStackEmpty(MyStack*s){return s->n==0;}void myStackFree(MyStack*s){free(s->q);free(s);}

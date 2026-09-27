@@ -1,0 +1,1 @@
+static int lh(struct TreeNode*n){int h=0;while(n){h++;n=n->left;}return h;}static int rh(struct TreeNode*n){int h=0;while(n){h++;n=n->right;}return h;}int countNodes(struct TreeNode*r){if(!r)return 0;int l=lh(r),h=rh(r);if(l==h)return (1<<l)-1;return 1+countNodes(r->left)+countNodes(r->right);}

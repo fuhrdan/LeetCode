@@ -1,0 +1,1 @@
+use std::collections::HashMap;impl Solution{pub fn contains_nearby_duplicate(a:Vec<i32>,k:i32)->bool{let mut m=HashMap::new();for(i,x)in a.into_iter().enumerate(){if let Some(&j)=m.get(&x){if i-j<=k as usize{return true}}m.insert(x,i);}false}}

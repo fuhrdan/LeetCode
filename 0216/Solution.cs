@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<IList<int>>o=new();void F(int k,int n,int st,List<int>v){if(v.Count==k){if(n==0)o.Add(new List<int>(v));return;}for(int x=st;x<=9&&x<=n;x++){v.Add(x);F(k,n-x,x+1,v);v.RemoveAt(v.Count-1);}}public IList<IList<int>> CombinationSum3(int k,int n){F(k,n,1,new List<int>());return o;}}
