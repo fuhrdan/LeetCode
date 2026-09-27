@@ -1,0 +1,1 @@
+impl Solution{pub fn can_complete_circuit(g:Vec<i32>,c:Vec<i32>)->i32{let(mut total,mut tank,mut st)=(0,0,0);for i in 0..g.len(){let d=g[i]-c[i];total+=d;tank+=d;if tank<0{st=i as i32+1;tank=0;}}if total>=0{st}else{-1}}}

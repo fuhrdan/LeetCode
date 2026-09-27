@@ -1,0 +1,1 @@
+void reorderList(struct ListNode*h){if(!h||!h->next)return;struct ListNode*s=h,*f=h;while(f->next&&f->next->next){s=s->next;f=f->next->next;}struct ListNode*p=0,*c=s->next;s->next=0;while(c){struct ListNode*n=c->next;c->next=p;p=c;c=n;}c=h;while(p){struct ListNode*a=c->next,*b=p->next;c->next=p;p->next=a;c=a;p=b;}}

@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public int EvalRPN(string[]t){var st=new Stack<int>();foreach(var s in t){if(s.Length==1&&"+-*/".Contains(s)){int b=st.Pop(),a=st.Pop();st.Push(s=="+"?a+b:s=="-"?a-b:s=="*"?a*b:a/b);}else st.Push(int.Parse(s));}return st.Pop();}}

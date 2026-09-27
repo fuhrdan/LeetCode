@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn preorder_traversal(root:Option<Rc<RefCell<TreeNode>>>)->Vec<i32>{let mut o=vec![];let mut st=vec![];if let Some(r)=root{st.push(r)}while let Some(n)=st.pop(){let b=n.borrow();o.push(b.val);if let Some(r)=b.right.clone(){st.push(r)}if let Some(l)=b.left.clone(){st.push(l)}}o}}

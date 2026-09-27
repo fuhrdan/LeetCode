@@ -1,0 +1,1 @@
+using System;public class Solution{public int MinCut(string s){int n=s.Length;bool[,]p=new bool[n,n];int[]d=new int[n+1];d[0]=-1;for(int i=1;i<=n;i++)d[i]=i-1;for(int r=0;r<n;r++)for(int l=r;l>=0;l--)if(s[l]==s[r]&&(r-l<2||p[l+1,r-1])){p[l,r]=true;d[r+1]=Math.Min(d[r+1],d[l]+1);}return d[n];}}

@@ -1,0 +1,1 @@
+struct ListNode* insertionSortList(struct ListNode*h){struct ListNode d={0,0};while(h){struct ListNode*n=h->next,*p=&d;while(p->next&&p->next->val<h->val)p=p->next;h->next=p->next;p->next=h;h=n;}return d.next;}

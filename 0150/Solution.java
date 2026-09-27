@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int evalRPN(String[]t){Deque<Integer>st=new ArrayDeque<>();for(String s:t){if(s.length()==1&&"+-*/".contains(s)){int b=st.pop(),a=st.pop();st.push(s.equals("+")?a+b:s.equals("-")?a-b:s.equals("*")?a*b:a/b);}else st.push(Integer.parseInt(s));}return st.pop();}}

@@ -1,0 +1,1 @@
+class Solution{public:Node* copyRandomList(Node*h){if(!h)return nullptr;for(Node*p=h;p;){auto c=new Node(p->val);c->next=p->next;p->next=c;p=c->next;}for(Node*p=h;p;p=p->next->next)if(p->random)p->next->random=p->random->next;Node*r=h->next;for(Node*p=h;p;){Node*c=p->next;p->next=c->next;c->next=c->next?c->next->next:nullptr;p=p->next;}return r;}};

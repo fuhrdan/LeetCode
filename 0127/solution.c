@@ -1,0 +1,3 @@
+#include <stdlib.h>
+#include <string.h>
+static int d1(const char*a,const char*b){int d=0;for(;*a;a++,b++)d+=*a!=*b;return d==1;}int ladderLength(char*b,char*e,char**w,int n){int end=-1;for(int i=0;i<n;i++)if(!strcmp(w[i],e))end=i;if(end<0)return 0;int*q=malloc((n+1)*sizeof(int)),*dist=calloc(n+1,sizeof(int)),h=0,t=0;char**all=malloc((n+1)*sizeof(char*));for(int i=0;i<n;i++)all[i]=w[i];all[n]=b;q[t++]=n;dist[n]=1;while(h<t){int u=q[h++];if(u==end){int r=dist[u];free(q);free(dist);free(all);return r;}for(int v=0;v<n;v++)if(!dist[v]&&d1(all[u],all[v])){dist[v]=dist[u]+1;q[t++]=v;}}free(q);free(dist);free(all);return 0;}

@@ -1,0 +1,1 @@
+impl Solution{pub fn min_cut(s:String)->i32{let b=s.as_bytes();let n=b.len();let mut p=vec![vec![false;n];n];let mut d:(Vec<i32>)=(0..=n as i32).map(|x|x-1).collect();for r in 0..n{for l in (0..=r).rev(){if b[l]==b[r]&&(r-l<2||p[l+1][r-1]){p[l][r]=true;d[r+1]=d[r+1].min(d[l]+1);}}}d[n]}}

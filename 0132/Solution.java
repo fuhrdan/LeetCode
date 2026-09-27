@@ -1,0 +1,1 @@
+class Solution{public int minCut(String s){int n=s.length();boolean[][]p=new boolean[n][n];int[]d=new int[n+1];d[0]=-1;for(int i=1;i<=n;i++)d[i]=i-1;for(int r=0;r<n;r++)for(int l=r;l>=0;l--)if(s.charAt(l)==s.charAt(r)&&(r-l<2||p[l+1][r-1])){p[l][r]=true;d[r+1]=Math.min(d[r+1],d[l]+1);}return d[n];}}

@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<Integer> postorderTraversal(TreeNode r){List<Integer>o=new ArrayList<>();Deque<TreeNode>st=new ArrayDeque<>();if(r!=null)st.push(r);while(!st.isEmpty()){TreeNode n=st.pop();o.add(n.val);if(n.left!=null)st.push(n.left);if(n.right!=null)st.push(n.right);}Collections.reverse(o);return o;}}

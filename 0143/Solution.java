@@ -1,0 +1,1 @@
+class Solution{public void reorderList(ListNode h){if(h==null||h.next==null)return;ListNode s=h,f=h;while(f.next!=null&&f.next.next!=null){s=s.next;f=f.next.next;}ListNode p=null,c=s.next;s.next=null;while(c!=null){ListNode n=c.next;c.next=p;p=c;c=n;}c=h;while(p!=null){ListNode a=c.next,b=p.next;c.next=p;p.next=a;c=a;p=b;}}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn word_break(s:String,w:Vec<String>)->bool{let n=s.len();let mut d=vec![false;n+1];d[0]=true;for i in 1..=n{for x in &w{if x.len()<=i&&d[i-x.len()]&&&s[i-x.len()..i]==x{d[i]=true;break}}}d[n]}}

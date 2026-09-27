@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public bool WordBreak(string s,IList<string>w){bool[]d=new bool[s.Length+1];d[0]=true;for(int i=1;i<=s.Length;i++)foreach(var x in w)if(x.Length<=i&&d[i-x.Length]&&s.Substring(i-x.Length,x.Length)==x){d[i]=true;break;}return d[s.Length];}}

@@ -1,0 +1,1 @@
+use std::collections::HashSet;impl Solution{pub fn longest_consecutive(a:Vec<i32>)->i32{let s:HashSet<i32>=a.into_iter().collect();let mut b=0;for &x in &s{if !s.contains(&(x-1)){let mut y=x;while s.contains(&y){y+=1}b=b.max(y-x);}}b}}

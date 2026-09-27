@@ -1,0 +1,1 @@
+import java.util.*;class LRUCache extends LinkedHashMap<Integer,Integer>{int cap;public LRUCache(int capacity){super(capacity,.75f,true);cap=capacity;}public int get(int k){return super.getOrDefault(k,-1);}public void put(int k,int v){super.put(k,v);}protected boolean removeEldestEntry(Map.Entry<Integer,Integer>e){return size()>cap;}}

@@ -1,0 +1,1 @@
+class Solution{public Node copyRandomList(Node h){if(h==null)return null;for(Node p=h;p!=null;){Node c=new Node(p.val);c.next=p.next;p.next=c;p=c.next;}for(Node p=h;p!=null;p=p.next.next)if(p.random!=null)p.next.random=p.random.next;Node r=h.next;for(Node p=h;p!=null;){Node c=p.next;p.next=c.next;c.next=c.next==null?null:c.next.next;p=p.next;}return r;}}

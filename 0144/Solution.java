@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<Integer> preorderTraversal(TreeNode r){List<Integer>o=new ArrayList<>();if(r==null)return o;Deque<TreeNode>st=new ArrayDeque<>();st.push(r);while(!st.isEmpty()){TreeNode n=st.pop();o.add(n.val);if(n.right!=null)st.push(n.right);if(n.left!=null)st.push(n.left);}return o;}}

@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{public int LongestConsecutive(int[]a){var s=new HashSet<int>(a);int b=0;foreach(int x in s)if(!s.Contains(x-1)){int y=x;while(s.Contains(y))y++;b=Math.Max(b,y-x);}return b;}}

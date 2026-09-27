@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{Dictionary<Node,Node>m=new();public Node CloneGraph(Node n){if(n==null)return null;if(m.ContainsKey(n))return m[n];var c=new Node(n.val);m[n]=c;foreach(var x in n.neighbors)c.neighbors.Add(CloneGraph(x));return c;}}

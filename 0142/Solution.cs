@@ -1,0 +1,1 @@
+public class Solution{public ListNode DetectCycle(ListNode h){var s=h;var f=h;do{if(f==null||f.next==null)return null;s=s.next;f=f.next.next;}while(!object.ReferenceEquals(s,f));s=h;while(!object.ReferenceEquals(s,f)){s=s.next;f=f.next;}return s;}}

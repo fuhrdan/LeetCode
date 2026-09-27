@@ -1,0 +1,1 @@
+impl Solution{pub fn insertion_sort_list(head:Option<Box<ListNode>>)->Option<Box<ListNode>>{let mut v=vec![];let mut p=head.as_ref();while let Some(n)=p{v.push(n.val);p=n.next.as_ref();}for i in 1..v.len(){let x=v[i];let mut j=i;while j>0&&v[j-1]>x{v[j]=v[j-1];j-=1;}v[j]=x;}let mut h=None;for &x in v.iter().rev(){let mut n=Box::new(ListNode::new(x));n.next=h;h=Some(n);}h}}

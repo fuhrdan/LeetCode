@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public IList<int> PostorderTraversal(TreeNode r){var o=new List<int>();var st=new Stack<TreeNode>();if(r!=null)st.Push(r);while(st.Count>0){var n=st.Pop();o.Add(n.val);if(n.left!=null)st.Push(n.left);if(n.right!=null)st.Push(n.right);}o.Reverse();return o;}}

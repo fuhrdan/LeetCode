@@ -1,0 +1,2 @@
+#include <vector>
+using namespace std;class Solution{void f(vector<vector<char>>&b,int i,int j){if(i<0||j<0||i>=b.size()||j>=b[0].size()||b[i][j]!='O')return;b[i][j]='#';f(b,i+1,j);f(b,i-1,j);f(b,i,j+1);f(b,i,j-1);}public:void solve(vector<vector<char>>&b){if(b.empty())return;int m=b.size(),n=b[0].size();for(int i=0;i<m;i++){f(b,i,0);f(b,i,n-1);}for(int j=0;j<n;j++){f(b,0,j);f(b,m-1,j);}for(auto&r:b)for(char&c:r)c=c=='#'?'O':c=='O'?'X':c;}};

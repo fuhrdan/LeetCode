@@ -1,0 +1,1 @@
+impl Solution{pub fn sort_list(head:Option<Box<ListNode>>)->Option<Box<ListNode>>{let mut v=vec![];let mut p=head.as_ref();while let Some(n)=p{v.push(n.val);p=n.next.as_ref();}v.sort_unstable();let mut h=None;for &x in v.iter().rev(){let mut n=Box::new(ListNode::new(x));n.next=h;h=Some(n);}h}}

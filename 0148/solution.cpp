@@ -1,0 +1,1 @@
+class Solution{ListNode*m(ListNode*a,ListNode*b){ListNode d,*t=&d;while(a&&b){if(a->val<=b->val){t->next=a;a=a->next;}else{t->next=b;b=b->next;}t=t->next;}t->next=a?a:b;return d.next;}public:ListNode* sortList(ListNode*h){if(!h||!h->next)return h;auto s=h,*f=h->next;while(f&&f->next){s=s->next;f=f->next->next;}auto b=s->next;s->next=nullptr;return m(sortList(h),sortList(b));}};

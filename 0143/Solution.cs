@@ -1,0 +1,1 @@
+public class Solution{public void ReorderList(ListNode h){if(h==null||h.next==null)return;var s=h;var f=h;while(f.next!=null&&f.next.next!=null){s=s.next;f=f.next.next;}ListNode p=null,c=s.next;s.next=null;while(c!=null){var n=c.next;c.next=p;p=c;c=n;}c=h;while(p!=null){var a=c.next;var b=p.next;c.next=p;p.next=a;c=a;p=b;}}}

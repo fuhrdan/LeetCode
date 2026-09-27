@@ -1,0 +1,1 @@
+public class Solution{public ListNode InsertionSortList(ListNode h){var d=new ListNode();while(h!=null){var n=h.next;var p=d;while(p.next!=null&&p.next.val<h.val)p=p.next;h.next=p.next;p.next=h;h=n;}return d.next;}}

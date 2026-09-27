@@ -1,0 +1,1 @@
+import java.util.*;class Solution{Map<Node,Node>m=new HashMap<>();public Node cloneGraph(Node n){if(n==null)return null;if(m.containsKey(n))return m.get(n);Node c=new Node(n.val);m.put(n,c);for(Node x:n.neighbors)c.neighbors.add(cloneGraph(x));return c;}}

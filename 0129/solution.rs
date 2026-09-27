@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn sum_numbers(root:Option<Rc<RefCell<TreeNode>>>)->i32{fn f(n:&Option<Rc<RefCell<TreeNode>>>,v:i32)->i32{if let Some(x)=n{let b=x.borrow();let v=v*10+b.val;if b.left.is_none()&&b.right.is_none(){v}else{f(&b.left,v)+f(&b.right,v)}}else{0}}f(&root,0)}}

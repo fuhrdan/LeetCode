@@ -1,0 +1,1 @@
+class Solution{public:void reorderList(ListNode*h){if(!h||!h->next)return;auto s=h,*f=h;while(f->next&&f->next->next){s=s->next;f=f->next->next;}ListNode*p=nullptr,*c=s->next;s->next=nullptr;while(c){auto n=c->next;c->next=p;p=c;c=n;}c=h;while(p){auto a=c->next,b=p->next;c->next=p;p->next=a;c=a;p=b;}}};

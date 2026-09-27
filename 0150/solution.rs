@@ -1,0 +1,1 @@
+impl Solution{pub fn eval_rpn(t:Vec<String>)->i32{let mut st=vec![];for s in t{match s.as_str(){"+"|"-"|"*"|"/"=>{let b=st.pop().unwrap();let a=st.pop().unwrap();st.push(match s.as_str(){"+"=>a+b,"-"=>a-b,"*"=>a*b,_=>a/b});},_=>st.push(s.parse().unwrap())}}st[0]}}

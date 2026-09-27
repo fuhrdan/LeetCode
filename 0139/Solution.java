@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public boolean wordBreak(String s,List<String>w){boolean[]d=new boolean[s.length()+1];d[0]=true;for(int i=1;i<=s.length();i++)for(String x:w)if(x.length()<=i&&d[i-x.length()]&&s.startsWith(x,i-x.length())){d[i]=true;break;}return d[s.length()];}}
