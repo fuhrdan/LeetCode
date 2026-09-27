@@ -1,0 +1,1 @@
+int minArea(char**img,int m,int*cols,int x,int y){int minr=m,maxr=-1,minc=cols[0],maxc=-1;for(int i=0;i<m;i++)for(int j=0;j<cols[0];j++)if(img[i][j]=='1'){if(i<minr)minr=i;if(i>maxr)maxr=i;if(j<minc)minc=j;if(j>maxc)maxc=j;}return(maxr-minr+1)*(maxc-minc+1);}

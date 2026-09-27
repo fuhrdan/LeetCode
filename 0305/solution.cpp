@@ -1,0 +1,2 @@
+#include <vector>
+using namespace std;class Solution{int f(vector<int>&p,int x){return p[x]==x?x:p[x]=f(p,p[x]);}public:vector<int> numIslands2(int m,int n,vector<vector<int>>&pos){vector<int>p(m*n,-1),o;int c=0,d[5]={1,0,-1,0,1};for(auto&v:pos){int r=v[0],q=v[1],id=r*n+q;if(p[id]!=-1){o.push_back(c);continue;}p[id]=id;c++;for(int z=0;z<4;z++){int a=r+d[z],b=q+d[z+1];if(a<0||b<0||a>=m||b>=n||p[a*n+b]==-1)continue;int x=f(p,id),y=f(p,a*n+b);if(x!=y){p[x]=y;c--;}}o.push_back(c);}return o;}};

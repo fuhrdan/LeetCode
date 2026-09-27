@@ -1,0 +1,1 @@
+using System;public class Solution{public int MaxProduct(string[]w){int[]m=new int[w.Length];for(int i=0;i<w.Length;i++)foreach(char c in w[i])m[i]|=1<<(c-'a');int b=0;for(int i=0;i<w.Length;i++)for(int j=i+1;j<w.Length;j++)if((m[i]&m[j])==0)b=Math.Max(b,w[i].Length*w[j].Length);return b;}}

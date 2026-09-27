@@ -1,0 +1,1 @@
+impl Solution{pub fn generate_abbreviations(w:String)->Vec<String>{fn f(b:&[u8],i:usize,c:i32,s:String,o:&mut Vec<String>){if i==b.len(){let mut x=s;if c>0{x.push_str(&c.to_string())}o.push(x);return}f(b,i+1,c+1,s.clone(),o);let mut x=s;if c>0{x.push_str(&c.to_string())}x.push(b[i]as char);f(b,i+1,0,x,o)}let mut o=vec![];f(w.as_bytes(),0,0,String::new(),&mut o);o}}

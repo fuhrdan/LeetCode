@@ -1,0 +1,1 @@
+class Solution{public int maxProduct(String[]w){int[]m=new int[w.length];for(int i=0;i<w.length;i++)for(char c:w[i].toCharArray())m[i]|=1<<(c-'a');int b=0;for(int i=0;i<w.length;i++)for(int j=i+1;j<w.length;j++)if((m[i]&m[j])==0)b=Math.max(b,w[i].length()*w[j].length());return b;}}

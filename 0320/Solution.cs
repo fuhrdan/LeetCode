@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<string>o=new();void F(string w,int i,int c,string s){if(i==w.Length){if(c>0)s+=c;o.Add(s);return;}F(w,i+1,c+1,s);if(c>0)s+=c;F(w,i+1,0,s+w[i]);}public IList<string> GenerateAbbreviations(string w){F(w,0,0,"");return o;}}

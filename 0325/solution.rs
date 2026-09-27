@@ -1,0 +1,1 @@
+use std::collections::HashMap;impl Solution{pub fn max_sub_array_len(a:Vec<i32>,k:i32)->i32{let mut m=HashMap::from([(0i64,-1i32)]);let(mut s,mut b)=(0i64,0);for(i,x)in a.into_iter().enumerate(){s+=x as i64;if let Some(&j)=m.get(&(s-k as i64)){b=b.max(i as i32-j)}m.entry(s).or_insert(i as i32);}b}}

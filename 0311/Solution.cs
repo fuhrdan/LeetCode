@@ -1,0 +1,1 @@
+public class Solution{public int[][] Multiply(int[][]a,int[][]b){int m=a.Length,k=a[0].Length,n=b[0].Length;int[][]o=new int[m][];for(int i=0;i<m;i++){o[i]=new int[n];for(int x=0;x<k;x++)if(a[i][x]!=0)for(int j=0;j<n;j++)if(b[x][j]!=0)o[i][j]+=a[i][x]*b[x][j];}return o;}}

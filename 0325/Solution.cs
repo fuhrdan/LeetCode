@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{public int MaxSubArrayLen(int[]a,int k){var m=new Dictionary<long,int>{{0,-1}};long s=0;int b=0;for(int i=0;i<a.Length;i++){s+=a[i];if(m.ContainsKey(s-k))b=Math.Max(b,i-m[s-k]);if(!m.ContainsKey(s))m[s]=i;}return b;}}

@@ -1,0 +1,1 @@
+int maxProfit(int*a,int n){if(!n)return 0;int hold=-a[0],sold=0,rest=0;for(int i=1;i<n;i++){int ph=hold,ps=sold;hold=hold>rest-a[i]?hold:rest-a[i];sold=ph+a[i];rest=rest>ps?rest:ps;}return sold>rest?sold:rest;}

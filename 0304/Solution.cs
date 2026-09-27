@@ -1,0 +1,1 @@
+public class NumMatrix{int[][]p;public NumMatrix(int[][]a){int m=a.Length,n=m>0?a[0].Length:0;p=new int[m+1][];for(int i=0;i<=m;i++)p[i]=new int[n+1];for(int i=0;i<m;i++)for(int j=0;j<n;j++)p[i+1][j+1]=a[i][j]+p[i][j+1]+p[i+1][j]-p[i][j];}public int SumRegion(int r1,int c1,int r2,int c2)=>p[r2+1][c2+1]-p[r1][c2+1]-p[r2+1][c1]+p[r1][c1];}

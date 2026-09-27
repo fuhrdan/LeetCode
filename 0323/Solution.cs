@@ -1,0 +1,1 @@
+public class Solution{int F(int[]p,int x)=>p[x]==x?x:(p[x]=F(p,p[x]));public int CountComponents(int n,int[][]e){int[]p=new int[n];for(int i=0;i<n;i++)p[i]=i;int c=n;foreach(var x in e){int a=F(p,x[0]),b=F(p,x[1]);if(a!=b){p[a]=b;c--;}}return c;}}

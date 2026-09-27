@@ -1,0 +1,1 @@
+class Solution{public int nthSuperUglyNumber(int n,int[]p){long[]u=new long[n];u[0]=1;int[]idx=new int[p.length];for(int i=1;i<n;i++){long m=Long.MAX_VALUE;for(int j=0;j<p.length;j++)m=Math.min(m,u[idx[j]]*p[j]);u[i]=m;for(int j=0;j<p.length;j++)if(u[idx[j]]*p[j]==m)idx[j]++;}return(int)u[n-1];}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn count_smaller(a:Vec<i32>)->Vec<i32>{let mut v=a.clone();v.sort();v.dedup();let mut b=vec![0i32;v.len()+1];let mut o=vec![0;a.len()];for i in (0..a.len()).rev(){let mut l=0;let mut r=v.len();while l<r{let m=(l+r)/2;if v[m]<a[i]{l=m+1}else{r=m}}let rank=l+1;let mut x=rank-1;while x>0{o[i]+=b[x];x&=x-1;}let mut x=rank;while x<b.len(){b[x]+=1;x+=x&(!x+1);}}o}}

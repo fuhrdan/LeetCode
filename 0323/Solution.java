@@ -1,0 +1,1 @@
+class Solution{int f(int[]p,int x){return p[x]==x?x:(p[x]=f(p,p[x]));}public int countComponents(int n,int[][]e){int[]p=new int[n];for(int i=0;i<n;i++)p[i]=i;int c=n;for(int[]x:e){int a=f(p,x[0]),b=f(p,x[1]);if(a!=b){p[a]=b;c--;}}return c;}}

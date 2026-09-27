@@ -1,0 +1,1 @@
+using System;public class Solution{public int CoinChange(int[]c,int a){int[]d=new int[a+1];Array.Fill(d,a+1);d[0]=0;for(int i=1;i<=a;i++)foreach(int x in c)if(x<=i)d[i]=Math.Min(d[i],d[i-x]+1);return d[a]>a?-1:d[a];}}

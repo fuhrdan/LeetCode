@@ -1,0 +1,1 @@
+impl Solution{pub fn is_additive_number(s:String)->bool{let n=s.len();for i in 1..n{if &s[0..1]=="0"&&i>1{break}for j in i+1..n{if &s[i..i+1]=="0"&&j-i>1{break}if let(Ok(mut a),Ok(mut b))=(s[..i].parse::<u128>(),s[i..j].parse::<u128>()){let mut p=j;while p<n{let x=(a+b).to_string();if !s[p..].starts_with(&x){break}p+=x.len();let c=a+b;a=b;b=c;}if p==n{return true}}}}false}}

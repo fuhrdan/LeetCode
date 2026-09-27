@@ -1,0 +1,1 @@
+class Solution{public int minArea(char[][]a,int x,int y){int m=a.length,n=a[0].length,r1=m,r2=-1,c1=n,c2=-1;for(int i=0;i<m;i++)for(int j=0;j<n;j++)if(a[i][j]=='1'){r1=Math.min(r1,i);r2=Math.max(r2,i);c1=Math.min(c1,j);c2=Math.max(c2,j);}return(r2-r1+1)*(c2-c1+1);}}

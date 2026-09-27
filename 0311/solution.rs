@@ -1,0 +1,1 @@
+impl Solution{pub fn multiply(a:Vec<Vec<i32>>,b:Vec<Vec<i32>>)->Vec<Vec<i32>>{let(m,k,n)=(a.len(),a[0].len(),b[0].len());let mut o=vec![vec![0;n];m];for i in 0..m{for x in 0..k{if a[i][x]!=0{for j in 0..n{if b[x][j]!=0{o[i][j]+=a[i][x]*b[x][j];}}}}}o}}

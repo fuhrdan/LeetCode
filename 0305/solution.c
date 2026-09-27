@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static int find(int*p,int x){while(p[x]!=x){p[x]=p[p[x]];x=p[x];}return x;}int* numIslands2(int m,int n,int**pos,int ps,int*cols,int*rs){int N=m*n,*p=malloc(N*sizeof(int)),*o=malloc(ps*sizeof(int));for(int i=0;i<N;i++)p[i]=-1;int c=0,d[5]={1,0,-1,0,1};for(int k=0;k<ps;k++){int r=pos[k][0],q=pos[k][1],id=r*n+q;if(p[id]!=-1){o[k]=c;continue;}p[id]=id;c++;for(int z=0;z<4;z++){int a=r+d[z],b=q+d[z+1];if(a<0||b<0||a>=m||b>=n)continue;int j=a*n+b;if(p[j]==-1)continue;int x=find(p,id),y=find(p,j);if(x!=y){p[x]=y;c--;}}o[k]=c;}free(p);*rs=ps;return o;}

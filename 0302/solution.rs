@@ -1,0 +1,1 @@
+impl Solution{pub fn min_area(a:Vec<Vec<char>>,_x:i32,_y:i32)->i32{let(m,n)=(a.len(),a[0].len());let(mut r1,mut r2,mut c1,mut c2)=(m,m.wrapping_sub(1),n,n.wrapping_sub(1));let mut rr=-1i32;let mut cc=-1i32;for i in 0..m{for j in 0..n{if a[i][j]=='1'{r1=r1.min(i);rr=rr.max(i as i32);c1=c1.min(j);cc=cc.max(j as i32);}}}((rr-r1 as i32+1)*(cc-c1 as i32+1))}}

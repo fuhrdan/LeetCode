@@ -1,0 +1,4 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+static bool valid(char*s){int b=0;for(int i=0;s[i];i++){if(s[i]=='(')b++;else if(s[i]==')'&&--b<0)return false;}return b==0;}char** removeInvalidParentheses(char*s,int*rs){int n=strlen(s),cap=1024,h=0,t=1;char**q=malloc(cap*sizeof(char*));q[0]=strdup(s);char**o=malloc(cap*sizeof(char*));int c=0,found=0;while(h<t&&!found){int end=t;for(;h<end;h++){char*x=q[h];if(valid(x)){o[c++]=strdup(x);found=1;}if(found)continue;for(int i=0;x[i];i++)if(x[i]=='('||x[i]==')'){if(i&&x[i]==x[i-1])continue;char*y=malloc(strlen(x));memcpy(y,x,i);strcpy(y+i,x+i+1);int dup=0;for(int j=0;j<t;j++)if(!strcmp(q[j],y)){dup=1;break;}if(!dup){if(t==cap){cap*=2;q=realloc(q,cap*sizeof(char*));o=realloc(o,cap*sizeof(char*));}q[t++]=y;}else free(y);}}}for(int i=0;i<t;i++)free(q[i]);free(q);*rs=c;return o;}

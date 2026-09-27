@@ -1,0 +1,1 @@
+impl Solution{pub fn nth_super_ugly_number(n:i32,p:Vec<i32>)->i32{let n=n as usize;let mut u=vec![1i64;n];let mut idx=vec![0usize;p.len()];for i in 1..n{let mut m=i64::MAX;for j in 0..p.len(){m=m.min(u[idx[j]]*p[j]as i64)}u[i]=m;for j in 0..p.len(){if u[idx[j]]*p[j]as i64==m{idx[j]+=1}}}u[n-1]as i32}}

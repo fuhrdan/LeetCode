@@ -1,0 +1,2 @@
+#include <string>
+using namespace std;class Solution{public:bool isAdditiveNumber(string s){int n=s.size();for(int i=1;i<n;i++){if(s[0]=='0'&&i>1)break;for(int j=i+1;j<n;j++){if(s[i]=='0'&&j-i>1)break;long long a=stoll(s.substr(0,i)),b=stoll(s.substr(i,j-i));int p=j;while(p<n){string x=to_string(a+b);if(s.compare(p,x.size(),x))break;p+=x.size();long long c=a+b;a=b;b=c;}if(p==n)return true;}}return false;}};

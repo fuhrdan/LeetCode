@@ -1,0 +1,1 @@
+struct NumArray{p:Vec<i64>}impl NumArray{fn new(a:Vec<i32>)->Self{let mut p=vec![0i64;a.len()+1];for i in 0..a.len(){p[i+1]=p[i]+a[i]as i64;}Self{p}}fn sum_range(&self,l:i32,r:i32)->i32{(self.p[r as usize+1]-self.p[l as usize])as i32}}

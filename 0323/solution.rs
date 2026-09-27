@@ -1,0 +1,1 @@
+impl Solution{pub fn count_components(n:i32,e:Vec<Vec<i32>>)->i32{fn f(p:&mut Vec<usize>,x:usize)->usize{if p[x]!=x{let r=f(p,p[x]);p[x]=r;}p[x]}let mut p:(Vec<usize>)=(0..n as usize).collect();let mut c=n;for x in e{let a=f(&mut p,x[0]as usize);let b=f(&mut p,x[1]as usize);if a!=b{p[a]=b;c-=1;}}c}}

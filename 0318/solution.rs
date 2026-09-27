@@ -1,0 +1,1 @@
+impl Solution{pub fn max_product(w:Vec<String>)->i32{let mut m=vec![0u32;w.len()];for(i,s)in w.iter().enumerate(){for b in s.bytes(){m[i]|=1<<(b-b'a')}}let mut best=0;for i in 0..w.len(){for j in i+1..w.len(){if m[i]&m[j]==0{best=best.max((w[i].len()*w[j].len())as i32)}}}best}}

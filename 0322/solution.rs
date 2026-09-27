@@ -1,0 +1,1 @@
+impl Solution{pub fn coin_change(c:Vec<i32>,a:i32)->i32{let a=a as usize;let mut d=vec![a as i32+1;a+1];d[0]=0;for i in 1..=a{for &x in &c{let x=x as usize;if x<=i{d[i]=d[i].min(d[i-x]+1)}}}if d[a]>a as i32{-1}else{d[a]}}}

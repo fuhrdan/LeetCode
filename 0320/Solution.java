@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<String>o=new ArrayList<>();void f(String w,int i,int c,String s){if(i==w.length()){if(c>0)s+=c;o.add(s);return;}f(w,i+1,c+1,s);if(c>0)s+=c;f(w,i+1,0,s+w.charAt(i));}public List<String> generateAbbreviations(String w){f(w,0,0,"");return o;}}

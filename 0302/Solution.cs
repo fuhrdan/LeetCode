@@ -1,0 +1,1 @@
+using System;public class Solution{public int MinArea(char[][]a,int x,int y){int m=a.Length,n=a[0].Length,r1=m,r2=-1,c1=n,c2=-1;for(int i=0;i<m;i++)for(int j=0;j<n;j++)if(a[i][j]=='1'){r1=Math.Min(r1,i);r2=Math.Max(r2,i);c1=Math.Min(c1,j);c2=Math.Max(c2,j);}return(r2-r1+1)*(c2-c1+1);}}

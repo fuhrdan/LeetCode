@@ -1,0 +1,2 @@
+#include <stdlib.h>
+int maxCoins(int*a,int n){int*m=malloc((n+2)*sizeof(int));m[0]=m[n+1]=1;for(int i=0;i<n;i++)m[i+1]=a[i];int**d=malloc((n+2)*sizeof(int*));for(int i=0;i<n+2;i++)d[i]=calloc(n+2,sizeof(int));for(int len=1;len<=n;len++)for(int l=1;l+len-1<=n;l++){int r=l+len-1;for(int k=l;k<=r;k++){int v=d[l][k-1]+m[l-1]*m[k]*m[r+1]+d[k+1][r];if(v>d[l][r])d[l][r]=v;}}int ret=d[1][n];for(int i=0;i<n+2;i++)free(d[i]);free(d);free(m);return ret;}

@@ -1,0 +1,1 @@
+class Solution{public int[][] multiply(int[][]a,int[][]b){int m=a.length,k=a[0].length,n=b[0].length;int[][]o=new int[m][n];for(int i=0;i<m;i++)for(int x=0;x<k;x++)if(a[i][x]!=0)for(int j=0;j<n;j++)if(b[x][j]!=0)o[i][j]+=a[i][x]*b[x][j];return o;}}

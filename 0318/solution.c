@@ -1,0 +1,1 @@
+int maxProduct(char**w,int n){int mask[1000],len[1000],b=0;for(int i=0;i<n;i++){mask[i]=len[i]=0;for(int j=0;w[i][j];j++){mask[i]|=1<<(w[i][j]-'a');len[i]++;}}for(int i=0;i<n;i++)for(int j=i+1;j<n;j++)if(!(mask[i]&mask[j])&&len[i]*len[j]>b)b=len[i]*len[j];return b;}

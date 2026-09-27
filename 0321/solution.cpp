@@ -1,0 +1,3 @@
+#include <vector>
+#include <algorithm>
+using namespace std;class Solution{vector<int>pick(vector<int>&a,int k){vector<int>s;int drop=a.size()-k;for(int x:a){while(drop&&!s.empty()&&s.back()<x){s.pop_back();drop--;}s.push_back(x);}s.resize(k);return s;}bool ge(vector<int>&a,int i,vector<int>&b,int j){while(i<a.size()&&j<b.size()&&a[i]==b[j])i++,j++;return j==b.size()||(i<a.size()&&a[i]>b[j]);}vector<int>merge(vector<int>a,vector<int>b){vector<int>r;int i=0,j=0;while(i<a.size()||j<b.size())r.push_back(ge(a,i,b,j)?a[i++]:b[j++]);return r;}public:vector<int> maxNumber(vector<int>&a,vector<int>&b,int k){vector<int>best;for(int i=max(0,k-(int)b.size());i<=min(k,(int)a.size());i++){auto r=merge(pick(a,i),pick(b,k-i));if(best.empty()||r>best)best=r;}return best;}};

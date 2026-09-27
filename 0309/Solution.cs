@@ -1,0 +1,1 @@
+using System;public class Solution{public int MaxProfit(int[]a){if(a.Length==0)return 0;int h=-a[0],s=0,r=0;for(int i=1;i<a.Length;i++){int ph=h,ps=s;h=Math.Max(h,r-a[i]);s=ph+a[i];r=Math.Max(r,ps);}return Math.Max(s,r);}}

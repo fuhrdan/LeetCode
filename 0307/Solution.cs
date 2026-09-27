@@ -1,0 +1,1 @@
+public class NumArray{int n;int[]b,a;void Add(int i,int d){for(i++;i<=n;i+=i&-i)b[i]+=d;}int Sum(int i){int r=0;for(i++;i>0;i-=i&-i)r+=b[i];return r;}public NumArray(int[]x){n=x.Length;b=new int[n+1];a=(int[])x.Clone();for(int i=0;i<n;i++)Add(i,a[i]);}public void Update(int i,int v){int d=v-a[i];a[i]=v;Add(i,d);}public int SumRange(int l,int r)=>Sum(r)-(l>0?Sum(l-1):0);}

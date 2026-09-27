@@ -1,0 +1,1 @@
+using System;public class Solution{public int NthSuperUglyNumber(int n,int[]p){long[]u=new long[n];u[0]=1;int[]idx=new int[p.Length];for(int i=1;i<n;i++){long m=long.MaxValue;for(int j=0;j<p.Length;j++)m=Math.Min(m,u[idx[j]]*p[j]);u[i]=m;for(int j=0;j<p.Length;j++)if(u[idx[j]]*p[j]==m)idx[j]++;}return(int)u[n-1];}}
