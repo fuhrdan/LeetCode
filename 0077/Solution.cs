@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<IList<int>>o=new();void F(int n,int k,int st,List<int>v){if(v.Count==k){o.Add(new List<int>(v));return;}for(int x=st;x<=n-(k-v.Count)+1;x++){v.Add(x);F(n,k,x+1,v);v.RemoveAt(v.Count-1);}}public IList<IList<int>> Combine(int n,int k){F(n,k,1,new List<int>());return o;}}

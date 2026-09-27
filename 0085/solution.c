@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static int hist(int*h,int n){int*st=malloc((n+1)*sizeof(int)),top=-1,b=0;for(int i=0;i<=n;i++){int cur=i==n?0:h[i];while(top>=0&&h[st[top]]>cur){int ht=h[st[top--]],l=top>=0?st[top]:-1,a=ht*(i-l-1);if(a>b)b=a;}st[++top]=i;}free(st);return b;}int maximalRectangle(char**m,int rows,int*cols){if(!rows)return 0;int n=cols[0],*h=calloc(n,sizeof(int)),b=0;for(int i=0;i<rows;i++){for(int j=0;j<n;j++)h[j]=m[i][j]=='1'?h[j]+1:0;int x=hist(h,n);if(x>b)b=x;}free(h);return b;}

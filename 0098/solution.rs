@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn is_valid_bst(root:Option<Rc<RefCell<TreeNode>>>)->bool{fn f(n:&Option<Rc<RefCell<TreeNode>>>,lo:i64,hi:i64)->bool{if let Some(x)=n{let b=x.borrow();let v=b.val as i64;v>lo&&v<hi&&f(&b.left,lo,v)&&f(&b.right,v,hi)}else{true}}f(&root,i64::MIN,i64::MAX)}}

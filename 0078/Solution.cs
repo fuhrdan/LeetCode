@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public IList<IList<int>> Subsets(int[]a){var o=new List<IList<int>>{new List<int>()};foreach(int x in a){int n=o.Count;for(int i=0;i<n;i++){var v=new List<int>(o[i]);v.Add(x);o.Add(v);}}return o;}}

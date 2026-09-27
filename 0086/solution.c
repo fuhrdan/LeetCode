@@ -1,0 +1,1 @@
+struct ListNode* partition(struct ListNode*h,int x){struct ListNode a={0,0},b={0,0},*p=&a,*q=&b;while(h){struct ListNode*n=h->next;h->next=0;if(h->val<x){p->next=h;p=h;}else{q->next=h;q=h;}h=n;}p->next=b.next;return a.next;}

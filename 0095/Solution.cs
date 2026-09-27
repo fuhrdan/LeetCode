@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<TreeNode> F(int l,int r){if(l>r)return new List<TreeNode>{null};var o=new List<TreeNode>();for(int x=l;x<=r;x++)foreach(var a in F(l,x-1))foreach(var b in F(x+1,r))o.Add(new TreeNode(x,a,b));return o;}public IList<TreeNode> GenerateTrees(int n)=>n==0?new List<TreeNode>():F(1,n);}

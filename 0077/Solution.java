@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<List<Integer>>o=new ArrayList<>();void f(int n,int k,int st,List<Integer>v){if(v.size()==k){o.add(new ArrayList<>(v));return;}for(int x=st;x<=n-(k-v.size())+1;x++){v.add(x);f(n,k,x+1,v);v.remove(v.size()-1);}}public List<List<Integer>> combine(int n,int k){f(n,k,1,new ArrayList<>());return o;}}

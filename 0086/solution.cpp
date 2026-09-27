@@ -1,0 +1,1 @@
+class Solution{public:ListNode* partition(ListNode*h,int x){ListNode a,b,*p=&a,*q=&b;while(h){auto n=h->next;h->next=nullptr;if(h->val<x){p->next=h;p=h;}else{q->next=h;q=h;}h=n;}p->next=b.next;return a.next;}};

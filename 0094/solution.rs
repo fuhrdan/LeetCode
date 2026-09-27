@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn inorder_traversal(root:Option<Rc<RefCell<TreeNode>>>)->Vec<i32>{fn f(n:&Option<Rc<RefCell<TreeNode>>>,o:&mut Vec<i32>){if let Some(x)=n{let b=x.borrow();f(&b.left,o);o.push(b.val);f(&b.right,o);}}let mut o=vec![];f(&root,&mut o);o}}

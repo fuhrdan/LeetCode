@@ -1,0 +1,1 @@
+public class Solution{public bool IsInterleave(string a,string b,string c){if(c.Length!=a.Length+b.Length)return false;bool[]d=new bool[b.Length+1];d[0]=true;for(int j=1;j<=b.Length;j++)d[j]=d[j-1]&&b[j-1]==c[j-1];for(int i=1;i<=a.Length;i++){d[0]=d[0]&&a[i-1]==c[i-1];for(int j=1;j<=b.Length;j++)d[j]=d[j]&&a[i-1]==c[i+j-1]||d[j-1]&&b[j-1]==c[i+j-1];}return d[b.Length];}}

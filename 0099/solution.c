@@ -1,0 +1,1 @@
+static struct TreeNode *first,*second,*prev;static void walk(struct TreeNode*n){if(!n)return;walk(n->left);if(prev&&prev->val>n->val){if(!first)first=prev;second=n;}prev=n;walk(n->right);}void recoverTree(struct TreeNode*root){first=second=prev=0;walk(root);if(first&&second){int t=first->val;first->val=second->val;second->val=t;}}

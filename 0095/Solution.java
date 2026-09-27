@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<TreeNode> f(int l,int r){if(l>r)return new ArrayList<>(Arrays.asList((TreeNode)null));List<TreeNode>o=new ArrayList<>();for(int x=l;x<=r;x++)for(TreeNode a:f(l,x-1))for(TreeNode b:f(x+1,r)){TreeNode n=new TreeNode(x);n.left=a;n.right=b;o.add(n);}return o;}public List<TreeNode> generateTrees(int n){return n==0?new ArrayList<>():f(1,n);}}

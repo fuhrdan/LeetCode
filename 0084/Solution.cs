@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{public int LargestRectangleArea(int[]h){var st=new Stack<int>();int b=0;for(int i=0;i<=h.Length;i++){int cur=i==h.Length?0:h[i];while(st.Count>0&&h[st.Peek()]>cur){int ht=h[st.Pop()],l=st.Count==0?-1:st.Peek();b=Math.Max(b,ht*(i-l-1));}st.Push(i);}return b;}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn delete_duplicates(mut head:Option<Box<ListNode>>)->Option<Box<ListNode>>{let mut p=&mut head;while let Some(n)=p{while let Some(next)=n.next.as_mut(){if next.val==n.val{n.next=next.next.take();}else{break}}p=&mut n.next;}head}}

@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public IList<int> InorderTraversal(TreeNode r){var o=new List<int>();var st=new Stack<TreeNode>();while(r!=null||st.Count>0){while(r!=null){st.Push(r);r=r.left;}r=st.Pop();o.Add(r.val);r=r.right;}return o;}}

@@ -1,0 +1,1 @@
+public class Solution{public ListNode ReverseBetween(ListNode h,int l,int r){var d=new ListNode(0,h);var p=d;for(int i=1;i<l;i++)p=p.next;var cur=p.next;for(int i=0;i<r-l;i++){var n=cur.next;cur.next=n.next;n.next=p.next;p.next=n;}return d.next;}}

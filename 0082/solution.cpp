@@ -1,0 +1,1 @@
+class Solution{public:ListNode* deleteDuplicates(ListNode*h){ListNode d(0,h),*p=&d;while(p->next){auto q=p->next;if(q->next&&q->val==q->next->val){int v=q->val;while(q&&q->val==v)q=q->next;p->next=q;}else p=p->next;}return d.next;}};

@@ -1,0 +1,1 @@
+class Solution{TreeNode a,b,p;void f(TreeNode n){if(n==null)return;f(n.left);if(p!=null&&p.val>n.val){if(a==null)a=p;b=n;}p=n;f(n.right);}public void recoverTree(TreeNode r){f(r);int t=a.val;a.val=b.val;b.val=t;}}

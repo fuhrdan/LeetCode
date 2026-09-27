@@ -1,0 +1,1 @@
+impl Solution{pub fn partition(head:Option<Box<ListNode>>,x:i32)->Option<Box<ListNode>>{let mut a=vec![];let mut b=vec![];let mut p=head.as_ref();while let Some(n)=p{if n.val<x{a.push(n.val)}else{b.push(n.val)}p=n.next.as_ref();}a.extend(b);let mut h=None;for &v in a.iter().rev(){let mut n=Box::new(ListNode::new(v));n.next=h;h=Some(n);}h}}

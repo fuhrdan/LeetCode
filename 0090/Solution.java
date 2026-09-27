@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<List<Integer>>o=new ArrayList<>();void f(int[]a,int st,List<Integer>v){o.add(new ArrayList<>(v));for(int i=st;i<a.length;i++){if(i>st&&a[i]==a[i-1])continue;v.add(a[i]);f(a,i+1,v);v.remove(v.size()-1);}}public List<List<Integer>> subsetsWithDup(int[]a){Arrays.sort(a);f(a,0,new ArrayList<>());return o;}}

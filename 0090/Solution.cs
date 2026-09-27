@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{List<IList<int>>o=new();void F(int[]a,int st,List<int>v){o.Add(new List<int>(v));for(int i=st;i<a.Length;i++){if(i>st&&a[i]==a[i-1])continue;v.Add(a[i]);F(a,i+1,v);v.RemoveAt(v.Count-1);}}public IList<IList<int>> SubsetsWithDup(int[]a){Array.Sort(a);F(a,0,new List<int>());return o;}}

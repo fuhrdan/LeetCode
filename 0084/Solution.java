@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int largestRectangleArea(int[]h){Deque<Integer>st=new ArrayDeque<>();int b=0;for(int i=0;i<=h.length;i++){int cur=i==h.length?0:h[i];while(!st.isEmpty()&&h[st.peek()]>cur){int ht=h[st.pop()],l=st.isEmpty()?-1:st.peek();b=Math.max(b,ht*(i-l-1));}st.push(i);}return b;}}

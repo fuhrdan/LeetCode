@@ -1,0 +1,1 @@
+impl Solution{pub fn combine(n:i32,k:i32)->Vec<Vec<i32>>{fn f(n:i32,k:usize,st:i32,v:&mut Vec<i32>,o:&mut Vec<Vec<i32>>){if v.len()==k{o.push(v.clone());return}for x in st..=n-(k-v.len())as i32+1{v.push(x);f(n,k,x+1,v,o);v.pop();}}let mut o=vec![];f(n,k as usize,1,&mut vec![],&mut o);o}}

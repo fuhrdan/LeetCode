@@ -1,0 +1,1 @@
+impl Solution{pub fn subsets_with_dup(mut a:Vec<i32>)->Vec<Vec<i32>>{a.sort_unstable();fn f(a:&[i32],st:usize,v:&mut Vec<i32>,o:&mut Vec<Vec<i32>>){o.push(v.clone());for i in st..a.len(){if i>st&&a[i]==a[i-1]{continue}v.push(a[i]);f(a,i+1,v,o);v.pop();}}let mut o=vec![];f(&a,0,&mut vec![],&mut o);o}}

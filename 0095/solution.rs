@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn generate_trees(n:i32)->Vec<Option<Rc<RefCell<TreeNode>>>>{fn f(l:i32,r:i32)->Vec<Option<Rc<RefCell<TreeNode>>>>{if l>r{return vec![None]}let mut o=vec![];for x in l..=r{for a in f(l,x-1){for b in f(x+1,r){o.push(Some(Rc::new(RefCell::new(TreeNode{val:x,left:a.clone(),right:b}))));}}}o}if n==0{vec![]}else{f(1,n)}}}

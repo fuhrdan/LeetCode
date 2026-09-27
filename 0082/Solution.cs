@@ -1,0 +1,1 @@
+public class Solution{public ListNode DeleteDuplicates(ListNode h){var d=new ListNode(0,h);var p=d;while(p.next!=null){var q=p.next;if(q.next!=null&&q.val==q.next.val){int v=q.val;while(q!=null&&q.val==v)q=q.next;p.next=q;}else p=p.next;}return d.next;}}

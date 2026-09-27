@@ -1,0 +1,1 @@
+public class Solution{public ListNode Partition(ListNode h,int x){var a=new ListNode();var b=new ListNode();var p=a;var q=b;while(h!=null){var n=h.next;h.next=null;if(h.val<x){p.next=h;p=h;}else{q.next=h;q=h;}h=n;}p.next=b.next;return a.next;}}

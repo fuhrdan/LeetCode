@@ -1,0 +1,1 @@
+class Solution{TreeNode *a=nullptr,*b=nullptr,*p=nullptr;void f(TreeNode*n){if(!n)return;f(n->left);if(p&&p->val>n->val){if(!a)a=p;b=n;}p=n;f(n->right);}public:void recoverTree(TreeNode*r){f(r);swap(a->val,b->val);}};

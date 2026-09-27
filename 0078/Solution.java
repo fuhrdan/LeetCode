@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<List<Integer>> subsets(int[]a){List<List<Integer>>o=new ArrayList<>();o.add(new ArrayList<>());for(int x:a){int n=o.size();for(int i=0;i<n;i++){List<Integer>v=new ArrayList<>(o.get(i));v.add(x);o.add(v);}}return o;}}

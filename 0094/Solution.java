@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<Integer> inorderTraversal(TreeNode r){List<Integer>o=new ArrayList<>();Deque<TreeNode>st=new ArrayDeque<>();while(r!=null||!st.isEmpty()){while(r!=null){st.push(r);r=r.left;}r=st.pop();o.add(r.val);r=r.right;}return o;}}

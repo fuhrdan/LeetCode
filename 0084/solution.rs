@@ -1,0 +1,1 @@
+impl Solution{pub fn largest_rectangle_area(h:Vec<i32>)->i32{let mut st:Vec<usize>=vec![];let mut b=0;for i in 0..=h.len(){let cur=if i==h.len(){0}else{h[i]};while let Some(&j)=st.last(){if h[j]<=cur{break}let ht=h[st.pop().unwrap()];let l=st.last().map(|&x|x as i32).unwrap_or(-1);b=b.max(ht*(i as i32-l-1));}st.push(i);}b}}

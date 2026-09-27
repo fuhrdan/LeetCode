@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static void f(int*a,int n,int i,int*b,int len,int***o,int**cols,int*c,int*cap){if(i==n){if(*c==*cap){*cap*=2;*o=realloc(*o,*cap*sizeof(int*));*cols=realloc(*cols,*cap*sizeof(int));}(*o)[*c]=malloc(len*sizeof(int));for(int j=0;j<len;j++)(*o)[*c][j]=b[j];(*cols)[(*c)++]=len;return;}f(a,n,i+1,b,len,o,cols,c,cap);b[len]=a[i];f(a,n,i+1,b,len+1,o,cols,c,cap);}int** subsets(int*a,int n,int*rs,int**rc){int cap=16,c=0,**o=malloc(cap*sizeof(int*)),*cols=malloc(cap*sizeof(int)),*b=malloc(n*sizeof(int));f(a,n,0,b,0,&o,&cols,&c,&cap);free(b);*rs=c;*rc=cols;return o;}

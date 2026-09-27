@@ -1,0 +1,1 @@
+impl Solution{pub fn num_decodings(s:String)->i32{let b=s.as_bytes();if b.is_empty()||b[0]==b'0'{return 0}let(mut a,mut p)=(1,1);for i in 1..b.len(){let mut c=if b[i]!=b'0'{p}else{0};let x=(b[i-1]-b'0')as i32*10+(b[i]-b'0')as i32;if (10..=26).contains(&x){c+=a}a=p;p=c;}p}}
