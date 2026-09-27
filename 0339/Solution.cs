@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{int F(IList<NestedInteger>a,int d){int s=0;foreach(var x in a)s+=x.IsInteger()?x.GetInteger()*d:F(x.GetList(),d+1);return s;}public int DepthSum(IList<NestedInteger>a)=>F(a,1);}

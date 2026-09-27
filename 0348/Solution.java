@@ -1,0 +1,1 @@
+class TicTacToe{int n,d1,d2;int[]r,c;public TicTacToe(int n){this.n=n;r=new int[n];c=new int[n];}public int move(int row,int col,int player){int v=player==1?1:-1;r[row]+=v;c[col]+=v;if(row==col)d1+=v;if(row+col==n-1)d2+=v;if(Math.abs(r[row])==n||Math.abs(c[col])==n||Math.abs(d1)==n||Math.abs(d2)==n)return player;return 0;}}

@@ -1,0 +1,1 @@
+typedef struct{int rob,skip;}R;static R f(struct TreeNode*n){if(!n)return(R){0,0};R l=f(n->left),r=f(n->right);R x;x.rob=n->val+l.skip+r.skip;x.skip=(l.rob>l.skip?l.rob:l.skip)+(r.rob>r.skip?r.rob:r.skip);return x;}int rob(struct TreeNode*r){R x=f(r);return x.rob>x.skip?x.rob:x.skip;}

@@ -1,0 +1,1 @@
+class Solution{public int lengthOfLongestSubstringKDistinct(String s,int k){if(k==0)return 0;int[]c=new int[256];int d=0,l=0,b=0;for(int r=0;r<s.length();r++){char x=s.charAt(r);if(c[x]++==0)d++;while(d>k){char y=s.charAt(l++);if(--c[y]==0)d--;}b=Math.max(b,r-l+1);}return b;}}

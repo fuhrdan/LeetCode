@@ -1,0 +1,2 @@
+#include <limits.h>
+typedef struct{int ok,size,min,max;}R;static int best;static R f(struct TreeNode*n){if(!n)return(R){1,0,INT_MAX,INT_MIN};R l=f(n->left),r=f(n->right);if(l.ok&&r.ok&&n->val>l.max&&n->val<r.min){R x={1,l.size+r.size+1,l.size?l.min:n->val,r.size?r.max:n->val};if(x.size>best)best=x.size;return x;}return(R){0,0,0,0};}int largestBSTSubtree(struct TreeNode*r){best=0;f(r);return best;}

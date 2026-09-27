@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn rob(root:Option<Rc<RefCell<TreeNode>>>)->i32{fn f(n:&Option<Rc<RefCell<TreeNode>>>)->(i32,i32){if let Some(x)=n{let b=x.borrow();let l=f(&b.left);let r=f(&b.right);(b.val+l.1+r.1,l.0.max(l.1)+r.0.max(r.1))}else{(0,0)}}let x=f(&root);x.0.max(x.1)}}

@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int[] intersect(int[]a,int[]b){Map<Integer,Integer>m=new HashMap<>();for(int x:a)m.merge(x,1,Integer::sum);List<Integer>o=new ArrayList<>();for(int x:b)if(m.getOrDefault(x,0)>0){o.add(x);m.put(x,m.get(x)-1);}return o.stream().mapToInt(Integer::intValue).toArray();}}

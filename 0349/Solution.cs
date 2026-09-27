@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public int[] Intersection(int[]a,int[]b){var s=new HashSet<int>(a);var o=new HashSet<int>();foreach(int x in b)if(s.Contains(x))o.Add(x);int[]r=new int[o.Count];o.CopyTo(r);return r;}}

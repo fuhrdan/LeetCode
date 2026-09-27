@@ -1,0 +1,2 @@
+#include <stdlib.h>
+typedef struct{int* q,size,count,head;long long sum;}MovingAverage;MovingAverage* movingAverageCreate(int size){MovingAverage*x=malloc(sizeof(*x));x->q=malloc(size*sizeof(int));x->size=size;x->count=x->head=0;x->sum=0;return x;}double movingAverageNext(MovingAverage*x,int val){if(x->count<x->size){x->q[(x->head+x->count)%x->size]=val;x->count++;x->sum+=val;}else{x->sum-=x->q[x->head];x->q[x->head]=val;x->sum+=val;x->head=(x->head+1)%x->size;}return(double)x->sum/x->count;}void movingAverageFree(MovingAverage*x){free(x->q);free(x);}

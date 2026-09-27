@@ -1,0 +1,2 @@
+#include <stdlib.h>
+typedef struct{int n,*r,*c,d1,d2;}TicTacToe;TicTacToe* ticTacToeCreate(int n){TicTacToe*x=calloc(1,sizeof(*x));x->n=n;x->r=calloc(n,sizeof(int));x->c=calloc(n,sizeof(int));return x;}int ticTacToeMove(TicTacToe*x,int row,int col,int player){int v=player==1?1:-1;x->r[row]+=v;x->c[col]+=v;if(row==col)x->d1+=v;if(row+col==x->n-1)x->d2+=v;if(abs(x->r[row])==x->n||abs(x->c[col])==x->n||abs(x->d1)==x->n||abs(x->d2)==x->n)return player;return 0;}void ticTacToeFree(TicTacToe*x){free(x->r);free(x->c);free(x);}

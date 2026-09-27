@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class MovingAverage{Queue<int>q=new();int cap;long sum;public MovingAverage(int size){cap=size;}public double Next(int val){q.Enqueue(val);sum+=val;if(q.Count>cap)sum-=q.Dequeue();return(double)sum/q.Count;}}

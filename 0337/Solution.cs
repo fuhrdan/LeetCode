@@ -1,0 +1,1 @@
+using System;public class Solution{int[]F(TreeNode n){if(n==null)return new[]{0,0};var l=F(n.left);var r=F(n.right);return new[]{n.val+l[1]+r[1],Math.Max(l[0],l[1])+Math.Max(r[0],r[1])};}public int Rob(TreeNode r){var x=F(r);return Math.Max(x[0],x[1]);}}

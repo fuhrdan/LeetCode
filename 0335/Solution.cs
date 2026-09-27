@@ -1,0 +1,1 @@
+public class Solution{public bool IsSelfCrossing(int[]a){for(int i=3;i<a.Length;i++){if(a[i]>=a[i-2]&&a[i-1]<=a[i-3])return true;if(i>=4&&a[i-1]==a[i-3]&&a[i]+a[i-4]>=a[i-2])return true;if(i>=5&&a[i-2]>=a[i-4]&&a[i]+a[i-4]>=a[i-2]&&a[i-1]<=a[i-3]&&a[i-1]+a[i-5]>=a[i-3])return true;}return false;}}

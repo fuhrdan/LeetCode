@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int[] intersection(int[]a,int[]b){Set<Integer>s=new HashSet<>(),o=new HashSet<>();for(int x:a)s.add(x);for(int x:b)if(s.contains(x))o.add(x);return o.stream().mapToInt(Integer::intValue).toArray();}}

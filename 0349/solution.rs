@@ -1,0 +1,1 @@
+use std::collections::HashSet;impl Solution{pub fn intersection(a:Vec<i32>,b:Vec<i32>)->Vec<i32>{let s:HashSet<_>=a.into_iter().collect();b.into_iter().filter(|x|s.contains(x)).collect::<HashSet<_>>().into_iter().collect()}}

@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static int cmp(const void*a,const void*b){const int*x=a,*y=b;return y[1]-x[1];}int* topKFrequent(int*a,int n,int k,int*rs){int (*p)[2]=malloc(n*sizeof *p);int c=0;for(int i=0;i<n;i++){int j;for(j=0;j<c;j++)if(p[j][0]==a[i]){p[j][1]++;break;}if(j==c){p[c][0]=a[i];p[c][1]=1;c++;}}qsort(p,c,sizeof *p,cmp);int*r=malloc(k*sizeof(int));for(int i=0;i<k;i++)r[i]=p[i][0];free(p);*rs=k;return r;}

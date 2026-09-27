@@ -1,0 +1,1 @@
+public class Solution{bool V(char c)=>"aeiouAEIOU".IndexOf(c)>=0;public string ReverseVowels(string s){char[]a=s.ToCharArray();int l=0,r=a.Length-1;while(l<r){while(l<r&&!V(a[l]))l++;while(l<r&&!V(a[r]))r--; (a[l],a[r])=(a[r],a[l]);l++;r--;}return new string(a);}}

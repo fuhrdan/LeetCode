@@ -1,0 +1,1 @@
+import java.util.*;class MovingAverage{Queue<Integer>q=new ArrayDeque<>();int cap;long sum;public MovingAverage(int size){cap=size;}public double next(int val){q.add(val);sum+=val;if(q.size()>cap)sum-=q.remove();return(double)sum/q.size();}}

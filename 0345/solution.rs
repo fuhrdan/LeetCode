@@ -1,0 +1,1 @@
+impl Solution{pub fn reverse_vowels(s:String)->String{let mut b=s.into_bytes();fn v(c:u8)->bool{b"aeiouAEIOU".contains(&c)}if b.is_empty(){return String::new()}let(mut l,mut r)=(0,b.len()-1);while l<r{while l<r&&!v(b[l]){l+=1}while l<r&&!v(b[r]){r-=1}b.swap(l,r);l+=1;if r>0{r-=1}}String::from_utf8(b).unwrap()}}

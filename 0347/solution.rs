@@ -1,0 +1,1 @@
+use std::collections::HashMap;impl Solution{pub fn top_k_frequent(a:Vec<i32>,k:i32)->Vec<i32>{let mut m=HashMap::new();for x in &a{*m.entry(*x).or_insert(0)+=1}let mut b=vec![vec![];a.len()+1];for(x,c)in m{b[c].push(x)}let mut o=vec![];for i in (0..b.len()).rev(){for &x in &b[i]{o.push(x);if o.len()==k as usize{return o}}}o}}

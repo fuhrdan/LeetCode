@@ -1,0 +1,1 @@
+public class Solution{public ListNode OddEvenList(ListNode h){if(h==null||h.next==null)return h;var odd=h;var even=h.next;var eh=even;while(even!=null&&even.next!=null){odd.next=even.next;odd=odd.next;even.next=odd.next;even=even.next;}odd.next=eh;return h;}}

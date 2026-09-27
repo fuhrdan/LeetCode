@@ -1,0 +1,1 @@
+class Solution{public:ListNode* oddEvenList(ListNode*h){if(!h||!h->next)return h;auto odd=h,even=h->next,eh=even;while(even&&even->next){odd->next=even->next;odd=odd->next;even->next=odd->next;even=even->next;}odd->next=eh;return h;}};

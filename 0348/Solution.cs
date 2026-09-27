@@ -1,0 +1,1 @@
+using System;public class TicTacToe{int n,d1,d2;int[]r,c;public TicTacToe(int n){this.n=n;r=new int[n];c=new int[n];}public int Move(int row,int col,int player){int v=player==1?1:-1;r[row]+=v;c[col]+=v;if(row==col)d1+=v;if(row+col==n-1)d2+=v;if(Math.Abs(r[row])==n||Math.Abs(c[col])==n||Math.Abs(d1)==n||Math.Abs(d2)==n)return player;return 0;}}

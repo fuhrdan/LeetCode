@@ -1,0 +1,1 @@
+using System;public class Solution{public int LengthOfLongestSubstringKDistinct(string s,int k){if(k==0)return 0;int[]c=new int[256];int d=0,l=0,b=0;for(int r=0;r<s.Length;r++){char x=s[r];if(c[x]++==0)d++;while(d>k){char y=s[l++];if(--c[y]==0)d--;}b=Math.Max(b,r-l+1);}return b;}}

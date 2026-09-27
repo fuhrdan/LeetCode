@@ -1,0 +1,1 @@
+use std::collections::HashMap;impl Solution{pub fn intersect(a:Vec<i32>,b:Vec<i32>)->Vec<i32>{let mut m=HashMap::new();for x in a{*m.entry(x).or_insert(0)+=1}let mut o=vec![];for x in b{if let Some(c)=m.get_mut(&x){if *c>0{o.push(x);*c-=1}}}o}}

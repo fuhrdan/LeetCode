@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public int[] Intersect(int[]a,int[]b){var m=new Dictionary<int,int>();foreach(int x in a)m[x]=m.GetValueOrDefault(x)+1;var o=new List<int>();foreach(int x in b)if(m.GetValueOrDefault(x)>0){o.Add(x);m[x]--;}return o.ToArray();}}

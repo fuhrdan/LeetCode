@@ -1,0 +1,1 @@
+use std::collections::VecDeque;struct MovingAverage{q:VecDeque<i32>,cap:usize,sum:i64}impl MovingAverage{fn new(size:i32)->Self{Self{q:VecDeque::new(),cap:size as usize,sum:0}}fn next(&mut self,val:i32)->f64{self.q.push_back(val);self.sum+=val as i64;if self.q.len()>self.cap{self.sum-=self.q.pop_front().unwrap()as i64;}self.sum as f64/self.q.len()as f64}}

@@ -1,0 +1,1 @@
+int lengthOfLongestSubstringKDistinct(char*s,int k){if(k==0)return 0;int c[256]={0},d=0,l=0,b=0;for(int r=0;s[r];r++){unsigned char x=s[r];if(c[x]++==0)d++;while(d>k){unsigned char y=s[l++];if(--c[y]==0)d--;}if(r-l+1>b)b=r-l+1;}return b;}
