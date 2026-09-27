@@ -1,0 +1,1 @@
+public class Solution{public int[] ProductExceptSelf(int[]a){int[]r=new int[a.Length];int p=1;for(int i=0;i<a.Length;i++){r[i]=p;p*=a[i];}p=1;for(int i=a.Length-1;i>=0;i--){r[i]*=p;p*=a[i];}return r;}}

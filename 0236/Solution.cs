@@ -1,0 +1,1 @@
+public class Solution{public TreeNode LowestCommonAncestor(TreeNode r,TreeNode p,TreeNode q){if(r==null||r==p||r==q)return r;var l=LowestCommonAncestor(r.left,p,q);var x=LowestCommonAncestor(r.right,p,q);return l!=null&&x!=null?r:l??x;}}

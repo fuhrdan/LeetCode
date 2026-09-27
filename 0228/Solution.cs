@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public IList<string> SummaryRanges(int[]a){var o=new List<string>();for(int i=0;i<a.Length;){int j=i;while(j+1<a.Length&&(long)a[j+1]==(long)a[j]+1)j++;o.Add(i==j?$"{a[i]}":$"{a[i]}->{a[j]}");i=j+1;}return o;}}

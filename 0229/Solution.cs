@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public IList<int> MajorityElement(int[]a){int x=0,y=1,cx=0,cy=0;foreach(int v in a){if(v==x)cx++;else if(v==y)cy++;else if(cx==0){x=v;cx=1;}else if(cy==0){y=v;cy=1;}else{cx--;cy--;}}cx=cy=0;foreach(int v in a){if(v==x)cx++;else if(v==y)cy++;}var o=new List<int>();if(cx>a.Length/3)o.Add(x);if(cy>a.Length/3)o.Add(y);return o;}}

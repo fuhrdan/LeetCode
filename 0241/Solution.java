@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<Integer> diffWaysToCompute(String s){List<Integer>o=new ArrayList<>();for(int i=0;i<s.length();i++){char c=s.charAt(i);if(c=='+'||c=='-'||c=='*')for(int x:diffWaysToCompute(s.substring(0,i)))for(int y:diffWaysToCompute(s.substring(i+1)))o.add(c=='+'?x+y:c=='-'?x-y:x*y);}if(o.isEmpty())o.add(Integer.parseInt(s));return o;}}

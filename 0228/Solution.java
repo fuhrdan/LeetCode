@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<String> summaryRanges(int[]a){List<String>o=new ArrayList<>();for(int i=0;i<a.length;){int j=i;while(j+1<a.length&&(long)a[j+1]==(long)a[j]+1)j++;o.add(i==j?""+a[i]:a[i]+"->"+a[j]);i=j+1;}return o;}}

@@ -1,0 +1,1 @@
+class Solution{public boolean isStrobogrammatic(String s){int l=0,r=s.length()-1;while(l<=r){char a=s.charAt(l),b=s.charAt(r),m=a=='0'?'0':a=='1'?'1':a=='6'?'9':a=='8'?'8':a=='9'?'6':'x';if(m!=b)return false;l++;r--;}return true;}}

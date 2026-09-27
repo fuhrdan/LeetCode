@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public IList<int> DiffWaysToCompute(string s){var o=new List<int>();for(int i=0;i<s.Length;i++){char c=s[i];if(c=='+'||c=='-'||c=='*')foreach(int x in DiffWaysToCompute(s.Substring(0,i)))foreach(int y in DiffWaysToCompute(s.Substring(i+1)))o.Add(c=='+'?x+y:c=='-'?x-y:x*y);}if(o.Count==0)o.Add(int.Parse(s));return o;}}

@@ -1,0 +1,1 @@
+public class Solution{public bool IsPalindrome(ListNode h){if(h==null)return true;var s=h;var f=h;while(f!=null&&f.next!=null){s=s.next;f=f.next.next;}ListNode p=null;while(s!=null){var n=s.next;s.next=p;p=s;s=n;}while(p!=null){if(h.val!=p.val)return false;h=h.next;p=p.next;}return true;}}

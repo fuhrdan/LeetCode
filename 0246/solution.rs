@@ -1,0 +1,1 @@
+impl Solution{pub fn is_strobogrammatic(s:String)->bool{let b=s.as_bytes();if b.is_empty(){return true}let(mut l,mut r)=(0usize,b.len()-1);while l<=r{let m=match b[l]{b'0'=>b'0',b'1'=>b'1',b'6'=>b'9',b'8'=>b'8',b'9'=>b'6',_=>return false};if m!=b[r]{return false}if r==0{break}l+=1;r-=1;}true}}

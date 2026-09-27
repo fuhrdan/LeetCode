@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn invert_tree(root:Option<Rc<RefCell<TreeNode>>>)->Option<Rc<RefCell<TreeNode>>>{if let Some(r)=root.clone(){let(mut l,mut rr)={let mut b=r.borrow_mut();(b.left.take(),b.right.take())};l=Self::invert_tree(l);rr=Self::invert_tree(rr);let mut b=r.borrow_mut();b.left=rr;b.right=l;}root}}

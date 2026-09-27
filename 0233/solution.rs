@@ -1,0 +1,1 @@
+impl Solution{pub fn count_digit_one(n:i32)->i32{let n=n as i64;let(mut r,mut f)=(0,1);while f<=n{let lo=n%f;let c=n/f%10;let hi=n/(f*10);r+=if c==0{hi*f}else if c==1{hi*f+lo+1}else{(hi+1)*f};if f>n/10{break}f*=10;}r as i32}}

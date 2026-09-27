@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public int KthSmallest(TreeNode r,int k){var s=new Stack<TreeNode>();while(r!=null||s.Count>0){while(r!=null){s.Push(r);r=r.left;}r=s.Pop();if(--k==0)return r.val;r=r.right;}return-1;}}

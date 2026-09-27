@@ -1,0 +1,1 @@
+use std::collections::VecDeque;impl Solution{pub fn max_sliding_window(a:Vec<i32>,k:i32)->Vec<i32>{let k=k as usize;let mut q=VecDeque::new();let mut o=vec![];for i in 0..a.len(){while q.front().map(|&j|j+k<=i).unwrap_or(false){q.pop_front();}while q.back().map(|&j|a[j]<=a[i]).unwrap_or(false){q.pop_back();}q.push_back(i);if i+1>=k{o.push(a[*q.front().unwrap()]);}}o}}

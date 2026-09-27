@@ -1,0 +1,1 @@
+impl Solution{pub fn shortest_word_distance(w:Vec<String>,a:String,b:String)->i32{let mut r=i32::MAX;if a==b{let mut p=-1;for(i,s)in w.iter().enumerate(){if s==&a{if p>=0{r=r.min(i as i32-p)}p=i as i32}}return r}let(mut x,mut y)=(-1,-1);for(i,s)in w.iter().enumerate(){if s==&a{x=i as i32}if s==&b{y=i as i32}if x>=0&&y>=0{r=r.min((x-y).abs())}}r}}

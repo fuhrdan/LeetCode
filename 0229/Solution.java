@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public List<Integer> majorityElement(int[]a){int x=0,y=1,cx=0,cy=0;for(int v:a){if(v==x)cx++;else if(v==y)cy++;else if(cx==0){x=v;cx=1;}else if(cy==0){y=v;cy=1;}else{cx--;cy--;}}cx=cy=0;for(int v:a){if(v==x)cx++;else if(v==y)cy++;}List<Integer>o=new ArrayList<>();if(cx>a.length/3)o.add(x);if(cy>a.length/3)o.add(y);return o;}}

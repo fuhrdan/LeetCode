@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public int[] MaxSlidingWindow(int[]a,int k){var q=new LinkedList<int>();int[]o=new int[a.Length-k+1];int c=0;for(int i=0;i<a.Length;i++){while(q.Count>0&&q.First.Value<=i-k)q.RemoveFirst();while(q.Count>0&&a[q.Last.Value]<=a[i])q.RemoveLast();q.AddLast(i);if(i>=k-1)o[c++]=a[q.First.Value];}return o;}}

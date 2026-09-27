@@ -1,0 +1,1 @@
+class Solution{public int shortestDistance(String[]w,String a,String b){int x=-1,y=-1,r=Integer.MAX_VALUE;for(int i=0;i<w.length;i++){if(w[i].equals(a))x=i;if(w[i].equals(b))y=i;if(x>=0&&y>=0)r=Math.min(r,Math.abs(x-y));}return r;}}

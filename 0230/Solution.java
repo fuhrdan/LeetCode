@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int kthSmallest(TreeNode r,int k){Deque<TreeNode>s=new ArrayDeque<>();while(r!=null||!s.isEmpty()){while(r!=null){s.push(r);r=r.left;}r=s.pop();if(--k==0)return r.val;r=r.right;}return-1;}}

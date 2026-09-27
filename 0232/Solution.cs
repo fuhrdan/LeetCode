@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class MyQueue{Stack<int>a=new(),b=new();void M(){if(b.Count==0)while(a.Count>0)b.Push(a.Pop());}public MyQueue(){}public void Push(int x)=>a.Push(x);public int Pop(){M();return b.Pop();}public int Peek(){M();return b.Peek();}public bool Empty()=>a.Count==0&&b.Count==0;}

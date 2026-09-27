@@ -1,0 +1,1 @@
+impl Solution{pub fn shortest_distance(w:Vec<String>,a:String,b:String)->i32{let(mut x,mut y,mut r)=(-1,-1,i32::MAX);for(i,s)in w.iter().enumerate(){if s==&a{x=i as i32}if s==&b{y=i as i32}if x>=0&&y>=0{r=r.min((x-y).abs())}}r}}

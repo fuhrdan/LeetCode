@@ -1,0 +1,1 @@
+import java.util.*;class Solution{String k(String s){StringBuilder r=new StringBuilder();for(char c:s.toCharArray())r.append((char)('a'+(c-s.charAt(0)+26)%26));return r.toString();}public List<List<String>> groupStrings(String[]s){Map<String,List<String>>m=new HashMap<>();for(String x:s)m.computeIfAbsent(k(x),z->new ArrayList<>()).add(x);return new ArrayList<>(m.values());}}

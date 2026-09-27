@@ -1,0 +1,1 @@
+use std::collections::HashMap;impl Solution{pub fn group_strings(s:Vec<String>)->Vec<Vec<String>>{let mut m:HashMap<Vec<u8>,Vec<String>>=HashMap::new();for x in s{let b=x.as_bytes();let k:Vec<u8>=b.iter().map(|&c|b'a'+(c+26-b[0])%26).collect();m.entry(k).or_default().push(x);}m.into_values().collect()}}

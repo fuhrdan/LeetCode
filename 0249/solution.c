@@ -1,0 +1,3 @@
+#include <stdlib.h>
+#include <string.h>
+static char*key(char*s){int n=strlen(s);char*k=malloc(n+1);for(int i=0;i<n;i++)k[i]='a'+(s[i]-s[0]+26)%26;k[n]=0;return k;}char*** groupStrings(char**s,int n,int*rs,int**rc){char**keys=malloc(n*sizeof(char*));int*g=malloc(n*sizeof(int)),groups=0;for(int i=0;i<n;i++){keys[i]=key(s[i]);int j;for(j=0;j<i;j++)if(!strcmp(keys[i],keys[j])){g[i]=g[j];break;}if(j==i)g[i]=groups++;}int*cnt=calloc(groups,sizeof(int));for(int i=0;i<n;i++)cnt[g[i]]++;char***o=malloc(groups*sizeof(char**));int*pos=calloc(groups,sizeof(int));for(int i=0;i<groups;i++)o[i]=malloc(cnt[i]*sizeof(char*));for(int i=0;i<n;i++)o[g[i]][pos[g[i]]++]=s[i];for(int i=0;i<n;i++)free(keys[i]);free(keys);free(g);free(pos);*rs=groups;*rc=cnt;return o;}

@@ -1,0 +1,1 @@
+class Solution{int c;boolean f(TreeNode n){if(n==null)return true;boolean l=f(n.left),r=f(n.right);if(!l||!r)return false;if(n.left!=null&&n.left.val!=n.val)return false;if(n.right!=null&&n.right.val!=n.val)return false;c++;return true;}public int countUnivalSubtrees(TreeNode r){f(r);return c;}}

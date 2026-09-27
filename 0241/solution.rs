@@ -1,0 +1,1 @@
+impl Solution{pub fn diff_ways_to_compute(s:String)->Vec<i32>{let mut o=vec![];for(i,c)in s.char_indices(){if c=='+'||c=='-'||c=='*'{let a=Self::diff_ways_to_compute(s[..i].to_string());let b=Self::diff_ways_to_compute(s[i+1..].to_string());for x in &a{for y in &b{o.push(match c{'+'=>x+y,'-'=>x-y,_=>x*y});}}}}if o.is_empty(){o.push(s.parse().unwrap())}o}}

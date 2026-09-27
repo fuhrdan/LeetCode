@@ -1,0 +1,1 @@
+using System;public class Solution{public int ShortestWordDistance(string[]w,string a,string b){int r=int.MaxValue;if(a==b){int p=-1;for(int i=0;i<w.Length;i++)if(w[i]==a){if(p>=0)r=Math.Min(r,i-p);p=i;}return r;}int x=-1,y=-1;for(int i=0;i<w.Length;i++){if(w[i]==a)x=i;if(w[i]==b)y=i;if(x>=0&&y>=0)r=Math.Min(r,Math.Abs(x-y));}return r;}}

@@ -1,0 +1,1 @@
+class Solution{public int shortestWordDistance(String[]w,String a,String b){int r=Integer.MAX_VALUE;if(a.equals(b)){int p=-1;for(int i=0;i<w.length;i++)if(w[i].equals(a)){if(p>=0)r=Math.min(r,i-p);p=i;}return r;}int x=-1,y=-1;for(int i=0;i<w.length;i++){if(w[i].equals(a))x=i;if(w[i].equals(b))y=i;if(x>=0&&y>=0)r=Math.min(r,Math.abs(x-y));}return r;}}

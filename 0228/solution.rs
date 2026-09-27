@@ -1,0 +1,1 @@
+impl Solution{pub fn summary_ranges(a:Vec<i32>)->Vec<String>{let mut o=vec![];let mut i=0;while i<a.len(){let mut j=i;while j+1<a.len()&&a[j+1]as i64==a[j]as i64+1{j+=1}o.push(if i==j{a[i].to_string()}else{format!("{}->{}",a[i],a[j])});i=j+1;}o}}

@@ -1,0 +1,2 @@
+#include <string.h>
+static int C;static char LO[32],HI[32];static void f(char*b,int n,int l,int r){static char p[5][2]={{'0','0'},{'1','1'},{'6','9'},{'8','8'},{'9','6'}};if(l>r){if((n>strlen(LO)||strcmp(b,LO)>=0)&&(n<strlen(HI)||strcmp(b,HI)<=0))C++;return;}for(int i=0;i<5;i++){if(l==0&&n>1&&p[i][0]=='0')continue;if(l==r&&p[i][0]!=p[i][1])continue;b[l]=p[i][0];b[r]=p[i][1];f(b,n,l+1,r-1);}}int strobogrammaticInRange(char*low,char*high){strcpy(LO,low);strcpy(HI,high);C=0;for(int n=strlen(low);n<=strlen(high);n++){char b[32]={0};b[n]=0;f(b,n,0,n-1);}return C;}

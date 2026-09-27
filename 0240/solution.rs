@@ -1,0 +1,1 @@
+impl Solution{pub fn search_matrix(m:Vec<Vec<i32>>,t:i32)->bool{if m.is_empty(){return false}let(mut r,mut c)=(0usize,m[0].len()as i32-1);while r<m.len()&&c>=0{let v=m[r][c as usize];if v==t{return true}if v>t{c-=1}else{r+=1}}false}}

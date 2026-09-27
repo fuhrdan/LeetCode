@@ -1,0 +1,1 @@
+class Solution{public:bool isPalindrome(ListNode*h){if(!h)return true;auto s=h,*f=h;while(f&&f->next){s=s->next;f=f->next->next;}ListNode*p=nullptr;while(s){auto n=s->next;s->next=p;p=s;s=n;}while(p){if(h->val!=p->val)return false;h=h->next;p=p->next;}return true;}};

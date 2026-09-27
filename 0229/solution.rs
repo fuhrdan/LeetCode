@@ -1,0 +1,1 @@
+impl Solution{pub fn majority_element(a:Vec<i32>)->Vec<i32>{let(mut x,mut y,mut cx,mut cy)=(0,1,0,0);for &v in &a{if v==x{cx+=1}else if v==y{cy+=1}else if cx==0{x=v;cx=1}else if cy==0{y=v;cy=1}else{cx-=1;cy-=1}}cx=0;cy=0;for &v in &a{if v==x{cx+=1}else if v==y{cy+=1}}let mut o=vec![];if cx>a.len()/3{o.push(x)}if cy>a.len()/3{o.push(y)}o}}

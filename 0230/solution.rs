@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn kth_smallest(root:Option<Rc<RefCell<TreeNode>>>,mut k:i32)->i32{let mut st=vec![];let mut r=root;loop{while let Some(x)=r{r=x.borrow().left.clone();st.push(x);}let x=st.pop().unwrap();k-=1;if k==0{return x.borrow().val}r=x.borrow().right.clone();}}}

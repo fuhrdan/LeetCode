@@ -1,0 +1,1 @@
+struct TreeNode* lowestCommonAncestor(struct TreeNode*r,struct TreeNode*p,struct TreeNode*q){if(!r||r==p||r==q)return r;struct TreeNode*l=lowestCommonAncestor(r->left,p,q),*x=lowestCommonAncestor(r->right,p,q);return l&&x?r:l?l:x;}

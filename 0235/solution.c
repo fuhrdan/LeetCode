@@ -1,0 +1,1 @@
+struct TreeNode* lowestCommonAncestor(struct TreeNode*r,struct TreeNode*p,struct TreeNode*q){while(r){if(p->val<r->val&&q->val<r->val)r=r->left;else if(p->val>r->val&&q->val>r->val)r=r->right;else return r;}return 0;}

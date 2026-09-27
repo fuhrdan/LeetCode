@@ -1,0 +1,1 @@
+import java.util.*;class MyQueue{Deque<Integer>a=new ArrayDeque<>(),b=new ArrayDeque<>();void m(){if(b.isEmpty())while(!a.isEmpty())b.push(a.pop());}public MyQueue(){}public void push(int x){a.push(x);}public int pop(){m();return b.pop();}public int peek(){m();return b.peek();}public boolean empty(){return a.isEmpty()&&b.isEmpty();}}
