@@ -1,0 +1,1 @@
+impl Solution{pub fn longest_common_prefix(a:Vec<String>)->String{if a.is_empty(){return String::new()}let mut p=a[0].clone();for s in a.iter().skip(1){let n=p.bytes().zip(s.bytes()).take_while(|(x,y)|x==y).count();p.truncate(n);}p}}

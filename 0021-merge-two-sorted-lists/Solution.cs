@@ -1,0 +1,1 @@
+public class Solution{public ListNode MergeTwoLists(ListNode a,ListNode b){var d=new ListNode();var t=d;while(a!=null&&b!=null){if(a.val<=b.val){t.next=a;a=a.next;}else{t.next=b;b=b.next;}t=t.next;}t.next=a??b;return d.next;}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn reverse_k_group(head:Option<Box<ListNode>>,k:i32)->Option<Box<ListNode>>{let mut vals=vec![];let mut p=head.as_ref();while let Some(n)=p{vals.push(n.val);p=n.next.as_ref();}let k=k as usize;for chunk in vals.chunks_mut(k){if chunk.len()==k{chunk.reverse();}}let mut h=None;for &v in vals.iter().rev(){let mut n=Box::new(ListNode::new(v));n.next=h;h=Some(n);}h}}

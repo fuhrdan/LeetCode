@@ -1,0 +1,1 @@
+public class Solution{public ListNode SwapPairs(ListNode h){var d=new ListNode(0,h);var p=d;while(p.next!=null&&p.next.next!=null){var a=p.next;var b=a.next;a.next=b.next;b.next=a;p.next=b;p=a;}return d.next;}}

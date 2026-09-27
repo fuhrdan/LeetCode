@@ -1,0 +1,1 @@
+class Solution{public ListNode reverseKGroup(ListNode h,int k){ListNode d=new ListNode(0,h),gp=d;while(true){ListNode kth=gp;for(int i=0;i<k&&kth!=null;i++)kth=kth.next;if(kth==null)break;ListNode gn=kth.next,prev=gn,cur=gp.next;while(cur!=gn){ListNode n=cur.next;cur.next=prev;prev=cur;cur=n;}ListNode old=gp.next;gp.next=kth;gp=old;}return d.next;}}

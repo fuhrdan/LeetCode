@@ -1,0 +1,1 @@
+impl Solution{pub fn remove_nth_from_end(head:Option<Box<ListNode>>,n:i32)->Option<Box<ListNode>>{let mut vals=vec![];let mut p=head.as_ref();while let Some(x)=p{vals.push(x.val);p=x.next.as_ref();}vals.remove(vals.len()-n as usize);let mut h=None;for &v in vals.iter().rev(){let mut x=Box::new(ListNode::new(v));x.next=h;h=Some(x);}h}}

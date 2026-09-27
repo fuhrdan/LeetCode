@@ -1,0 +1,1 @@
+public class Solution{public bool IsMatch(string s,string p){int m=s.Length,n=p.Length;bool[,]d=new bool[m+1,n+1];d[0,0]=true;for(int j=2;j<=n;j++)if(p[j-1]=='*')d[0,j]=d[0,j-2];for(int i=1;i<=m;i++)for(int j=1;j<=n;j++){char pc=p[j-1];if(pc=='.'||pc==s[i-1])d[i,j]=d[i-1,j-1];else if(pc=='*'){d[i,j]=d[i,j-2];char q=p[j-2];if(q=='.'||q==s[i-1])d[i,j]|=d[i-1,j];}}return d[m,n];}}

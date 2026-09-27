@@ -1,0 +1,1 @@
+public class Solution{ListNode M(ListNode a,ListNode b){var d=new ListNode();var t=d;while(a!=null&&b!=null){if(a.val<=b.val){t.next=a;a=a.next;}else{t.next=b;b=b.next;}t=t.next;}t.next=a??b;return d.next;}public ListNode MergeKLists(ListNode[]v){if(v.Length==0)return null;for(int s=1;s<v.Length;s*=2)for(int i=0;i+s<v.Length;i+=2*s)v[i]=M(v[i],v[i+s]);return v[0];}}

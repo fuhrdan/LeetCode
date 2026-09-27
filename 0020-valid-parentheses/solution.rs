@@ -1,0 +1,1 @@
+impl Solution{pub fn is_valid(s:String)->bool{let mut st=vec![];for c in s.bytes(){match c{b'('|b'['|b'{'=>st.push(c),_=>{let o=match st.pop(){Some(x)=>x,None=>return false};if(c==b')'&&o!=b'(')||(c==b']'&&o!=b'[')||(c==b'}'&&o!=b'{'){return false}}}}st.is_empty()}}

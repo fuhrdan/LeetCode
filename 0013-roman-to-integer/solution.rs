@@ -1,0 +1,1 @@
+impl Solution{pub fn roman_to_int(s:String)->i32{fn v(c:u8)->i32{match c{b'I'=>1,b'V'=>5,b'X'=>10,b'L'=>50,b'C'=>100,b'D'=>500,_=>1000}}let b=s.as_bytes();let mut r=0;for i in 0..b.len(){let a=v(b[i]);let n=if i+1<b.len(){v(b[i+1])}else{0};r+=if a<n{-a}else{a};}r}}

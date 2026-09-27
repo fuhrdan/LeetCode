@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<String>r=new ArrayList<>();void bt(int n,int o,int c,StringBuilder s){if(s.length()==2*n){r.add(s.toString());return;}if(o<n){s.append('(');bt(n,o+1,c,s);s.deleteCharAt(s.length()-1);}if(c<o){s.append(')');bt(n,o,c+1,s);s.deleteCharAt(s.length()-1);}}public List<String> generateParenthesis(int n){bt(n,0,0,new StringBuilder());return r;}}

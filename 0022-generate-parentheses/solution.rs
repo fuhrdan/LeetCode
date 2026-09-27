@@ -1,0 +1,1 @@
+impl Solution{pub fn generate_parenthesis(n:i32)->Vec<String>{fn bt(n:i32,o:i32,c:i32,s:&mut String,r:&mut Vec<String>){if s.len()==(2*n)as usize{r.push(s.clone());return}if o<n{s.push('(');bt(n,o+1,c,s,r);s.pop();}if c<o{s.push(')');bt(n,o,c+1,s,r);s.pop();}}let mut r=vec![];bt(n,0,0,&mut String::new(),&mut r);r}}

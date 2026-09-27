@@ -1,0 +1,1 @@
+impl Solution{pub fn merge_two_lists(a:Option<Box<ListNode>>,b:Option<Box<ListNode>>)->Option<Box<ListNode>>{match(a,b){(None,x)|(x,None)=>x,(Some(mut x),Some(mut y))=>if x.val<=y.val{x.next=Self::merge_two_lists(x.next.take(),Some(y));Some(x)}else{y.next=Self::merge_two_lists(Some(x),y.next.take());Some(y)}}}}

@@ -1,0 +1,1 @@
+class Solution{public:ListNode* reverseKGroup(ListNode*h,int k){ListNode d(0,h),*gp=&d;while(true){ListNode*kth=gp;for(int i=0;i<k&&kth;i++)kth=kth->next;if(!kth)break;ListNode*gn=kth->next,*prev=gn,*cur=gp->next;while(cur!=gn){auto n=cur->next;cur->next=prev;prev=cur;cur=n;}auto old=gp->next;gp->next=kth;gp=old;}return d.next;}};

@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{string[]m={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};List<string>o=new();void Bt(string d,int i,char[]c){if(i==d.Length){o.Add(new string(c));return;}foreach(char x in m[d[i]-'0']){c[i]=x;Bt(d,i+1,c);}}public IList<string> LetterCombinations(string d){if(d.Length>0)Bt(d,0,new char[d.Length]);return o;}}

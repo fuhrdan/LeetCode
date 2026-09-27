@@ -1,0 +1,1 @@
+impl Solution{pub fn three_sum_closest(mut a:Vec<i32>,t:i32)->i32{a.sort_unstable();let mut b=a[0]+a[1]+a[2];for i in 0..a.len()-2{let(mut l,mut r)=(i+1,a.len()-1);while l<r{let s=a[i]+a[l]+a[r];if (t-s).abs()<(t-b).abs(){b=s}if s<t{l+=1}else if s>t{r-=1}else{return t}}}b}}

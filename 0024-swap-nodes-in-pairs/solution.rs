@@ -1,0 +1,1 @@
+impl Solution{pub fn swap_pairs(head:Option<Box<ListNode>>)->Option<Box<ListNode>>{match head{Some(mut a)=>match a.next.take(){Some(mut b)=>{a.next=Self::swap_pairs(b.next.take());b.next=Some(a);Some(b)}None=>Some(a)},None=>None}}}

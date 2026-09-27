@@ -1,0 +1,1 @@
+public class Solution{public string LongestCommonPrefix(string[]a){if(a.Length==0)return"";string p=a[0];for(int i=1;i<a.Length;i++){int j=0;while(j<p.Length&&j<a[i].Length&&p[j]==a[i][j])j++;p=p.Substring(0,j);}return p;}}

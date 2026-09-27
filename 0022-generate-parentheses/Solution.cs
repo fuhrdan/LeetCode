@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<string>r=new();void Bt(int n,int o,int c,string s){if(s.Length==2*n){r.Add(s);return;}if(o<n)Bt(n,o+1,c,s+"(");if(c<o)Bt(n,o,c+1,s+")");}public IList<string> GenerateParenthesis(int n){Bt(n,0,0,"");return r;}}
