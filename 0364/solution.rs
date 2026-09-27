@@ -1,0 +1,1 @@
+impl Solution{pub fn depth_sum_inverse(a:Vec<NestedInteger>)->i32{let mut cur=a;let(mut un,mut res)=(0,0);while !cur.is_empty(){let mut next=vec![];for x in cur{match x{NestedInteger::Int(v)=>un+=v,NestedInteger::List(v)=>next.extend(v)}}res+=un;cur=next;}res}}

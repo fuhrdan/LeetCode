@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int depthSumInverse(List<NestedInteger>a){int un=0,res=0;List<NestedInteger>cur=a;while(!cur.isEmpty()){List<NestedInteger>next=new ArrayList<>();for(NestedInteger x:cur)if(x.isInteger())un+=x.getInteger();else next.addAll(x.getList());res+=un;cur=next;}return res;}}

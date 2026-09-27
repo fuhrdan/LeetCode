@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{public bool IsReflected(int[][]p){int lo=int.MaxValue,hi=int.MinValue;var s=new HashSet<string>();foreach(var x in p){lo=Math.Min(lo,x[0]);hi=Math.Max(hi,x[0]);s.Add($"{x[0]},{x[1]}");}long sum=(long)lo+hi;foreach(var x in p)if(!s.Contains($"{sum-x[0]},{x[1]}"))return false;return true;}}

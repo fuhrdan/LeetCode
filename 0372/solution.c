@@ -1,0 +1,1 @@
+static int modpow(int a,int e){int r=1;a%=1337;while(e){if(e&1)r=r*a%1337;a=a*a%1337;e>>=1;}return r;}int superPow(int a,int*b,int n){int r=1;for(int i=0;i<n;i++)r=modpow(r,10)*modpow(a,b[i])%1337;return r;}

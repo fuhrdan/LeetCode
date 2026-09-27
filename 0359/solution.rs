@@ -1,0 +1,1 @@
+use std::collections::HashMap;struct Logger{m:HashMap<String,i32>}impl Logger{fn new()->Self{Self{m:HashMap::new()}}fn should_print_message(&mut self,t:i32,s:String)->bool{if self.m.get(&s).map(|&x|t-x>=10).unwrap_or(true){self.m.insert(s,t);true}else{false}}}

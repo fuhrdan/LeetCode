@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{List<IList<int>>o=new();int F(TreeNode n){if(n==null)return-1;int h=1+Math.Max(F(n.left),F(n.right));if(h==o.Count)o.Add(new List<int>());o[h].Add(n.val);return h;}public IList<IList<int>> FindLeaves(TreeNode r){F(r);return o;}}

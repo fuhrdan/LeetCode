@@ -1,0 +1,1 @@
+impl Solution{pub fn get_modified_array(n:i32,u:Vec<Vec<i32>>)->Vec<i32>{let mut r=vec![0;n as usize];for x in u{r[x[0]as usize]+=x[2];if x[1]+1<n{r[(x[1]+1)as usize]-=x[2]}}for i in 1..r.len(){r[i]+=r[i-1]}r}}

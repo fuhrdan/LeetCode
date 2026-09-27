@@ -1,0 +1,1 @@
+class Solution{public ListNode plusOne(ListNode h){ListNode d=new ListNode(0,h),last=d;for(ListNode p=h;p!=null;p=p.next)if(p.val!=9)last=p;last.val++;for(ListNode p=last.next;p!=null;p=p.next)p.val=0;return d.val==1?d:h;}}

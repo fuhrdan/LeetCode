@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class SummaryRanges{SortedSet<int>s=new();public SummaryRanges(){}public void AddNum(int value)=>s.Add(value);public int[][] GetIntervals(){var o=new List<int[]>();foreach(int x in s){if(o.Count>0&&o[^1][1]+1==x)o[^1][1]=x;else o.Add(new[]{x,x});}return o.ToArray();}}

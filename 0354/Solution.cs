@@ -1,0 +1,1 @@
+using System;public class Solution{public int MaxEnvelopes(int[][]e){Array.Sort(e,(a,b)=>a[0]!=b[0]?a[0].CompareTo(b[0]):b[1].CompareTo(a[1]));int[]t=new int[e.Length];int len=0;foreach(var x in e){int l=0,r=len;while(l<r){int m=(l+r)/2;if(t[m]<x[1])l=m+1;else r=m;}t[l]=x[1];if(l==len)len++;}return len;}}

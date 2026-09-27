@@ -1,0 +1,1 @@
+class Solution{public:ListNode* plusOne(ListNode*h){ListNode d(0,h),*last=&d;for(auto p=h;p;p=p->next)if(p->val!=9)last=p;last->val++;for(auto p=last->next;p;p=p->next)p->val=0;if(d.val){auto r=new ListNode(1);r->next=h;return r;}return h;}};

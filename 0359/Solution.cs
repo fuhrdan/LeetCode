@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Logger{Dictionary<string,int>m=new();public Logger(){}public bool ShouldPrintMessage(int t,string s){if(!m.ContainsKey(s)||t-m[s]>=10){m[s]=t;return true;}return false;}}

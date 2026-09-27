@@ -1,0 +1,1 @@
+class Solution{public int getMoneyAmount(int n){int[][]d=new int[n+2][n+2];for(int len=2;len<=n;len++)for(int l=1;l+len-1<=n;l++){int r=l+len-1;d[l][r]=Integer.MAX_VALUE;for(int x=l;x<=r;x++)d[l][r]=Math.min(d[l][r],x+Math.max(d[l][x-1],d[x+1][r]));}return d[1][n];}}

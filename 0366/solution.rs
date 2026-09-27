@@ -1,0 +1,1 @@
+use std::rc::Rc;use std::cell::RefCell;impl Solution{pub fn find_leaves(root:Option<Rc<RefCell<TreeNode>>>)->Vec<Vec<i32>>{fn f(n:&Option<Rc<RefCell<TreeNode>>>,o:&mut Vec<Vec<i32>>)->i32{if let Some(x)=n{let b=x.borrow();let h=1+f(&b.left,o).max(f(&b.right,o));if h as usize==o.len(){o.push(vec![])}o[h as usize].push(b.val);h}else{-1}}let mut o=vec![];f(&root,&mut o);o}}

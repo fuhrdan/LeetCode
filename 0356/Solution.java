@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public boolean isReflected(int[][]p){int lo=Integer.MAX_VALUE,hi=Integer.MIN_VALUE;Set<String>s=new HashSet<>();for(int[]x:p){lo=Math.min(lo,x[0]);hi=Math.max(hi,x[0]);s.add(x[0]+","+x[1]);}long sum=(long)lo+hi;for(int[]x:p)if(!s.contains((sum-x[0])+","+x[1]))return false;return true;}}

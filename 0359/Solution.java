@@ -1,0 +1,1 @@
+import java.util.*;class Logger{Map<String,Integer>m=new HashMap<>();public Logger(){}public boolean shouldPrintMessage(int t,String s){if(!m.containsKey(s)||t-m.get(s)>=10){m.put(s,t);return true;}return false;}}

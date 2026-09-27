@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public int DepthSumInverse(IList<NestedInteger>a){int un=0,res=0;var cur=new List<NestedInteger>(a);while(cur.Count>0){var next=new List<NestedInteger>();foreach(var x in cur)if(x.IsInteger())un+=x.GetInteger();else next.AddRange(x.GetList());res+=un;cur=next;}return res;}}

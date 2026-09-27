@@ -1,0 +1,1 @@
+use std::collections::VecDeque;struct HitCounter{q:VecDeque<i32>}impl HitCounter{fn new()->Self{Self{q:VecDeque::new()}}fn hit(&mut self,t:i32){self.q.push_back(t)}fn get_hits(&mut self,t:i32)->i32{while self.q.front().map(|&x|x<=t-300).unwrap_or(false){self.q.pop_front();}self.q.len()as i32}}

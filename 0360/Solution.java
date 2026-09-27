@@ -1,0 +1,1 @@
+class Solution{int f(int x,int a,int b,int c){return a*x*x+b*x+c;}public int[] sortTransformedArray(int[]n,int a,int b,int c){int[]r=new int[n.length];int l=0,h=n.length-1,k=a>=0?n.length-1:0;while(l<=h){int x=f(n[l],a,b,c),y=f(n[h],a,b,c);if(a>=0){if(x>y){r[k--]=x;l++;}else{r[k--]=y;h--;}}else{if(x<y){r[k++]=x;l++;}else{r[k++]=y;h--;}}}return r;}}

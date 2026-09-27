@@ -1,0 +1,1 @@
+public class Solution{int F(int x,int a,int b,int c)=>a*x*x+b*x+c;public int[] SortTransformedArray(int[]n,int a,int b,int c){int[]r=new int[n.Length];int l=0,h=n.Length-1,k=a>=0?n.Length-1:0;while(l<=h){int x=F(n[l],a,b,c),y=F(n[h],a,b,c);if(a>=0){if(x>y){r[k--]=x;l++;}else{r[k--]=y;h--;}}else{if(x<y){r[k++]=x;l++;}else{r[k++]=y;h--;}}}return r;}}

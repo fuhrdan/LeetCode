@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<List<Integer>>o=new ArrayList<>();int f(TreeNode n){if(n==null)return-1;int h=1+Math.max(f(n.left),f(n.right));if(h==o.size())o.add(new ArrayList<>());o.get(h).add(n.val);return h;}public List<List<Integer>> findLeaves(TreeNode r){f(r);return o;}}

@@ -1,0 +1,1 @@
+using System;public class Solution{public int GetMoneyAmount(int n){int[][]d=new int[n+2][];for(int i=0;i<n+2;i++)d[i]=new int[n+2];for(int len=2;len<=n;len++)for(int l=1;l+len-1<=n;l++){int r=l+len-1;d[l][r]=int.MaxValue;for(int x=l;x<=r;x++)d[l][r]=Math.Min(d[l][r],x+Math.Max(d[l][x-1],d[x+1][r]));}return d[1][n];}}

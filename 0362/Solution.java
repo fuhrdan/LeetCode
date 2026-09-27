@@ -1,0 +1,1 @@
+import java.util.*;class HitCounter{Queue<Integer>q=new ArrayDeque<>();public HitCounter(){}public void hit(int t){q.add(t);}public int getHits(int t){while(!q.isEmpty()&&q.peek()<=t-300)q.remove();return q.size();}}

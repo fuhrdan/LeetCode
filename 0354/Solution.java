@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int maxEnvelopes(int[][]e){Arrays.sort(e,(a,b)->a[0]!=b[0]?a[0]-b[0]:b[1]-a[1]);int[]t=new int[e.length];int len=0;for(int[]x:e){int l=0,r=len;while(l<r){int m=(l+r)/2;if(t[m]<x[1])l=m+1;else r=m;}t[l]=x[1];if(l==len)len++;}return len;}}

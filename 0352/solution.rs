@@ -1,0 +1,1 @@
+use std::collections::BTreeSet;struct SummaryRanges{s:BTreeSet<i32>}impl SummaryRanges{fn new()->Self{Self{s:BTreeSet::new()}}fn add_num(&mut self,v:i32){self.s.insert(v);}fn get_intervals(&self)->Vec<Vec<i32>>{let mut o=vec![];for &x in &self.s{if let Some(last)=o.last_mut(){if last[1]+1==x{last[1]=x;continue}}o.push(vec![x,x]);}o}}

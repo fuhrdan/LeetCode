@@ -1,0 +1,1 @@
+use std::collections::HashSet;impl Solution{pub fn is_reflected(p:Vec<Vec<i32>>)->bool{let(mut lo,mut hi)=(i32::MAX,i32::MIN);let mut s=HashSet::new();for x in &p{lo=lo.min(x[0]);hi=hi.max(x[0]);s.insert((x[0],x[1]));}let sum=lo as i64+hi as i64;for x in p{if !s.contains(&((sum-x[0]as i64)as i32,x[1])){return false}}true}}

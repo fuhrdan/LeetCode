@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class HitCounter{Queue<int>q=new();public HitCounter(){}public void Hit(int t)=>q.Enqueue(t);public int GetHits(int t){while(q.Count>0&&q.Peek()<=t-300)q.Dequeue();return q.Count;}}

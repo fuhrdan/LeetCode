@@ -1,0 +1,1 @@
+impl Solution{pub fn get_money_amount(n:i32)->i32{let n=n as usize;let mut d=vec![vec![0;n+2];n+2];for len in 2..=n{for l in 1..=n-len+1{let r=l+len-1;d[l][r]=i32::MAX;for x in l..=r{d[l][r]=d[l][r].min(x as i32+d[l][x-1].max(d[x+1][r]));}}}d[1][n]}}

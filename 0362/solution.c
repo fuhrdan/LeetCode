@@ -1,0 +1,2 @@
+#include <stdlib.h>
+typedef struct{int*t,h,tail,cap;}HitCounter;HitCounter* hitCounterCreate(){HitCounter*x=malloc(sizeof(*x));x->cap=100000;x->t=malloc(x->cap*sizeof(int));x->h=x->tail=0;return x;}void hitCounterHit(HitCounter*x,int timestamp){x->t[x->tail++]=timestamp;}int hitCounterGetHits(HitCounter*x,int timestamp){while(x->h<x->tail&&x->t[x->h]<=timestamp-300)x->h++;return x->tail-x->h;}void hitCounterFree(HitCounter*x){free(x->t);free(x);}

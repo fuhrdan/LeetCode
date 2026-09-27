@@ -1,0 +1,1 @@
+impl Solution{pub fn super_pow(a:i32,b:Vec<i32>)->i32{fn p(mut a:i32,mut e:i32)->i32{let mut r=1;a%=1337;while e>0{if e&1==1{r=r*a%1337}a=a*a%1337;e>>=1;}r}let mut r=1;for d in b{r=p(r,10)*p(a,d)%1337;}r}}

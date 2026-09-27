@@ -1,0 +1,1 @@
+impl Solution{pub fn max_envelopes(mut e:Vec<Vec<i32>>)->i32{e.sort_by(|a,b|if a[0]!=b[0]{a[0].cmp(&b[0])}else{b[1].cmp(&a[1])});let mut t=vec![];for x in e{let(mut l,mut r)=(0,t.len());while l<r{let m=(l+r)/2;if t[m]<x[1]{l=m+1}else{r=m}}if l==t.len(){t.push(x[1])}else{t[l]=x[1]}}t.len()as i32}}

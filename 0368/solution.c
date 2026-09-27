@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static int cmp(const void*a,const void*b){return(*(int*)a>*(int*)b)-(*(int*)a<*(int*)b);}int* largestDivisibleSubset(int*a,int n,int*rs){if(!n){*rs=0;return NULL;}qsort(a,n,sizeof(int),cmp);int*dp=malloc(n*sizeof(int)),*pre=malloc(n*sizeof(int)),best=0;for(int i=0;i<n;i++){dp[i]=1;pre[i]=-1;for(int j=0;j<i;j++)if(a[i]%a[j]==0&&dp[j]+1>dp[i]){dp[i]=dp[j]+1;pre[i]=j;}if(dp[i]>dp[best])best=i;}int len=dp[best],*r=malloc(len*sizeof(int));for(int k=len-1;k>=0;k--){r[k]=a[best];best=pre[best];}free(dp);free(pre);*rs=len;return r;}
