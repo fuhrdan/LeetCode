@@ -1,0 +1,1 @@
+class Solution{int lb(int[]a,long t){int l=0,r=a.length;while(l<r){int m=(l+r)/2;if(a[m]<t)l=m+1;else r=m;}return l;}public int[] searchRange(int[]a,int t){int l=lb(a,t);if(l==a.length||a[l]!=t)return new int[]{-1,-1};return new int[]{l,lb(a,(long)t+1)-1};}}

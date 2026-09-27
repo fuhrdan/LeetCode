@@ -1,0 +1,3 @@
+#include <stdlib.h>
+#include <string.h>
+static int cmpc(const void*a,const void*b){return*(char*)a-*(char*)b;}char*** groupAnagrams(char**s,int n,int*rs,int**rc){char**keys=malloc(n*sizeof(char*));int*g=malloc(n*sizeof(int)),groups=0;for(int i=0;i<n;i++){keys[i]=strdup(s[i]);qsort(keys[i],strlen(keys[i]),1,cmpc);int id=-1;for(int j=0;j<i;j++)if(strcmp(keys[i],keys[j])==0){id=g[j];break;}if(id<0)id=groups++;g[i]=id;}int*cnt=calloc(groups,sizeof(int));for(int i=0;i<n;i++)cnt[g[i]]++;char***o=malloc(groups*sizeof(char**));int*pos=calloc(groups,sizeof(int));for(int j=0;j<groups;j++)o[j]=malloc(cnt[j]*sizeof(char*));for(int i=0;i<n;i++)o[g[i]][pos[g[i]]++]=s[i];for(int i=0;i<n;i++)free(keys[i]);free(keys);free(g);free(pos);*rs=groups;*rc=cnt;return o;}

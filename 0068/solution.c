@@ -1,0 +1,3 @@
+#include <stdlib.h>
+#include <string.h>
+char** fullJustify(char**w,int n,int width,int*rs){char**o=malloc(n*sizeof(char*));int cnt=0,i=0;while(i<n){int j=i,len=0;while(j<n&&len+strlen(w[j])+(j-i)<=width){len+=strlen(w[j]);j++;}int gaps=j-i-1;char*line=malloc(width+1);int p=0;if(j==n||gaps==0){for(int k=i;k<j;k++){if(k>i)line[p++]=' ';int z=strlen(w[k]);memcpy(line+p,w[k],z);p+=z;}while(p<width)line[p++]=' ';}else{int spaces=width-len,base=spaces/gaps,extra=spaces%gaps;for(int k=i;k<j;k++){int z=strlen(w[k]);memcpy(line+p,w[k],z);p+=z;if(k<j-1){int s=base+(k-i<extra);while(s--)line[p++]=' ';}}}line[p]=0;o[cnt++]=line;i=j;}*rs=cnt;return o;}

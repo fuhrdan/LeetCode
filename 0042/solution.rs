@@ -1,0 +1,1 @@
+impl Solution{pub fn trap(h:Vec<i32>)->i32{if h.is_empty(){return 0}let(mut l,mut r,mut lm,mut rm,mut w)=(0usize,h.len()-1,0,0,0);while l<r{if h[l]<h[r]{lm=lm.max(h[l]);w+=lm-h[l];l+=1}else{rm=rm.max(h[r]);w+=rm-h[r];r-=1}}w}}

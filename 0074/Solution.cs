@@ -1,0 +1,1 @@
+public class Solution{public bool SearchMatrix(int[][]m,int t){int R=m.Length,C=m[0].Length,l=0,r=R*C-1;while(l<=r){int x=(l+r)/2,v=m[x/C][x%C];if(v==t)return true;if(v<t)l=x+1;else r=x-1;}return false;}}

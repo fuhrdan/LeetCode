@@ -1,0 +1,1 @@
+using System;public class Solution{public int MinPathSum(int[][]g){int n=g[0].Length;int[]d=new int[n];Array.Fill(d,int.MaxValue);d[0]=0;foreach(var r in g)for(int j=0;j<n;j++)d[j]=Math.Min(d[j],j>0?d[j-1]:int.MaxValue)+r[j];return d[n-1];}}

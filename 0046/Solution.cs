@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<IList<int>>o=new();void F(int[]a,int p){if(p==a.Length){o.Add(new List<int>(a));return;}for(int i=p;i<a.Length;i++){(a[p],a[i])=(a[i],a[p]);F(a,p+1);(a[p],a[i])=(a[i],a[p]);}}public IList<IList<int>> Permute(int[]a){F(a,0);return o;}}

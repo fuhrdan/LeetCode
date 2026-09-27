@@ -1,0 +1,1 @@
+using System;public class Solution{public int MinDistance(string a,string b){int[]d=new int[b.Length+1];for(int j=0;j<d.Length;j++)d[j]=j;for(int i=1;i<=a.Length;i++){int prev=d[0];d[0]=i;for(int j=1;j<=b.Length;j++){int old=d[j];d[j]=a[i-1]==b[j-1]?prev:1+Math.Min(prev,Math.Min(d[j],d[j-1]));prev=old;}}return d[b.Length];}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn simplify_path(p:String)->String{let mut st:Vec<&str>=vec![];for x in p.split('/'){match x{""|"."=>{},".."=>{st.pop();},_=>st.push(x)}}if st.is_empty(){"/".into()}else{format!("/{}",st.join("/"))}}}

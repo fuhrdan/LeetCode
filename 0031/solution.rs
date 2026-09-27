@@ -1,0 +1,1 @@
+impl Solution{pub fn next_permutation(a:&mut Vec<i32>){let n=a.len();if n<2{return}let mut i=n-2;while a[i]>=a[i+1]{if i==0{a.reverse();return}i-=1;}let mut j=n-1;while a[j]<=a[i]{j-=1}a.swap(i,j);a[i+1..].reverse();}}

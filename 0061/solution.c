@@ -1,0 +1,1 @@
+struct ListNode* rotateRight(struct ListNode*h,int k){if(!h||!h->next||!k)return h;int n=1;struct ListNode*t=h;while(t->next){t=t->next;n++;}k%=n;if(!k)return h;t->next=h;int steps=n-k;while(steps--)t=t->next;h=t->next;t->next=0;return h;}

@@ -1,0 +1,1 @@
+public class Solution{public void NextPermutation(int[]a){int i=a.Length-2;while(i>=0&&a[i]>=a[i+1])i--;if(i>=0){int j=a.Length-1;while(a[j]<=a[i])j--; (a[i],a[j])=(a[j],a[i]);}for(int l=i+1,r=a.Length-1;l<r;l++,r--)(a[l],a[r])=(a[r],a[l]);}}

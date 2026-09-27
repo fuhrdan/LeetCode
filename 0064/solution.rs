@@ -1,0 +1,1 @@
+impl Solution{pub fn min_path_sum(g:Vec<Vec<i32>>)->i32{let n=g[0].len();let mut d=vec![i32::MAX;n];d[0]=0;for r in g{for j in 0..n{let left=if j>0{d[j-1]}else{i32::MAX};d[j]=d[j].min(left)+r[j];}}d[n-1]}}

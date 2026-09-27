@@ -1,0 +1,1 @@
+impl Solution{pub fn get_permutation(n:i32,k:i32)->String{let mut v:(Vec<i32>)=(1..=n).collect();let mut fact=1;for i in 1..=n{fact*=i}let(mut k,mut s)=(k-1,String::new());for rem in (1..=n).rev(){fact/=rem;let idx=(k/fact)as usize;k%=fact;s.push(char::from(b'0'+v.remove(idx)as u8));}s}}

@@ -1,0 +1,2 @@
+#include <string>
+using namespace std;class Solution{public:bool isNumber(string s){bool num=false,dot=false,exp=false,after=true;for(int i=0;i<s.size();i++){char c=s[i];if(isdigit((unsigned char)c)){num=true;after=true;}else if(c=='.'){if(dot||exp)return false;dot=true;}else if(c=='e'||c=='E'){if(exp||!num)return false;exp=true;after=false;}else if(c=='+'||c=='-'){if(i&&s[i-1]!='e'&&s[i-1]!='E')return false;}else return false;}return num&&after;}};

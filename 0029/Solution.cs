@@ -1,0 +1,1 @@
+using System;public class Solution{public int Divide(int a,int b){if(a==int.MinValue&&b==-1)return int.MaxValue;long x=Math.Abs((long)a),y=Math.Abs((long)b),q=0;for(int i=31;i>=0;i--)if((x>>i)>=y){x-=y<<i;q|=1L<<i;}return (a<0)^(b<0)?(int)-q:(int)q;}}

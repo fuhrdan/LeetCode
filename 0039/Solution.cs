@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{List<IList<int>>o=new();void F(int[]a,int st,int r,List<int>v){if(r==0){o.Add(new List<int>(v));return;}for(int i=st;i<a.Length;i++)if(a[i]<=r){v.Add(a[i]);F(a,i,r-a[i],v);v.RemoveAt(v.Count-1);}}public IList<IList<int>> CombinationSum(int[]a,int t){F(a,0,t,new List<int>());return o;}}

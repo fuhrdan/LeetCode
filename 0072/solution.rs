@@ -1,0 +1,1 @@
+impl Solution{pub fn min_distance(a:String,b:String)->i32{let(a,b)=(a.as_bytes(),b.as_bytes());let mut d:(Vec<i32>)=(0..=b.len()as i32).collect();for i in 1..=a.len(){let mut prev=d[0];d[0]=i as i32;for j in 1..=b.len(){let old=d[j];d[j]=if a[i-1]==b[j-1]{prev}else{1+prev.min(d[j]).min(d[j-1])};prev=old;}}d[b.len()]}}

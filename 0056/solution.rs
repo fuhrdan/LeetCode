@@ -1,0 +1,1 @@
+impl Solution{pub fn merge(mut v:Vec<Vec<i32>>)->Vec<Vec<i32>>{v.sort_unstable();let mut o:Vec<Vec<i32>>=vec![];for x in v{if o.is_empty()||x[0]>o.last().unwrap()[1]{o.push(x)}else{let q=o.last_mut().unwrap();q[1]=q[1].max(x[1]);}}o}}

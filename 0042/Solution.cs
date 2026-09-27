@@ -1,0 +1,1 @@
+using System;public class Solution{public int Trap(int[]h){int l=0,r=h.Length-1,lm=0,rm=0,w=0;while(l<r){if(h[l]<h[r]){lm=Math.Max(lm,h[l]);w+=lm-h[l++];}else{rm=Math.Max(rm,h[r]);w+=rm-h[r--];}}return w;}}

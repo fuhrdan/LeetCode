@@ -1,0 +1,1 @@
+impl Solution{pub fn generate_matrix(n:i32)->Vec<Vec<i32>>{let n=n as usize;let(mut t,mut b,mut l,mut r,mut x)=(0,n-1,0,n-1,1);let mut m=vec![vec![0;n];n];while t<=b&&l<=r{for j in l..=r{m[t][j]=x;x+=1}t+=1;for i in t..=b{m[i][r]=x;x+=1}if r==0{break}r-=1;if t<=b{for j in (l..=r).rev(){m[b][j]=x;x+=1}if b==0{break}b-=1}if l<=r{for i in (t..=b).rev(){m[i][l]=x;x+=1}l+=1}}m}}

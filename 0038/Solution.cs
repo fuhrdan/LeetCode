@@ -1,0 +1,1 @@
+using System.Text;public class Solution{public string CountAndSay(int n){string s="1";while(--n>0){var t=new StringBuilder();for(int i=0;i<s.Length;){int j=i;while(j<s.Length&&s[j]==s[i])j++;t.Append(j-i).Append(s[i]);i=j;}s=t.ToString();}return s;}}

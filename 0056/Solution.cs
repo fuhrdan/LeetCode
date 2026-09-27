@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{public int[][] Merge(int[][]v){Array.Sort(v,(a,b)=>a[0].CompareTo(b[0]));var o=new List<int[]>();foreach(var x in v){if(o.Count==0||x[0]>o[^1][1])o.Add((int[])x.Clone());else o[^1][1]=Math.Max(o[^1][1],x[1]);}return o.ToArray();}}

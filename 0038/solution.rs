@@ -1,0 +1,1 @@
+impl Solution{pub fn count_and_say(n:i32)->String{let mut s="1".to_string();for _ in 1..n{let b=s.as_bytes();let mut t=String::new();let mut i=0;while i<b.len(){let mut j=i;while j<b.len()&&b[j]==b[i]{j+=1}t.push_str(&(j-i).to_string());t.push(b[i]as char);i=j;}s=t;}s}}

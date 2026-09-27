@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;using System.Linq;public class Solution{public IList<IList<string>> GroupAnagrams(string[]s){var m=new Dictionary<string,IList<string>>();foreach(var x in s){var c=x.ToCharArray();Array.Sort(c);string k=new(c);if(!m.ContainsKey(k))m[k]=new List<string>();m[k].Add(x);}return m.Values.ToList();}}

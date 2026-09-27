@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int[][] merge(int[][]v){Arrays.sort(v,Comparator.comparingInt(x->x[0]));List<int[]>o=new ArrayList<>();for(int[]x:v){if(o.isEmpty()||x[0]>o.get(o.size()-1)[1])o.add(x.clone());else o.get(o.size()-1)[1]=Math.max(o.get(o.size()-1)[1],x[1]);}return o.toArray(new int[0][]);}}

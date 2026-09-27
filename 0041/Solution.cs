@@ -1,0 +1,1 @@
+public class Solution{public int FirstMissingPositive(int[]a){int n=a.Length;for(int i=0;i<n;i++)while(a[i]>=1&&a[i]<=n&&a[a[i]-1]!=a[i]){int j=a[i]-1;(a[i],a[j])=(a[j],a[i]);}for(int i=0;i<n;i++)if(a[i]!=i+1)return i+1;return n+1;}}

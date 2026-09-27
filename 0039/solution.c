@@ -1,0 +1,3 @@
+#include <stdlib.h>
+static void bt(int*a,int n,int st,int rem,int*buf,int len,int***out,int**cols,int*cnt,int*cap){if(rem==0){if(*cnt==*cap){*cap*=2;*out=realloc(*out,*cap*sizeof(int*));*cols=realloc(*cols,*cap*sizeof(int));}(*out)[*cnt]=malloc(len*sizeof(int));for(int i=0;i<len;i++)(*out)[*cnt][i]=buf[i];(*cols)[(*cnt)++]=len;return;}for(int i=st;i<n;i++)if(a[i]<=rem){buf[len]=a[i];bt(a,n,i,rem-a[i],buf,len+1,out,cols,cnt,cap);}}
+int** combinationSum(int*a,int n,int target,int*returnSize,int**returnColumnSizes){int cap=16,c=0;int**o=malloc(cap*sizeof(int*));int*cols=malloc(cap*sizeof(int));int*buf=malloc((target+1)*sizeof(int));bt(a,n,0,target,buf,0,&o,&cols,&c,&cap);free(buf);*returnSize=c;*returnColumnSizes=cols;return o;}

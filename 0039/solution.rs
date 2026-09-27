@@ -1,0 +1,1 @@
+impl Solution{pub fn combination_sum(a:Vec<i32>,t:i32)->Vec<Vec<i32>>{fn f(a:&[i32],st:usize,r:i32,v:&mut Vec<i32>,o:&mut Vec<Vec<i32>>){if r==0{o.push(v.clone());return}for i in st..a.len(){if a[i]<=r{v.push(a[i]);f(a,i,r-a[i],v,o);v.pop();}}}let mut o=vec![];f(&a,0,t,&mut vec![],&mut o);o}}

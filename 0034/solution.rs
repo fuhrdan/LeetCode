@@ -1,0 +1,1 @@
+impl Solution{pub fn search_range(a:Vec<i32>,t:i32)->Vec<i32>{fn lb(a:&[i32],t:i64)->usize{let(mut l,mut r)=(0,a.len());while l<r{let m=(l+r)/2;if (a[m]as i64)<t{l=m+1}else{r=m}}l}let l=lb(&a,t as i64);if l==a.len()||a[l]!=t{return vec![-1,-1]}vec![l as i32,(lb(&a,t as i64+1)-1)as i32]}}

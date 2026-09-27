@@ -1,0 +1,1 @@
+impl Solution{pub fn set_zeroes(m:&mut Vec<Vec<i32>>){let(r,c)=(m.len(),m[0].len());let r0=(0..c).any(|j|m[0][j]==0);let c0=(0..r).any(|i|m[i][0]==0);for i in 1..r{for j in 1..c{if m[i][j]==0{m[i][0]=0;m[0][j]=0;}}}for i in 1..r{for j in 1..c{if m[i][0]==0||m[0][j]==0{m[i][j]=0;}}}if r0{for j in 0..c{m[0][j]=0}}if c0{for i in 0..r{m[i][0]=0}}}}

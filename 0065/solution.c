@@ -1,0 +1,2 @@
+#include <stdbool.h>
+bool isNumber(char*s){int i=0;bool num=false,dot=false,exp=false,numAfterE=true;for(;s[i];i++){char c=s[i];if(c>='0'&&c<='9'){num=true;numAfterE=true;}else if(c=='.'){if(dot||exp)return false;dot=true;}else if(c=='e'||c=='E'){if(exp||!num)return false;exp=true;numAfterE=false;}else if(c=='+'||c=='-'){if(i&&s[i-1]!='e'&&s[i-1]!='E')return false;}else return false;}return num&&numAfterE;}

@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int minPathSum(int[][]g){int n=g[0].length;int[]d=new int[n];Arrays.fill(d,Integer.MAX_VALUE);d[0]=0;for(int[]r:g)for(int j=0;j<n;j++)d[j]=Math.min(d[j],j>0?d[j-1]:Integer.MAX_VALUE)+r[j];return d[n-1];}}

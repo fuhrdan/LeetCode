@@ -1,0 +1,1 @@
+impl Solution{pub fn add_binary(a:String,b:String)->String{let(a,b)=(a.as_bytes(),b.as_bytes());let(mut i,mut j,mut c)=(a.len()as i32-1,b.len()as i32-1,0);let mut r=vec![];while i>=0||j>=0||c>0{let mut s=c;if i>=0{s+=(a[i as usize]-b'0')as i32;i-=1}if j>=0{s+=(b[j as usize]-b'0')as i32;j-=1}r.push((b'0'+(s%2)as u8)as char);c=s/2;}r.iter().rev().collect()}}

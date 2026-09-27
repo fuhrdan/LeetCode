@@ -1,0 +1,1 @@
+static int f52(int n,int c,int d1,int d2){if(c==((1<<n)-1))return 1;int a=((1<<n)-1)&~(c|d1|d2),r=0;while(a){int bit=a&-a;a-=bit;r+=f52(n,c|bit,(d1|bit)<<1,(d2|bit)>>1);}return r;}int totalNQueens(int n){return f52(n,0,0,0);}

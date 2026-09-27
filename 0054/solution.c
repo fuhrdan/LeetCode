@@ -1,0 +1,2 @@
+#include <stdlib.h>
+int* spiralOrder(int**m,int rows,int*cols,int*returnSize){if(!rows){*returnSize=0;return NULL;}int n=cols[0],*o=malloc(rows*n*sizeof(int)),k=0,t=0,b=rows-1,l=0,r=n-1;while(t<=b&&l<=r){for(int j=l;j<=r;j++)o[k++]=m[t][j];t++;for(int i=t;i<=b;i++)o[k++]=m[i][r];r--;if(t<=b){for(int j=r;j>=l;j--)o[k++]=m[b][j];b--;}if(l<=r){for(int i=b;i>=t;i--)o[k++]=m[i][l];l++;}}*returnSize=k;return o;}

@@ -1,0 +1,2 @@
+#include <stdlib.h>
+int** generateMatrix(int n,int*rs,int**rc){int**m=malloc(n*sizeof(int*)),*cols=malloc(n*sizeof(int));for(int i=0;i<n;i++){m[i]=calloc(n,sizeof(int));cols[i]=n;}int t=0,b=n-1,l=0,r=n-1,x=1;while(t<=b){for(int j=l;j<=r;j++)m[t][j]=x++;t++;for(int i=t;i<=b;i++)m[i][r]=x++;r--;if(t<=b){for(int j=r;j>=l;j--)m[b][j]=x++;b--;}if(l<=r){for(int i=b;i>=t;i--)m[i][l]=x++;l++;}}*rs=n;*rc=cols;return m;}

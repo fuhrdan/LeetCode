@@ -1,0 +1,1 @@
+impl Solution{pub fn insert(v:Vec<Vec<i32>>,mut x:Vec<i32>)->Vec<Vec<i32>>{let mut o=vec![];let mut i=0;while i<v.len()&&v[i][1]<x[0]{o.push(v[i].clone());i+=1;}while i<v.len()&&v[i][0]<=x[1]{x[0]=x[0].min(v[i][0]);x[1]=x[1].max(v[i][1]);i+=1;}o.push(x);while i<v.len(){o.push(v[i].clone());i+=1;}o}}

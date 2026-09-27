@@ -1,0 +1,1 @@
+impl Solution{pub fn search(a:Vec<i32>,t:i32)->i32{let(mut l,mut r)=(0i32,a.len()as i32-1);while l<=r{let m=(l+r)/2;let x=a[m as usize];if x==t{return m}if a[l as usize]<=x{if a[l as usize]<=t&&t<x{r=m-1}else{l=m+1}}else{if x<t&&t<=a[r as usize]{l=m+1}else{r=m-1}}}-1}}

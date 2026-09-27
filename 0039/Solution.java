@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<List<Integer>>o=new ArrayList<>();void f(int[]a,int st,int r,List<Integer>v){if(r==0){o.add(new ArrayList<>(v));return;}for(int i=st;i<a.length;i++)if(a[i]<=r){v.add(a[i]);f(a,i,r-a[i],v);v.remove(v.size()-1);}}public List<List<Integer>> combinationSum(int[]a,int t){f(a,0,t,new ArrayList<>());return o;}}

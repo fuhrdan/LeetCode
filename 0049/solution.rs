@@ -1,0 +1,1 @@
+use std::collections::HashMap;impl Solution{pub fn group_anagrams(s:Vec<String>)->Vec<Vec<String>>{let mut m:HashMap<Vec<u8>,Vec<String>>=HashMap::new();for x in s{let mut k=x.as_bytes().to_vec();k.sort_unstable();m.entry(k).or_default().push(x);}m.into_values().collect()}}

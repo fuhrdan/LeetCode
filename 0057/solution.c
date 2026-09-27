@@ -1,0 +1,2 @@
+#include <stdlib.h>
+int** insert(int**v,int n,int*cols,int*ni,int niSize,int*rs,int**rc){int**o=malloc((n+1)*sizeof(int*));int*c=malloc((n+1)*sizeof(int));int k=0,i=0;while(i<n&&v[i][1]<ni[0]){o[k]=malloc(2*sizeof(int));o[k][0]=v[i][0];o[k][1]=v[i][1];c[k++]=2;i++;}int a=ni[0],b=ni[1];while(i<n&&v[i][0]<=b){if(v[i][0]<a)a=v[i][0];if(v[i][1]>b)b=v[i][1];i++;}o[k]=malloc(2*sizeof(int));o[k][0]=a;o[k][1]=b;c[k++]=2;while(i<n){o[k]=malloc(2*sizeof(int));o[k][0]=v[i][0];o[k][1]=v[i][1];c[k++]=2;i++;}*rs=k;*rc=c;return o;}

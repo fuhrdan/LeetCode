@@ -1,0 +1,1 @@
+using System.Text;public class Solution{public string AddBinary(string a,string b){int i=a.Length-1,j=b.Length-1,c=0;var r=new StringBuilder();while(i>=0||j>=0||c>0){int s=c+(i>=0?a[i--]-'0':0)+(j>=0?b[j--]-'0':0);r.Append(s%2);c=s/2;}var x=r.ToString().ToCharArray();System.Array.Reverse(x);return new string(x);}}

@@ -1,0 +1,1 @@
+public class Solution{public void Rotate(int[][]m){int n=m.Length;for(int i=0;i<n;i++)for(int j=i+1;j<n;j++)(m[i][j],m[j][i])=(m[j][i],m[i][j]);for(int i=0;i<n;i++)for(int l=0,r=n-1;l<r;l++,r--)(m[i][l],m[i][r])=(m[i][r],m[i][l]);}}

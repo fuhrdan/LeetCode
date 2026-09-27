@@ -1,0 +1,3 @@
+#include <stdlib.h>
+static int cmp40(const void*a,const void*b){return(*(int*)a>*(int*)b)-(*(int*)a<*(int*)b);}static void f(int*a,int n,int st,int r,int*b,int len,int***o,int**cols,int*c,int*cap){if(!r){if(*c==*cap){*cap*=2;*o=realloc(*o,*cap*sizeof(int*));*cols=realloc(*cols,*cap*sizeof(int));}(*o)[*c]=malloc(len*sizeof(int));for(int i=0;i<len;i++)(*o)[*c][i]=b[i];(*cols)[(*c)++]=len;return;}for(int i=st;i<n&&a[i]<=r;i++){if(i>st&&a[i]==a[i-1])continue;b[len]=a[i];f(a,n,i+1,r-a[i],b,len+1,o,cols,c,cap);}}
+int** combinationSum2(int*a,int n,int t,int*rs,int**rc){qsort(a,n,sizeof(int),cmp40);int cap=16,c=0,**o=malloc(cap*sizeof(int*)),*cols=malloc(cap*sizeof(int)),*b=malloc(n*sizeof(int));f(a,n,0,t,b,0,&o,&cols,&c,&cap);free(b);*rs=c;*rc=cols;return o;}

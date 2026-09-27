@@ -1,0 +1,2 @@
+#include <vector>
+using namespace std;class Solution{int r[9]{},c[9]{},q[9]{};bool f(vector<vector<char>>&b,int p){if(p==81)return true;int i=p/9,j=p%9;if(b[i][j]!='.')return f(b,p+1);int k=i/3*3+j/3,u=r[i]|c[j]|q[k];for(int d=0;d<9;d++){int bit=1<<d;if(!(u&bit)){b[i][j]='1'+d;r[i]|=bit;c[j]|=bit;q[k]|=bit;if(f(b,p+1))return true;r[i]^=bit;c[j]^=bit;q[k]^=bit;}}b[i][j]='.';return false;}public:void solveSudoku(vector<vector<char>>&b){for(int i=0;i<9;i++)for(int j=0;j<9;j++)if(b[i][j]!='.'){int bit=1<<(b[i][j]-'1');r[i]|=bit;c[j]|=bit;q[i/3*3+j/3]|=bit;}f(b,0);}};

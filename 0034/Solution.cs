@@ -1,0 +1,1 @@
+public class Solution{int Lb(int[]a,long t){int l=0,r=a.Length;while(l<r){int m=(l+r)/2;if(a[m]<t)l=m+1;else r=m;}return l;}public int[] SearchRange(int[]a,int t){int l=Lb(a,t);if(l==a.Length||a[l]!=t)return new[]{-1,-1};return new[]{l,Lb(a,(long)t+1)-1};}}

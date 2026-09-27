@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public int[][] insert(int[][]v,int[]x){List<int[]>o=new ArrayList<>();int i=0;while(i<v.length&&v[i][1]<x[0])o.add(v[i++]);while(i<v.length&&v[i][0]<=x[1]){x[0]=Math.min(x[0],v[i][0]);x[1]=Math.max(x[1],v[i][1]);i++;}o.add(x);while(i<v.length)o.add(v[i++]);return o.toArray(new int[0][]);}}

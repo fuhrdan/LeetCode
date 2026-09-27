@@ -1,0 +1,2 @@
+#include <vector>
+using namespace std;class Solution{public:vector<vector<int>> generateMatrix(int n){vector<vector<int>>m(n,vector<int>(n));int t=0,b=n-1,l=0,r=n-1,x=1;while(t<=b){for(int j=l;j<=r;j++)m[t][j]=x++;t++;for(int i=t;i<=b;i++)m[i][r]=x++;r--;if(t<=b){for(int j=r;j>=l;j--)m[b][j]=x++;b--;}if(l<=r){for(int i=b;i>=t;i--)m[i][l]=x++;l++;}}return m;}};

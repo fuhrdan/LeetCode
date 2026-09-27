@@ -1,0 +1,1 @@
+impl Solution{pub fn longest_valid_parentheses(s:String)->i32{let mut st=vec![-1i32];let mut b=0;for(i,c)in s.bytes().enumerate(){if c==b'('{st.push(i as i32)}else{st.pop();if st.is_empty(){st.push(i as i32)}else{b=b.max(i as i32-*st.last().unwrap())}}}b}}

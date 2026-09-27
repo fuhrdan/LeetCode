@@ -1,0 +1,1 @@
+using System.Collections.Generic;using System.Text;public class Solution{public string GetPermutation(int n,int k){var v=new List<int>();int f=1;for(int i=1;i<=n;i++){v.Add(i);f*=i;}var s=new StringBuilder();k--;for(int rem=n;rem>0;rem--){f/=rem;int idx=k/f;k%=f;s.Append(v[idx]);v.RemoveAt(idx);}return s.ToString();}}

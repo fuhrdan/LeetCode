@@ -1,0 +1,1 @@
+impl Solution{pub fn is_valid_sudoku(b:Vec<Vec<char>>)->bool{let(mut r,mut c,mut q)=([0u16;9],[0u16;9],[0u16;9]);for i in 0..9{for j in 0..9{if b[i][j]!='.'{let bit=1u16<<((b[i][j]as u8-b'1')as u32);let k=i/3*3+j/3;if r[i]&bit!=0||c[j]&bit!=0||q[k]&bit!=0{return false}r[i]|=bit;c[j]|=bit;q[k]|=bit;}}}true}}

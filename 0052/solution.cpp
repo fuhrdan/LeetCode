@@ -1,0 +1,1 @@
+class Solution{int f(int n,int c,int d1,int d2){if(c==(1<<n)-1)return 1;int a=((1<<n)-1)&~(c|d1|d2),r=0;while(a){int b=a&-a;a-=b;r+=f(n,c|b,(d1|b)<<1,(d2|b)>>1);}return r;}public:int totalNQueens(int n){return f(n,0,0,0);}};

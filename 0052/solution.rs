@@ -1,0 +1,1 @@
+impl Solution{pub fn total_n_queens(n:i32)->i32{fn f(n:u32,c:u32,d1:u32,d2:u32)->i32{if c==(1<<n)-1{return 1}let mut a=((1<<n)-1)&!(c|d1|d2);let mut r=0;while a!=0{let b=a&(!a+1);a-=b;r+=f(n,c|b,(d1|b)<<1,(d2|b)>>1);}r}f(n as u32,0,0,0)}}

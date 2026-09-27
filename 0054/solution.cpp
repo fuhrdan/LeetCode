@@ -1,0 +1,2 @@
+#include <vector>
+using namespace std;class Solution{public:vector<int> spiralOrder(vector<vector<int>>&m){vector<int>o;if(m.empty())return o;int t=0,b=m.size()-1,l=0,r=m[0].size()-1;while(t<=b&&l<=r){for(int j=l;j<=r;j++)o.push_back(m[t][j]);t++;for(int i=t;i<=b;i++)o.push_back(m[i][r]);r--;if(t<=b){for(int j=r;j>=l;j--)o.push_back(m[b][j]);b--;}if(l<=r){for(int i=b;i>=t;i--)o.push_back(m[i][l]);l++;}}return o;}};

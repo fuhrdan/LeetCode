@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public String getPermutation(int n,int k){List<Integer>v=new ArrayList<>();int f=1;for(int i=1;i<=n;i++){v.add(i);f*=i;}StringBuilder s=new StringBuilder();k--;for(int rem=n;rem>0;rem--){f/=rem;int idx=k/f;k%=f;s.append(v.remove(idx));}return s.toString();}}

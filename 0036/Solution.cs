@@ -1,0 +1,1 @@
+public class Solution{public bool IsValidSudoku(char[][]b){int[]r=new int[9],c=new int[9],q=new int[9];for(int i=0;i<9;i++)for(int j=0;j<9;j++)if(b[i][j]!='.'){int bit=1<<(b[i][j]-'1'),k=i/3*3+j/3;if((r[i]&bit)!=0||(c[j]&bit)!=0||(q[k]&bit)!=0)return false;r[i]|=bit;c[j]|=bit;q[k]|=bit;}return true;}}

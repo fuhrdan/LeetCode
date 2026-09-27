@@ -1,0 +1,1 @@
+import java.util.*;class Solution{List<List<Integer>>o=new ArrayList<>();void f(int[]a,int p){if(p==a.length){List<Integer>v=new ArrayList<>();for(int x:a)v.add(x);o.add(v);return;}for(int i=p;i<a.length;i++){int t=a[p];a[p]=a[i];a[i]=t;f(a,p+1);t=a[p];a[p]=a[i];a[i]=t;}}public List<List<Integer>> permute(int[]a){f(a,0);return o;}}

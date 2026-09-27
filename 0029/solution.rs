@@ -1,0 +1,1 @@
+impl Solution{pub fn divide(a:i32,b:i32)->i32{if a==i32::MIN&&b==-1{return i32::MAX}let neg=(a<0)^(b<0);let(mut x, y)=((a as i64).abs(),(b as i64).abs());let mut q=0i64;for i in (0..32).rev(){if (x>>i)>=y{x-=y<<i;q|=1<<i;}}if neg{-(q as i32)}else{q as i32}}}

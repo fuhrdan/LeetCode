@@ -1,0 +1,1 @@
+impl Solution{pub fn first_missing_positive(mut a:Vec<i32>)->i32{let n=a.len();for i in 0..n{while a[i]>=1&&a[i]<=n as i32&&a[a[i]as usize-1]!=a[i]{let j=a[i]as usize-1;a.swap(i,j);}}for i in 0..n{if a[i]!=i as i32+1{return i as i32+1}}n as i32+1}}

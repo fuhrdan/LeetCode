@@ -1,0 +1,1 @@
+using System.Text;public class Solution{public string Multiply(string a,string b){if(a=="0"||b=="0")return"0";int[]d=new int[a.Length+b.Length];for(int i=a.Length-1;i>=0;i--)for(int j=b.Length-1;j>=0;j--){int p=(a[i]-'0')*(b[j]-'0')+d[i+j+1];d[i+j+1]=p%10;d[i+j]+=p/10;}var s=new StringBuilder();int k=d[0]==0?1:0;for(;k<d.Length;k++)s.Append(d[k]);return s.ToString();}}

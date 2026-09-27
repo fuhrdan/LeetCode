@@ -1,0 +1,1 @@
+static void rev(int*a,int l,int r){while(l<r){int t=a[l];a[l++]=a[r];a[r--]=t;}}void nextPermutation(int*a,int n){int i=n-2;while(i>=0&&a[i]>=a[i+1])i--;if(i>=0){int j=n-1;while(a[j]<=a[i])j--;int t=a[i];a[i]=a[j];a[j]=t;}rev(a,i+1,n-1);}

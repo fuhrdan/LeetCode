@@ -1,0 +1,1 @@
+class Solution{public:ListNode* rotateRight(ListNode*h,int k){if(!h||!h->next||!k)return h;int n=1;auto t=h;while(t->next){t=t->next;n++;}k%=n;if(!k)return h;t->next=h;for(int i=0;i<n-k;i++)t=t->next;h=t->next;t->next=nullptr;return h;}};

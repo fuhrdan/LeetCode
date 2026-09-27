@@ -1,0 +1,1 @@
+impl Solution{pub fn permute(mut a:Vec<i32>)->Vec<Vec<i32>>{fn f(a:&mut Vec<i32>,p:usize,o:&mut Vec<Vec<i32>>){if p==a.len(){o.push(a.clone());return}for i in p..a.len(){a.swap(p,i);f(a,p+1,o);a.swap(p,i);}}let mut o=vec![];f(&mut a,0,&mut o);o}}

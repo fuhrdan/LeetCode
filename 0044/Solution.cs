@@ -1,0 +1,1 @@
+public class Solution{public bool IsMatch(string s,string p){int i=0,j=0,star=-1,mark=0;while(i<s.Length){if(j<p.Length&&(p[j]=='?'||p[j]==s[i])){i++;j++;}else if(j<p.Length&&p[j]=='*'){star=j++;mark=i;}else if(star>=0){j=star+1;i=++mark;}else return false;}while(j<p.Length&&p[j]=='*')j++;return j==p.Length;}}

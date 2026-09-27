@@ -1,0 +1,1 @@
+impl Solution{pub fn sort_colors(a:&mut Vec<i32>){let(mut l,mut i,mut r)=(0usize,0usize,a.len()-1);while i<=r{if a[i]==0{a.swap(l,i);l+=1;i+=1}else if a[i]==2{a.swap(i,r);if r==0{break}r-=1}else{i+=1}}}}

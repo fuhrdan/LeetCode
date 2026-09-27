@@ -1,0 +1,1 @@
+impl Solution{pub fn rotate_right(head:Option<Box<ListNode>>,k:i32)->Option<Box<ListNode>>{let mut v=vec![];let mut p=head.as_ref();while let Some(n)=p{v.push(n.val);p=n.next.as_ref();}if v.is_empty(){return None}let k=k as usize%v.len();v.rotate_right(k);let mut h=None;for &x in v.iter().rev(){let mut n=Box::new(ListNode::new(x));n.next=h;h=Some(n);}h}}

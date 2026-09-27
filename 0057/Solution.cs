@@ -1,0 +1,1 @@
+using System;using System.Collections.Generic;public class Solution{public int[][] Insert(int[][]v,int[]x){var o=new List<int[]>();int i=0;while(i<v.Length&&v[i][1]<x[0])o.Add(v[i++]);while(i<v.Length&&v[i][0]<=x[1]){x[0]=Math.Min(x[0],v[i][0]);x[1]=Math.Max(x[1],v[i][1]);i++;}o.Add(x);while(i<v.Length)o.Add(v[i++]);return o.ToArray();}}

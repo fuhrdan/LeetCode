@@ -1,0 +1,1 @@
+public class Solution{public int UniquePathsWithObstacles(int[][]g){int n=g[0].Length;int[]d=new int[n];d[0]=1;foreach(var r in g)for(int j=0;j<n;j++)if(r[j]==1)d[j]=0;else if(j>0)d[j]+=d[j-1];return d[n-1];}}

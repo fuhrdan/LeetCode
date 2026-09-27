@@ -1,0 +1,2 @@
+#include <stdlib.h>
+static void f(int*a,int n,int p,int***o,int*c,int*cap){if(p==n){if(*c==*cap){*cap*=2;*o=realloc(*o,*cap*sizeof(int*));}(*o)[*c]=malloc(n*sizeof(int));for(int i=0;i<n;i++)(*o)[*c][i]=a[i];(*c)++;return;}for(int i=p;i<n;i++){int t=a[p];a[p]=a[i];a[i]=t;f(a,n,p+1,o,c,cap);t=a[p];a[p]=a[i];a[i]=t;}}int** permute(int*a,int n,int*rs,int**rc){int cap=16,c=0;int**o=malloc(cap*sizeof(int*));f(a,n,0,&o,&c,&cap);int*cols=malloc(c*sizeof(int));for(int i=0;i<c;i++)cols[i]=n;*rs=c;*rc=cols;return o;}

@@ -1,0 +1,1 @@
+import java.util.*;class Solution{public String simplifyPath(String p){Deque<String>st=new ArrayDeque<>();for(String x:p.split("/")){if(x.isEmpty()||x.equals("."))continue;if(x.equals("..")){if(!st.isEmpty())st.removeLast();}else st.addLast(x);}return"/"+String.join("/",st);}}

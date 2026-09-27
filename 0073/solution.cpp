@@ -1,0 +1,2 @@
+#include <vector>
+using namespace std;class Solution{public:void setZeroes(vector<vector<int>>&m){int R=m.size(),C=m[0].size();bool r0=false,c0=false;for(int j=0;j<C;j++)r0|=m[0][j]==0;for(int i=0;i<R;i++)c0|=m[i][0]==0;for(int i=1;i<R;i++)for(int j=1;j<C;j++)if(!m[i][j])m[i][0]=m[0][j]=0;for(int i=1;i<R;i++)for(int j=1;j<C;j++)if(!m[i][0]||!m[0][j])m[i][j]=0;if(r0)for(int&x:m[0])x=0;if(c0)for(auto&r:m)r[0]=0;}};

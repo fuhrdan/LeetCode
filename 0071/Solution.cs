@@ -1,0 +1,1 @@
+using System.Collections.Generic;public class Solution{public string SimplifyPath(string p){var st=new List<string>();foreach(var x in p.Split('/')){if(x==""||x==".")continue;if(x==".."){if(st.Count>0)st.RemoveAt(st.Count-1);}else st.Add(x);}return"/"+string.Join("/",st);}}
