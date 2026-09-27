@@ -1,0 +1,1 @@
+class Solution{public java.util.List<Integer> lexicalOrder(int n){java.util.List<Integer>r=new java.util.ArrayList<>(n);int cur=1;for(int i=0;i<n;i++){r.add(cur);if((long)cur*10<=n)cur*=10;else{while(cur%10==9||cur+1>n)cur/=10;cur++;}}return r;}}

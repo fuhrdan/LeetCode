@@ -1,0 +1,1 @@
+using System;public class Solution{ListNode h;Random r=new();public Solution(ListNode head){h=head;}public int GetRandom(){int ans=0,i=0;for(var p=h;p!=null;p=p.next)if(r.Next(++i)==0)ans=p.val;return ans;}}

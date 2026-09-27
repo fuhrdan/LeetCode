@@ -1,0 +1,1 @@
+import java.util.*;class Solution{ListNode h;Random r=new Random();public Solution(ListNode head){h=head;}public int getRandom(){int ans=0,i=0;for(ListNode p=h;p!=null;p=p.next)if(r.nextInt(++i)==0)ans=p.val;return ans;}}

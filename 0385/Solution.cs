@@ -1,0 +1,1 @@
+public class Solution{int i;NestedInteger F(string s){if(s[i]!='['){int sign=1,v=0;if(s[i]=='-'){sign=-1;i++;}while(i<s.Length&&char.IsDigit(s[i]))v=v*10+s[i++]-'0';return new NestedInteger(sign*v);}var r=new NestedInteger();i++;while(s[i]!=']'){r.Add(F(s));if(s[i]==',')i++;}i++;return r;}public NestedInteger Deserialize(string s){i=0;return F(s);}}

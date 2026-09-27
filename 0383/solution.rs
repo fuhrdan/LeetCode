@@ -1,0 +1,1 @@
+impl Solution{pub fn can_construct(r:String,m:String)->bool{let mut c=[0i32;26];for b in m.bytes(){c[(b-b'a')as usize]+=1}for b in r.bytes(){let i=(b-b'a')as usize;c[i]-=1;if c[i]<0{return false}}true}}

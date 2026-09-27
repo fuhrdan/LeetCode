@@ -1,0 +1,1 @@
+impl Solution{pub fn kth_smallest(m:Vec<Vec<i32>>,k:i32)->i32{let n=m.len();let(mut lo,mut hi)=(m[0][0],m[n-1][n-1]);while lo<hi{let mid=lo+(hi-lo)/2;let(mut c,mut j)=(0,n as i32-1);for i in 0..n{while j>=0&&m[i][j as usize]>mid{j-=1}c+=j+1;}if c<k{lo=mid+1}else{hi=mid}}lo}}

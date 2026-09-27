@@ -1,0 +1,1 @@
+using System;public class Solution{int[]a;Random r=new();public Solution(int[]nums){a=nums;}public int Pick(int target){int ans=-1,c=0;for(int i=0;i<a.Length;i++)if(a[i]==target&&r.Next(++c)==0)ans=i;return ans;}}

@@ -1,0 +1,1 @@
+class Solution{public int maxRotateFunction(int[]a){long sum=0,f=0;for(int i=0;i<a.length;i++){sum+=a[i];f+=(long)i*a[i];}long b=f;for(int k=1;k<a.length;k++){f+=sum-(long)a.length*a[a.length-k];b=Math.max(b,f);}return(int)b;}}

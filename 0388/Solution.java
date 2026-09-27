@@ -1,0 +1,1 @@
+class Solution{public int lengthLongestPath(String s){int[]len=new int[256];int best=0;for(String line:s.split("\n")){int d=0;while(d<line.length()&&line.charAt(d)=='\t')d++;String name=line.substring(d);int total=len[d]+name.length();if(name.contains("."))best=Math.max(best,total);else len[d+1]=total+1;}return best;}}

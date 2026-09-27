@@ -1,0 +1,1 @@
+struct Solution{o:Vec<i32>}impl Solution{fn new(a:Vec<i32>)->Self{Self{o:a}}fn reset(&self)->Vec<i32>{self.o.clone()}fn shuffle(&self)->Vec<i32>{let mut a=self.o.clone();for i in (1..a.len()).rev(){let j=fastrand::usize(..=i);a.swap(i,j);}a}}

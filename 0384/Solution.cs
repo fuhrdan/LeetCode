@@ -1,0 +1,1 @@
+using System;public class Solution{int[]o;Random r=new();public Solution(int[]a){o=(int[])a.Clone();}public int[] Reset()=>(int[])o.Clone();public int[] Shuffle(){int[]a=(int[])o.Clone();for(int i=a.Length-1;i>0;i--){int j=r.Next(i+1);(a[i],a[j])=(a[j],a[i]);}return a;}}

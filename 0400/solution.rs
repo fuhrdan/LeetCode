@@ -1,0 +1,1 @@
+impl Solution{pub fn find_nth_digit(mut n:i32)->i32{let(mut len,mut c,mut start)=(1i64,9i64,1i64);while n as i64>len*c{n-=(len*c)as i32;len+=1;c*=10;start*=10;}let mut num=start+(n as i64-1)/len;let idx=(n as i64-1)%len;for _ in 0..len-idx-1{num/=10}(num%10)as i32}}

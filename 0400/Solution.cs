@@ -1,0 +1,1 @@
+public class Solution{public int FindNthDigit(int n){long len=1,c=9,start=1;while(n>len*c){n-=(int)(len*c);len++;c*=10;start*=10;}long num=start+(n-1)/len;int idx=(int)((n-1)%len);for(int i=0;i<len-idx-1;i++)num/=10;return(int)(num%10);}}

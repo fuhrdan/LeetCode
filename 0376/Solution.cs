@@ -1,0 +1,1 @@
+using System;public class Solution{public int WiggleMaxLength(int[]a){if(a.Length==0)return 0;int up=1,down=1;for(int i=1;i<a.Length;i++){if(a[i]>a[i-1])up=down+1;else if(a[i]<a[i-1])down=up+1;}return Math.Max(up,down);}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn max_rotate_function(a:Vec<i32>)->i32{let n=a.len()as i64;let sum:i64=a.iter().map(|&x|x as i64).sum();let mut f:i64=a.iter().enumerate().map(|(i,&x)|i as i64*x as i64).sum();let mut b=f;for k in 1..a.len(){f+=sum-n*a[a.len()-k]as i64;b=b.max(f);}b as i32}}

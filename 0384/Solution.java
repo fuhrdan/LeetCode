@@ -1,0 +1,1 @@
+import java.util.*;class Solution{int[]o;Random r=new Random();public Solution(int[]a){o=a.clone();}public int[] reset(){return o.clone();}public int[] shuffle(){int[]a=o.clone();for(int i=a.length-1;i>0;i--){int j=r.nextInt(i+1),t=a[i];a[i]=a[j];a[j]=t;}return a;}}

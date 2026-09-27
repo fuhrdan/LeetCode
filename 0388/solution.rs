@@ -1,0 +1,1 @@
+impl Solution{pub fn length_longest_path(s:String)->i32{let mut len=vec![0usize;256];let mut best=0;for line in s.split('\n'){let d=line.bytes().take_while(|&b|b==b'\t').count();let name=&line[d..];let total=len[d]+name.len();if name.contains('.') {best=best.max(total)}else{len[d+1]=total+1}}best as i32}}

@@ -1,0 +1,1 @@
+using System;public class Solution{public int MaxRotateFunction(int[]a){long sum=0,f=0;for(int i=0;i<a.Length;i++){sum+=a[i];f+=(long)i*a[i];}long b=f;for(int k=1;k<a.Length;k++){f+=sum-(long)a.Length*a[a.Length-k];b=Math.Max(b,f);}return(int)b;}}

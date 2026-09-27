@@ -1,0 +1,3 @@
+#include <stdlib.h>
+#include <stdbool.h>
+typedef struct{int*q,h,t,cap;bool*used;}PhoneDirectory;PhoneDirectory* phoneDirectoryCreate(int n){PhoneDirectory*x=malloc(sizeof(*x));x->q=malloc(n*sizeof(int));x->used=calloc(n,sizeof(bool));x->h=0;x->t=n;x->cap=n;for(int i=0;i<n;i++)x->q[i]=i;return x;}int phoneDirectoryGet(PhoneDirectory*x){if(x->h==x->t)return-1;int v=x->q[x->h++];x->used[v]=true;return v;}bool phoneDirectoryCheck(PhoneDirectory*x,int n){return n>=0&&n<x->cap&&!x->used[n];}void phoneDirectoryRelease(PhoneDirectory*x,int n){if(n>=0&&n<x->cap&&x->used[n]){x->used[n]=false;x->q[x->t++%x->cap]=n;}}void phoneDirectoryFree(PhoneDirectory*x){free(x->q);free(x->used);free(x);}

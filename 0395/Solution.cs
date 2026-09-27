@@ -1,0 +1,1 @@
+using System;public class Solution{int F(string s,int l,int r,int k){if(r-l<k)return 0;int[]c=new int[26];for(int i=l;i<r;i++)c[s[i]-'a']++;for(int i=l;i<r;i++)if(c[s[i]-'a']<k){int j=i+1;while(j<r&&c[s[j]-'a']<k)j++;return Math.Max(F(s,l,i,k),F(s,j,r,k));}return r-l;}public int LongestSubstring(string s,int k)=>F(s,0,s.Length,k);}

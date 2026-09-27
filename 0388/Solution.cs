@@ -1,0 +1,1 @@
+using System;public class Solution{public int LengthLongestPath(string s){int[]len=new int[256];int best=0;foreach(string line in s.Split('\n')){int d=0;while(d<line.Length&&line[d]=='\t')d++;string name=line.Substring(d);int total=len[d]+name.Length;if(name.Contains('.'))best=Math.Max(best,total);else len[d+1]=total+1;}return best;}}

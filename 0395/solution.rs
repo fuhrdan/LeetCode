@@ -1,0 +1,1 @@
+impl Solution{pub fn longest_substring(s:String,k:i32)->i32{fn f(b:&[u8],k:i32)->i32{if b.len()<k as usize{return 0}let mut c=[0;26];for &x in b{c[(x-b'a')as usize]+=1}for i in 0..b.len(){if c[(b[i]-b'a')as usize]<k{let mut j=i+1;while j<b.len()&&c[(b[j]-b'a')as usize]<k{j+=1}return f(&b[..i],k).max(f(&b[j..],k))}}b.len()as i32}f(s.as_bytes(),k)}}

@@ -1,0 +1,1 @@
+import java.util.*;class Solution{int[]a;Random r=new Random();public Solution(int[]nums){a=nums;}public int pick(int target){int ans=-1,c=0;for(int i=0;i<a.length;i++)if(a[i]==target&&r.nextInt(++c)==0)ans=i;return ans;}}

@@ -1,0 +1,1 @@
+impl Solution{pub fn lexical_order(n:i32)->Vec<i32>{let mut r=vec![0;n as usize];let mut cur=1;for i in 0..n as usize{r[i]=cur;if(cur as i64)*10<=n as i64{cur*=10}else{while cur%10==9||cur+1>n{cur/=10}cur+=1}}r}}

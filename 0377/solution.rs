@@ -1,0 +1,1 @@
+impl Solution{pub fn combination_sum4(a:Vec<i32>,target:i32)->i32{let mut d=vec![0u64;target as usize+1];d[0]=1;for t in 1..=target as usize{for &x in &a{if x as usize<=t{d[t]+=d[t-x as usize]}}}d[target as usize]as i32}}
