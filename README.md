@@ -14,3 +14,4 @@ Solutions are organized by programming language and problem.
 This repository consolidates my LeetCode work into one place for easier browsing and reference.
 
 Most recent solutions are written in C, with older solutions primarily in C#.
+Some Rust, Java and C++ added.
